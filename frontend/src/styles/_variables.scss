@@ -1,0 +1,336 @@
+@use "sass:color";
+// White & Silver Variants
+$text-white-green: rgba(250, 249, 251, 1);
+$white-light: rgba(255, 255, 255, 1);
+$white-soft: rgba(255, 255, 255, 0.85);
+$white-hover-green: rgba(225, 255, 255, 1);
+$white-muted: rgba(247, 247, 247, 1);
+$pure-white: #ffffff;
+$frost-white-hover: rgba(255, 255, 255, 0.13);
+$silver-fog-opacity: rgba(245, 245, 245, 0.9);
+$pearl-smoke: rgba(230, 230, 230, 1);
+$frost-white-glow: rgba(255, 255, 255, 0.2);
+$ash-faint: rgba(0, 0, 0, 0.05);
+$ash-glow-hover: rgba(0, 0, 0, 0.08);
+$bg-white-light: rgba(255, 255, 255, 0.9);
+$hover-white-glow: rgba(0, 123, 255, 0.5);
+$misty-silver: #dee4e7;
+$misty-white-light: rgba(255, 255, 255, 0.58);
+$misty-white-medium: rgba(255, 255, 255, 0.78);
+$cloud-dust: #f4f4f4;
+$buttermilk-cream: #fefae0;
+$snow-drift: #f5f5f5;
+$whisper-white: (255, 255, 255, 0.05);
+$soft-silver: #cccccc;
+
+// Green , Green-Mint & Teal-Green Variants
+$bg-teal-green: rgba(1, 113, 98, 1);
+$teal-green-alt: rgba(17, 127, 112, 1);
+$teal-green-odd-hover: rgba(1, 133, 118, 1);
+$teal-green-even-hover: rgba(27, 147, 132, 1);
+$hover-teal-bg: rgba(14, 110, 97, 1);
+$green-base: #00a86b;
+$green-dark: #006060;
+$green-deep: #165033;
+$mint-green: rgb(215, 240, 235);
+$teal-transparent-green: rgba(1, 113, 98, 0.1);
+$teal-green: rgba(1, 113, 98, 0.5);
+$dark-teal: rgba(25, 140, 125, 1);
+$slate-green: #2f4f4f;
+$teal-deep: #0e5252;
+$teal-dark: #0e5252;
+$teal-circle: #0e5252;
+$teal-center: #1f6b6b;
+$teal-header-green: #015c4d;
+$forest-emerald: rgba(0, 85, 73, 1);
+$deep-emerald-opacity: rgba(1, 113, 98, 0.9);
+$green-bg: #28a745;
+$teal-hover-bg-green: rgba(1, 113, 98, 0.15);
+$mint-bg: #cfe7e7;
+$bg-gray-green: rgba(238, 238, 238, 0.51);
+$teal-track-bg: rgba(225, 235, 245, 0.2);
+$forest-green-deep: #004d40;
+$mint-cyan-light: #b5eaea;
+$deep-jungle-green: rgb(0, 85, 74);
+$pinewood-green: #1e7e34;
+$serene-green: #118c4f;
+$moss-shadow: #0d7741;
+$pine-forest: #004d3b;
+$juniper-green: #1a6634;
+$verdant-shade: #035c2a;
+$forest-emeral: #218838;
+
+// Gray & Dark Variants
+$gray-dark: #6c757d;
+$gray-light: #adb5bd;
+$muted-gray-bg: #e9ecef;
+$gray-hover: #5a6268;
+$gray-hover-light: #868e96;
+$gray-hover-bg-light: #f0f2f5;
+$gray-track-bg: rgba(0, 0, 0, 0.05);
+$gray-darker: #555;
+$gray-mid-light: #777777;
+$gray-softest: rgba(245, 245, 245, 1);
+$gray-dark-light: rgba(34, 34, 34, 1);
+$gray-soft-light: rgba(220, 220, 220, 1);
+$gray-muted-light: rgba(160, 160, 160, 1);
+$gray-muted-green: gray;
+$gray-medium-light: rgb(180, 180, 180);
+$gray-pale-light: #eceff1;
+$gray-soft-green: rgba(226, 226, 226, 1);
+$gray-deep: #555;
+$dark-gray: #222;
+$medium-gray: #aaa;
+$gray-subtle: #ededed;
+$light-gray-table: #ededed;
+$dark-gray-center: #333;
+$soft-gray-circle: #f2f2f2;
+$gray-header-light: #f8f9fa;
+$gray-odd-row-hover: #e0e0e0;
+$gray-even-row-hover: #d6d6d6;
+$quiet-shadow: rgba(0, 0, 0, 0.12);
+$soft-gray-bg: #f8f9fa;
+$misted-gray: #d1d5db;
+$cloud-gray: #d0d0d0;
+$weathered-slate: #757575;
+$deep-ink: rgba(0, 0, 0, 0.6);
+$light-gray-bg: #f1f1f1;
+$pale-steel: #bbbbbb;
+
+// Yellow Variants
+$golden-sunburst: #ffc107;
+$amber-radiance: #e0a800;
+$sunshine-yellow: rgba(251, 190, 5, 1);
+$vintage-gold: rgba(149, 113, 3, 1);
+
+// Black Variants
+$text-gray-green: rgba(68, 68, 68, 1);
+$text-black-light: rgba(0, 0, 0, 1);
+$smoky-haze: rgba(0, 0, 0, 0.2);
+
+// Blue Variants
+$blue-base: #42a5f5;
+$blue-dark: #2196f3;
+$blue-deep: #0056b3;
+$blue-hover-deep: #004494;
+$blue-bg: #007bff;
+$blue-hover: #1e88e5;
+
+// Red Variants
+$red-base: #d9534f;
+$red-light: #dc3545;
+$red-hover: #c9302c;
+$red-hover-light: #c82333;
+$radical-rose: rgba(210, 6, 65, 1);
+$ruby-signal: #c82333;
+$deep-crimson: #c0392b;
+
+// Border Variants
+$light-aqua-border: rgba(100, 181, 191, 0.6);
+$warm-gray-border: #dee2e6;
+$aquamarine-border: rgba(0, 150, 136, 0.6);
+$neutral-gray-border: #ccc;
+$focus-gray-border: gray;
+$gray-light-border: #eee;
+$gray-soft-border: #ddd;
+$teal-form-border: 1px solid rgba(255, 255, 255, 0.1);
+$gray-form-border: 1px solid rgba(0, 0, 0, 0.05);
+
+// Shadow Variants
+$shadow-dark-overlay: rgba(0, 0, 0, 0.5);
+$shadow-light-overlay: rgba(0, 0, 0, 0.2);
+$gray-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+$teal-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+$teal-form-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+$gray-form-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+$overlay-dark: rgba(0, 0, 0, 0.59);
+$overlay-light: rgba(255, 255, 255, 0.5);
+$shadow-teal-medium: 0px 4px 8px rgba(1, 113, 98, 0.2);
+$shadow-soft-medium: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+$shadow-elevated-dark: 0px 8px 20px rgba(0, 0, 0, 0.15);
+$shadow-depth-mid: 0 3px 6px rgba(0, 0, 0, 0.25);
+$shadow-elevation-lg: 0 4px 10px rgba(0, 0, 0, 0.2);
+$shadow-elevation-xl: 0 5px 15px rgba(0, 0, 0, 0.2);
+$shadow-aqua-blur: 0px 4px 8px rgba(0, 121, 107, 0.2);
+$shadow-faint-layer: 0px 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-neutral-fade: 0 3px 6px rgba(0, 0, 0, 0.15);
+$shadow-light-float: 0px 4px 10px rgba(0, 0, 0, 0.05);
+$subtle-shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.15);
+$shadow-tint: rgba(0, 0, 0, 0.1);
+$shadow-contrast-float: 0 4px 12px rgba(0, 0, 0, 0.2);
+$dark-overlay-fast: rgba(0, 0, 0, 0.7);
+$dark-lay-fast: rgba(0, 0, 0, 0.9);
+$shadow-deep-elevated: 0px 10px 30px rgba(0, 0, 0, 0.3);
+$gentle-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-low-opacity: 0px 4px 8px rgba(0, 0, 0, 0.25);
+$shadow-heavy-lift: 0 6px 16px rgba(0, 0, 0, 0.3);
+$shadow-soft-float: 0 2px 4px rgba(0, 0, 0, 0.3),
+  inset 0 1px 0 rgba(255, 255, 255, 0.3);
+$shadow-inner-edge: 0 2px 6px rgba(0, 0, 0, 0.1),
+  inset 0 1px 0 rgba(0, 0, 0, 0.05);
+
+// Gradient Variants
+$gradient-green: linear-gradient(
+  90deg,
+  rgba(17, 127, 112, 1) 0%,
+  rgba(31, 229, 202, 1) 100%
+);
+$teal-gradient-green: linear-gradient(
+  90deg,
+  rgba(1, 113, 98, 1) 0%,
+  rgba(2, 215, 186, 1) 100%
+);
+$cyan-gradient-green: linear-gradient(
+  90deg,
+  rgba(28, 171, 186, 1) 0%,
+  rgba(13, 77, 84, 1) 100%
+);
+$teal-gradient-alt: linear-gradient(
+  90deg,
+  rgba(1, 113, 98, 1) 0%,
+  rgba(2, 215, 186, 1) 100%
+);
+$yellow-gradient: linear-gradient(
+  90deg,
+  rgba(251, 190, 5, 1) 0%,
+  rgba(149, 113, 3, 1) 100%
+);
+$red-gradient: linear-gradient(
+  90deg,
+  rgba(210, 65, 65, 1) 0%,
+  rgba(108, 33, 33, 1) 100%
+);
+$cyan-gradient-alt: linear-gradient(
+  90deg,
+  rgba(28, 171, 186, 1) 0%,
+  rgba(13, 77, 84, 1) 100%
+);
+$black-gradient: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(102, 102, 102, 1) 100%
+);
+$sky-gradient: linear-gradient(
+  90deg,
+  rgba(135, 206, 235, 1) 0%,
+  rgba(64, 224, 208, 1) 100%
+);
+$teal-gradient: linear-gradient(
+  90deg,
+  rgba(1, 113, 98, 1),
+  rgba(25, 140, 125, 1)
+);
+$teal-gradient-hover: linear-gradient(
+  90deg,
+  rgba(1, 113, 98, 0.9),
+  rgba(25, 140, 125, 1)
+);
+$gray-gradient: linear-gradient(90deg, #e0e0e0, #cccccc);
+$heatmap-gradient: linear-gradient(
+  45deg,
+  #6ceb9b 0%,
+  #fac32d 47%,
+  #f50157 100%
+);
+$dark-heatmap-gradient: linear-gradient(
+  135deg,
+  rgba(34, 193, 94, 0.8) 0%,
+  rgba(0, 132, 80, 0.9) 30%,
+  rgba(5, 70, 64, 0.95) 70%,
+  rgba(0, 40, 20, 1) 100%
+);
+$teal-fill: linear-gradient(
+  to right,
+  rgba(17, 127, 112, 1) 0%,
+  rgba(31, 229, 202, 1) 100%
+);
+$teal-form-bg: linear-gradient(
+  135deg,
+  rgba(1, 113, 98, 0.2),
+  rgba(255, 255, 255, 0.05)
+);
+$gray-form-bg: linear-gradient(
+  135deg,
+  rgba(240, 240, 240, 0.8),
+  rgba(255, 255, 255, 0.6)
+);
+$emerald-gradient: linear-gradient(to left, #008066, #00a37a);
+$mist-gradient: linear-gradient(to left, #e0e0e0, #ffffff);
+$white-gra: linear-gradient(to left, #ffffff, #eaeaea);
+$emerald-gradient-hover: linear-gradient(to right, #006b52, #00936b);
+$mist-gradient-hover: linear-gradient(to right, #f0f0f0, #e0e0e0);
+$gray-fill: linear-gradient(to right, #6b7280 0%, #d1d5db 100%);
+$lime-forest-blend: linear-gradient(45deg, #d9f99d, #3f6212);
+$mint-jade-blend: linear-gradient(45deg, #a7f3d0, #065f46);
+$aloe-fern-blend: linear-gradient(45deg, #bbf7d0, #166534);
+$purple-plum-gradient: linear-gradient(
+  90deg,
+  rgba(89, 62, 137, 1) 0%,
+  #812a62 100%
+);
+$tangerine-blaze-gradient: linear-gradient(
+  90deg,
+  rgba(255, 146, 63, 1) 0%,
+  rgba(255, 76, 0, 1) 100%
+);
+$grape-magenta-gradient: linear-gradient(
+  90deg,
+  rgba(89, 62, 137, 1) 0%,
+  rgba(129, 42, 98, 1) 100%
+);
+$indigo-navy-gradient: linear-gradient(
+  90deg,
+  rgba(77, 78, 255, 1) 0%,
+  rgba(52, 58, 164, 1) 100%
+);
+$smoky-charcoal-gradient: linear-gradient(to bottom, #616161, #3d3d3d);
+$smoky-charcoal-gradient-hover: linear-gradient(to bottom, #757575, #4a4a4a);
+$white-gradient: linear-gradient(to left, white, #eee);
+$blue-deep-gradient: linear-gradient(90deg, #007bff, $blue-deep, #003f88);
+$blue-deep-gradient-hover: linear-gradient(
+  90deg,
+  #339dff,
+  color.adjust($blue-deep, $lightness: 10%) #1a4c99
+);
+$dark-tan-gradient: linear-gradient(to bottom, #8b7355, #6d5a42, #4a3f32);
+$dark-yellow-gradient: linear-gradient(to right, #c9b037, #f7ef8a, #c9b037);
+$icy-white-gradient: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+$fold-gradient: linear-gradient(
+  to right,
+  rgba(255, 255, 255, 0.1) 0%,
+  rgba(0, 0, 0, 0.2) 50%,
+  rgba(255, 255, 255, 0.05) 100%
+);
+$fold-gradient-odd: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.15) 0%,
+  rgba(255, 255, 255, 0.05) 50%,
+  rgba(0, 0, 0, 0.1) 100%
+);
+$active-gradient: linear-gradient(
+  to bottom,
+  #a06b2c,
+  #7f5322,
+  #5f3e1a,
+  #3f2a12
+);
+$active-gradient-green: linear-gradient(
+  to bottom,
+  #4fb3a2,
+  #2f8f83,
+  #1f6f66,
+  #144f49
+);
+$fold-gradient-white-alt: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.03) 0%,
+  rgba(255, 255, 255, 0.05) 50%,
+  rgba(0, 0, 0, 0.04) 100%
+);
+$fold-gradient-odd-white: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.15) 0%,
+  rgba(255, 255, 255, 0.05) 50%,
+  rgba(0, 0, 0, 0.1) 100%
+);
+$frosted-pearl-gradient: linear-gradient(45deg, #f0f0f0, #ffffff, #f0f0f0);

@@ -1,0 +1,13 @@
+.footer-hp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+@media (min-width: 1443px) {
+  .footer-hp {
+    padding: 24px 7px;
+  }
+}

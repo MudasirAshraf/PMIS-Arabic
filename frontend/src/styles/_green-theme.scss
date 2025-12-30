@@ -1,0 +1,1208 @@
+@use "./variables" as *;
+// Green Theme
+.green-theme {
+  background-image: url("../assets/svg/green-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    // Login-CSS
+  .login-box {
+    background: $teal-gradient-hover;
+  }
+  .login-btn {
+    color: $pure-white;
+    background: $emerald-gradient;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $emerald-gradient-hover;
+      opacity: 0.9;
+    }
+  }
+
+  .links a {
+    color: $pure-white;
+
+    &:hover {
+      text-decoration: none;
+      color: $gray-even-row-hover;
+    }
+  }
+
+  .logo-separator {
+    border-top: 1px solid $gray-light-border;
+  }
+  // NAVBAR
+  .main-container-navbar {
+    background-color: $bg-teal-green;
+  }
+  .first-container-navbar span {
+    color: $white-light;
+  }
+  .center-container-navbar span {
+    color: $text-white-green;
+  }
+  .profile-container-navbar {
+    background-color: $bg-gray-green;
+  }
+
+  // HomePage
+  // First Row (Header)
+  .header-details,
+  .header-details-data-center {
+    background: $gradient-green;
+  }
+  .container-scroll-bar {
+    background-color: $teal-green-alt;
+  }
+  // Text
+  .header-details p,
+  .addrisk-modal-header,
+  .scroll-container p,
+  .first-container-section-I p,
+  .stakeholder-modal-close-btn,
+  .first-container-card-I p,
+  .value-card-I p,
+  .first-container-section-II p,
+  .documents-header-deliverable h3,
+  .main-container-card-II p,
+  .second-header-boq p,
+  .header-delivrable-center p,
+  .deliverable-row label,
+  .icon-color,
+  .first-container-section-III p,
+  .header-para-templates,
+  .addrisk-modal-body label,
+  .first-container-section-IV p,
+  .curtain-title,
+  .curtain-click-text,
+  .chart-label,
+  .first-container-section-V p,
+  .footer-hp,
+  .footer-grid-card p,
+  .para-timeline,
+  .p-timeline,
+  .p-card-grid,
+  .value-colors,
+  .sector-header,
+  .label-title,
+  .sector-note,
+  .dates,
+  .project-table th,
+  .first-header-BOQ-center p,
+  .first-header-PO-center p,
+  .change-request-form label,
+  .form-group label,
+  .project-table td,
+  .budget-cardi-header-para,
+  .budget-details-header-para,
+  .header-project-manager p,
+  .ist-label-filter label,
+  .summary-values span,
+  .epmo-field label,
+  .para-dc,
+  .header-ist-section-i p,
+  .chart-details p,
+  .main-container-data-card-para-i,
+  .main-container-data-card-para-ii,
+  .content-ii-section-ii-para,
+  .hr,
+  .project-details-form label,
+  .add-project-header h3,
+  .field label,
+  .accordion-grid p,
+  .add-project-header button,
+  .details-content-i-pII,
+  .login-box h2,
+  .boq-id,
+  .boq-value,
+  .details-content-i-pI,
+  .header-ist-section-i-data-II p,
+  .y-axis-title,
+  .x-axis-title,
+  .header-video-center,
+  .choice-container h3,
+  .value-i,
+  .value-ii,
+  .title-ac,
+  .project-stack-note,
+  .project-closure-form-header h2,
+  .top-corner-para,
+  .article-description,
+  .change-data-field label,
+  .sidebar-header p,
+  .accordion-item summary,
+  .confirm-text-para,
+  .request-stake-close-btn,
+  .request-stake-header,
+  .request-stake-field,
+  .add-btn,
+  .modify-btn,
+  .article-title,
+  .description-ac,
+  .form-group-comp label,
+  .paragraph-item p,
+  .competition-details-title,
+  .competition-details-item label,
+  .para-con-grid,
+  .step-para,
+  .container-BUDGET-para-i,
+  .responsive-table-Data-IV,
+  .section-paragraph-i,
+  .section-i-paragraph-i,
+  .para-schedue-center,
+  .tab-section-label,
+  .content-templates p,
+  .po-center-label,
+  .temp-icon,
+  .add-doc-panel-modal-body label,
+  .request-stake-field label,
+  .panel-header-para,
+  .span-paragraph-i,
+  .para-event-card,
+  .homepage-btn-I button,
+  .section-iv-hp button,
+  .modalIII-close,
+  .modalIII-content h2,
+  .builder-modal-content label,
+  .add-document-modal-label,
+  .stats-table th,
+  .competitions-table th,
+  .competitions-table td,
+  label,
+  .prjct-chrt-label,
+  .stats-table td,
+  .projects-circle-segment,
+  .floating-card-icon,
+  .para-title-I,
+  .para-title-II,
+  .floating-card-para,
+  .header-approvals-page p,
+  .close-sidebar-btn,
+  .search-para,
+  .para-date,
+  .header-project-risk,
+  .po-number,
+  .document-buttons-I,
+  .login-box form label,
+  .po-center-amount,
+  .document-summary,
+  .view-btn,
+  .edit-btn,
+  .para-year,
+  .para-month,
+  .modalIV-close,
+  .header-icon,
+  .modalIV-content h2,
+  .header-project-section p,
+  .modalV-close,
+  .article-modal-title,
+  .article-modal-description,
+  .add-project-title,
+  .add-project-close,
+  .no-results-message,
+  .add-project-body label,
+  .article-close-btn,
+  .back-button,
+  .modalV-content h2,
+  .collapse-container-para,
+  .close-btn-comp-modal,
+  .modal-header-comp-modal h3,
+  .step-box p,
+  .value-card-boq,
+  .responsive-table-Data-IV tbody tr:hover,
+  .file-icon,
+  .para-content-value,
+  .po-span,
+  .first-header-risk-center p,
+  .no-projects-simple,
+  .pdf-modal-close,
+  .header-button-risk-center button,
+  .epmo-button,
+  .search-button-rc,
+  .addrisk-modal-header h3,
+  .stakeholder-modal-form-group label,
+  .project-icon,
+  .addrisk-close-btn,
+  .filter-button-rc,
+  .risk-center-table th,
+  .risk-center-table td,
+  .delete-modal-content p,
+  .confirm-btn,
+  .para-document,
+  .modal-title-dv,
+  .close-icon-dv,
+  .cancel-btn,
+  .edit-risk-modal-header,
+  .chatbox-close-btn,
+  .edit-risk-modal-body label,
+  .risk-chat-modal-header,
+  .second-header-chatbox-modal p,
+  .editmodal-body label,
+  .movemodal-body label,
+  .service-modal-buttons button,
+  .service-modal-buttons-top button,
+  .average-label,
+  .add-doc-panel-close-btn,
+  .video-modal-close .header-video-center,
+  .back-icon,
+  .main-container-video-card p,
+  .video-modal-close,
+  .back-icon-container,
+  .video-description,
+  .doc-title,
+  .document-title {
+    color: $white-light;
+  }
+  .another-header-scroll-container {
+    background-color: $teal-green-alt;
+  }
+  // Section-I
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5,
+  .main-container-grid-card,
+  .custom-budget-section {
+    background-color: $bg-teal-green;
+  }
+  .second-container-section-I,
+  .second-container-section-II,
+  .second-container-section-III,
+  .second-container-section-IV,
+  .second-container-section-V,
+  .container-I-cards-bc-i,
+  .container-I-cards-bc-ii,
+  .budget-cardi-header,
+  .budget-details-header,
+  .content-i-budget-details,
+  .collapse-container {
+    background-color: $teal-green-alt;
+  }
+  // CARD-I , CARD-II
+  .main-conatiner-card-I,
+  .main-container-card-II {
+    background-color: $bg-teal-green;
+  }
+  // Budget-Card
+  .main-container-budgetcard-i,
+  .budget-details-card-container {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-soft-medium;
+  }
+  .hallow-cont-event-card {
+    background-color: $white-soft;
+  }
+  .hallow-cont-event-card p {
+    color: $text-gray-green;
+  }
+  // Card-III
+  .main-container-card-III.card1 {
+    background: $teal-gradient-green;
+  }
+  .main-container-card-III.card2 {
+    background: $cyan-gradient-green;
+  }
+  .value-card-iii,
+  .title-card-iii,
+  .para-second-row {
+    color: $white-light;
+  }
+  // Card-IV & Card-V
+  .main-container-card-IV.card1,
+  .main-container-card-V.card1,
+  .card1-row {
+    background: $teal-gradient-alt;
+  }
+  .main-container-card-IV.card2,
+  .main-container-card-V.card2,
+  .card2-row {
+    background: $yellow-gradient;
+  }
+  .main-container-card-IV.card3,
+  .main-container-card-V.card3,
+  .card3-row {
+    background: $red-gradient;
+  }
+  .main-container-card-IV.card4,
+  .main-container-card-V.card4,
+  .card4-row {
+    background: $cyan-gradient-alt;
+  }
+  .main-container-card-IV.card5,
+  .main-container-card-V.card5,
+  .card5-row {
+    background: $black-gradient;
+  }
+  // Chart
+  .chart-bg {
+    background-color: $bg-teal-green;
+  }
+  // Modal SCSS
+  .modal-header,
+  .modal-header-custom {
+    background-color: $bg-teal-green;
+  }
+  .modal-header h2,
+  .modal-close-button,
+  .modal-header-custom h2,
+  .modal-close-button-custom,
+  .modal-close-btn-ii,
+  .close-button {
+    color: $white-light;
+  }
+  .modal-table td {
+    background-color: $bg-teal-green;
+    color: $white-light;
+  }
+  //Profile-center-SCSS
+  .header-pc p {
+    color: $white-light;
+  }
+  .cards-grid-i,
+  .cards-grid-ii,
+  .cards-grid-iv {
+    background-color: $teal-green-alt;
+    box-shadow: $shadow-soft-medium;
+  }
+  // Pagination SCSS
+  .pagination,
+  .video-pagination-controls,
+  .accordion-item summary {
+    background-color: $bg-teal-green;
+  }
+  .pagination-btn,
+  .video-pagination-btn {
+    color: $white-light;
+  }
+  .pagination-btn:hover,
+  .video-pagination-btn:hover {
+    background-color: $gray-soft-light;
+  }
+  .pagination-btn:disabled,
+  .video-pagination-btn:disabled {
+    color: $gray-muted-green;
+  }
+  .pagination-btn.active,
+  .video-pagination-btn.active {
+    background: $teal-gradient-green;
+  }
+  // Table SCSS
+  .project-table,
+  .modal-ii-container,
+  .modalIII-overlay {
+    background-color: $bg-teal-green;
+  }
+  .project-table td {
+    background-color: $teal-green-alt;
+  }
+  .custom-modal-content {
+    background-color: $teal-green-alt;
+  }
+  // Project Center Search && Filter
+  .container-search-project-center,
+  .main-container-filter {
+    background-color: $teal-green-alt;
+  }
+  .sub-container-filter {
+    background-color: $bg-teal-green;
+  }
+  .input-filter {
+    background-color: $white-light;
+    box-shadow: $shadow-soft-medium;
+  }
+  // Scroll Bar
+  .modal-table {
+    scrollbar-color: $bg-teal-green;
+  }
+  .modal-table::-webkit-scrollbar-track {
+    background-color: $mint-green;
+  }
+  // Links Bootstrap
+  .container-links-data-center,
+  .main-container-tab-container {
+    background: $teal-transparent-green;
+  }
+  .container-links-data-center p,
+  .tab-i {
+    color: $gray-soft-green;
+  }
+  .container-links-data-center p:hover,
+  .service-modal-buttons button:hover,
+  .service-modal-buttons-top button:hover,
+  .tab-i:hover {
+    background: $teal-hover-bg-green;
+    color: $white-hover-green;
+    border: 2px solid $teal-green;
+    box-shadow: $shadow-teal-medium;
+  }
+  .srchbar-input {
+    border: 2px solid $teal-green;
+    box-shadow: $shadow-teal-medium;
+    background: $bg-white-light;
+    color: $text-black-light;
+  }
+  .container-links-data-center p.active,
+  .service-modal-buttons .active-button,
+  .service-modal-buttons-top .active-button,
+  .tab-i.active,
+  .tab-i.active-tab,
+  .link-doc-btn {
+    background: $teal-gradient;
+    border: 2px solid $teal-green;
+    box-shadow: $shadow-teal-medium;
+    color: $pure-white;
+  }
+  .service-modal-buttons button,
+  .service-modal-buttons-top button {
+    background: $dark-teal;
+  }
+  // Data Center
+  .section-one,
+  .section-two,
+  .content-two,
+  .section-i-data-II,
+  .section-i-Data-III,
+  .section-ii-Data-III,
+  .section-I-Data-IV,
+  .responsive-table-Data-IV th,
+  .Section-III-Homepage::-webkit-scrollbar- {
+    background: $bg-teal-green;
+  }
+  .header-ist-section-i,
+  .main-container-data-card,
+  .header-ist-section-i-data-II,
+  .main-container-value-card,
+  .main-container-BUDGET,
+  .container-event-card,
+  .homepage-btn-I button,
+  .section-iv-hp button,
+  .Section-III-Homepage::-webkit-scrollbar-track,
+  .header-risk-center,
+  .table-Risk-Center,
+  .container-search-length,
+  .section-schedule-center,
+  .header-BOQ-center,
+  .po-center-filters,
+  .header-PO-center {
+    background: $teal-green-alt;
+  }
+  .details-ist-section-i,
+  .details-ist-section-ii,
+  .card-container-section-ii,
+  .content-container-Data-II,
+  .content-section-Data-III,
+  .content-section-ii-Data-III,
+  .responsive-table-Data-IV,
+  .main-container-event-card,
+  .modalIII-content {
+    background: $dark-teal;
+  }
+  .hr,
+  .hr-tag,
+  .circle {
+    background: $pure-white;
+  }
+  // Button
+  .button-container-c-ii {
+    background-color: $mint-green;
+  }
+  .budget-image,
+  .first-container-BUDGET {
+    background-color: $slate-green;
+  }
+  .heatmap-grid {
+    background: $dark-heatmap-gradient;
+  }
+  .second-paragraphs-container p {
+    color: $gray-soft-green;
+  }
+  // .Section-II-Homepage-container {
+  //   background-color: $homepage-middle-green;
+  // }
+  .responsive-table-Data-IV tbody tr:hover {
+    background: $teal-green-alt;
+  }
+  // Modal-III
+  .table-container {
+    background-color: $teal-green-alt;
+    box-shadow: $shadow-elevated-dark;
+  }
+  .stats-table th,
+  .stats-table td,
+  .competitions-table th,
+  .competitions-table td {
+    border: 1px solid $gray-soft-border;
+  }
+  .stats-table thead {
+    background-color: $teal-deep;
+  }
+  .projects-circle-segment {
+    background-color: $teal-dark;
+    box-shadow: $shadow-elevated-dark;
+  }
+  .projects-circle {
+    background-color: $teal-green-alt;
+    box-shadow: $shadow-elevated-dark;
+  }
+  .projects-circle-center {
+    color: $teal-center;
+    background-color: $mint-bg;
+  }
+  // Modal-IV
+  .modalIV-overlay,
+  .modalV-overlay {
+    background-color: $teal-green-alt;
+    box-shadow: $shadow-elevated-dark;
+  }
+  .modalIV-content,
+  .modalV-content,
+  .movemodal-content {
+    background-color: $bg-teal-green;
+  }
+  .hallow-cont-modalIV {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-elevated-dark;
+  }
+  // Risk-Center
+  .header-button-risk-center button,
+  .search-button-rc,
+  .filter-button-rc,
+  .epmo-button {
+    background: $emerald-gradient;
+    border: 1px solid $bg-teal-green;
+  }
+
+  .header-button-risk-center:hover,
+  .search-button-rc:hover,
+  .filter-button-rc:hover {
+    background: $emerald-gradient-hover;
+    box-shadow: $shadow-depth-mid;
+  }
+  .risk-center-table,
+  .competitions-table {
+    background-color: $deep-emerald-opacity;
+  }
+  .risk-center-table thead,
+  .competitions-table thead {
+    background-color: $forest-emerald;
+  }
+  .risk-center-table tbody tr {
+    border-bottom: 1px solid $frost-white-glow;
+  }
+  .risk-center-table tbody tr:nth-child(even),
+  .competitions-table tr:nth-child(even) {
+    background-color: $frost-white-glow;
+  }
+  .risk-center-table tbody tr:hover,
+  .competitions-table tr:hover {
+    background-color: $frost-white-hover;
+    transition: 0.3s;
+  }
+  .message-icon,
+  .edit-icon {
+    color: $gray-soft-green;
+  }
+  .delete-modal {
+    background-color: $shadow-dark-overlay;
+  }
+  .delete-modal-content {
+    background-color: $deep-emerald-opacity;
+    box-shadow: $shadow-elevation-lg;
+  }
+  .confirm-btn {
+    background: $red-base;
+  }
+  .confirm-btn:hover {
+    background: $red-hover;
+  }
+  .cancel-btn {
+    background: $gray-dark;
+  }
+  .cancel-btn:hover {
+    background: $gray-hover;
+  }
+  // Edit-Modal
+  .edit-risk-modal-content,
+  .risk-chat-modal-content,
+  .chart-modal-content-summary {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-elevation-xl;
+  }
+  .edit-risk-modal-header,
+  .edit-risk-modal-footer,
+  .risk-chat-modal-header,
+  .add-project-actions,
+  .modal-footer-comp {
+    background-color: $teal-green-alt;
+  }
+  .edit-risk-modal-body input,
+  .edit-risk-modal-body textarea,
+  .labels-div select,
+  .risk-chat-textarea,
+  .editmodal-body input,
+  .movemodal-body select,
+  .add-project-body input,
+  .add-project-body select,
+  .labels-div select,
+  .form-group input,
+  .form-group select {
+    border: 1px solid $neutral-gray-border;
+  }
+  .edit-risk-cancel-btn,
+  .risk-cancel-btn,
+  .editmodal-footer .cancel-button,
+  .prev,
+  .addrisk-cancel-btn,
+  .stakeholder-modal-cancel-btn,
+  .add-document-modal-cancel-btn,
+  .LinkModal-cancel-btn,
+  .add-doc-cancel-button,
+  .cancel-button,
+  .request-stake-cancel-btn,
+  .schedule-modal-actions .cancel-btn,
+  .history-modal-close-btn,
+  .workflow-cancel-button,
+  .add-project-actions button:first-child,
+  .cancel-btn-comp,
+  .modify-btn,
+  .no-btn,
+  .cm2-prev {
+    color: $pure-white;
+    background: $smoky-charcoal-gradient;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $smoky-charcoal-gradient-hover;
+    }
+  }
+  .edit-risk-save-btn,
+  .risk-confirm-btn,
+  .editmodal-footer .save-button,
+  .next,
+  .addrisk-save-btn,
+  .stakeholder-modal-save-btn,
+  .add-document-modal-save-btn,
+  .LinkModal-save-btn,
+  .add-doc-save-button,
+  .save-button,
+  .request-save-button,
+  .request-stake-save-btn,
+  .schedule-modal-actions button,
+  .btn-approvals,
+  .add-project-actions button:last-child,
+  .submit-btn-comp,
+  .add-btn,
+  .save-btn,
+  .cm2-next {
+    background: $teal-gradient;
+    color: $pure-white;
+    transition: background 0.3s ease;
+    &:hover {
+      background: $teal-gradient-hover;
+    }
+  }
+  // Document Panel
+  .editmodal-content,
+  .movemodal-content {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-elevation-xl;
+  }
+  .document-table thead,
+  .document-table th {
+    background-color: $teal-header-green;
+    color: $pure-white;
+  }
+  .document-table td {
+    color: $pure-white;
+  }
+  .document-table tr:nth-child(odd) {
+    background-color: $bg-teal-green;
+  }
+  .document-table tr:nth-child(odd):hover {
+    background-color: $teal-green-odd-hover;
+  }
+  .document-table tr:nth-child(even) {
+    background-color: $teal-green-alt;
+  }
+  .document-table tr:nth-child(even):hover {
+    background-color: $teal-green-even-hover;
+  }
+  .service-modal-overlay {
+    background: $overlay-dark;
+  }
+
+  .service-modal-container {
+    background-color: $teal-green-alt;
+  }
+
+  .service-modal-header {
+    background: $bg-teal-green;
+    border-bottom: 1px solid $light-aqua-border;
+    h2 {
+      color: $pure-white;
+    }
+  }
+
+  .service-modal-close {
+    color: $pure-white;
+    &:hover {
+      color: $dark-gray-center;
+    }
+  }
+
+  .service-modal-table {
+    background: $gray-muted-green;
+    thead {
+      background-color: $bg-teal-green;
+      color: $pure-white;
+    }
+    th {
+      border: 1px solid $light-aqua-border;
+      box-shadow: inset 0 -1px 0 0 $light-aqua-border;
+      color: $pure-white;
+    }
+    td {
+      border: 1px solid $gray-soft-border;
+      background: $pure-white;
+      color: $text-black-light;
+    }
+    tbody tr:hover {
+      background: $hover-teal-bg;
+    }
+  }
+  .risk-panel-table th,
+  .project-stack-table th,
+  .project-manager-table th,
+  .schedule-table th,
+  .dependency-table th,
+  .boq-modal-table th,
+  .deliverables-table th,
+  .deliverable-documents-table th,
+  .linked-documents-table th,
+  .build-team-table th,
+  .workflow-table th,
+  .modal-inner-table th,
+  .attachments-table th,
+  .workflow-table-wrapper thead {
+    border: 1px solid $light-aqua-border;
+    box-shadow: inset 0 -1px 0 0 $light-aqua-border;
+    color: $pure-white;
+    background-color: $bg-teal-green;
+  }
+  .risk-panel-table td,
+  .project-stack-table td,
+  .project-manager-table td,
+  .schedule-table td,
+  .dependency-table td,
+  .boq-modal-table td,
+  .deliverables-table td,
+  .deliverable-documents-table td,
+  .linked-documents-table td,
+  .build-team-table td,
+  .workflow-table td,
+  .modal-inner-table td,
+  .attachments-table td,
+  .workflow-table-wrapper td {
+    border: 1px solid $gray-muted-green;
+    background: $pure-white;
+    color: $text-black-light;
+  }
+  .risk-panel-table tbody tr:nth-child(odd) td,
+  .project-stack-table tbody tr:nth-child(odd) td,
+  .project-manager-table tbody tr:nth-child(odd) td {
+    background-color: $light-gray-bg;
+  }
+  .risk-panel-table tbody tr:nth-child(odd) td:hover,
+  .project-stack-table
+    tbody
+    tr:nth-child(odd)
+    td:hover
+    .project-manager-table
+    tbody
+    tr:nth-child(odd)
+    td:hover {
+    background-color: $gray-odd-row-hover;
+  }
+  .risk-panel-table tbody tr:nth-child(even) td,
+  .project-stack-table tbody tr:nth-child(even) td,
+  .project-manager-table tbody tr:nth-child(even) td {
+    background-color: $pure-white;
+  }
+  .risk-panel-table tbody tr:nth-child(even) td :hover,
+  .project-stack-table tbody tr:nth-child(even) td:hover,
+  .project-manager-table tbody tr:nth-child(even) td:hover {
+    background-color: $gray-even-row-hover;
+  }
+
+  .service-modal-dropdown select,
+  .service-modal-dropdown-top select,
+  .add-doc-panel-modal-body input,
+  .add-doc-panel-modal-body select,
+  .prjct-chrt-input,
+  .prjct-chrt-textarea,
+  .change-request-form input,
+  .change-request-form textarea,
+  .change-request-form select,
+  .change-data-field input,
+  .change-data-field textarea,
+  .change-data .select__control,
+  .request-stake-field input,
+  .request-stake-field textarea,
+  .request-stake-field select,
+  .search-box,
+  .search-input,
+  .row input,
+  textarea,
+  .schedule-modal-box input,
+  .schedule-modal-box select,
+  .schedule-modal-box textarea,
+  .deliverable-modal-content input,
+  .builder-modal-select,
+  .po-center-dropdown select,
+  .po-center-search,
+  .add-project-body input,
+  .add-project-body select,
+  .competition-details-item input,
+  .competition-details-item textarea,
+  .form-group-comp input {
+    border: 1px solid $neutral-gray-border;
+    background: $pure-white;
+    color: $text-black-light;
+  }
+  .service-modal-dropdown select:focus,
+  .service-modal-dropdown-top select:focus,
+  .add-doc-panel-modal-body select:focus,
+  .competition-details-item select:focus {
+    outline: none;
+    border-color: $focus-gray-border;
+    color: $text-black-light;
+    box-shadow: 0 0 5px $hover-white-glow;
+  }
+  .main-container-video-card,
+  .document-item,
+  .main-container-document-card,
+  .main-container-article-card {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-elevation-lg;
+    border: 1px solid $mint-cyan-light;
+  }
+  .modal-content-dv,
+  .article-modal-content {
+    background-color: $bg-teal-green;
+    box-shadow: $shadow-elevation-lg;
+  }
+  .details-btn-vc {
+    background-color: $teal-green-alt;
+    border: 1px solid $green-base;
+  }
+  .details-btn-vc:hover {
+    background-color: $green-dark;
+    border: 1px solid $gray-muted-green;
+  }
+  .video-modal-content,
+  .video-fullscreen,
+  .doc-preview-section {
+    background: $frost-white-glow;
+  }
+  .video-modal-close {
+    background: $shadow-dark-overlay;
+  }
+  // Project-Section
+  .container-progress-wrapper {
+    background-color: $teal-green-alt;
+  }
+  .progress-bar-wrapper {
+    background-color: $teal-track-bg;
+    box-shadow: $teal-track-bg;
+  }
+  .progress-bar-fill {
+    background: $teal-fill;
+  }
+  .project-details-form,
+  .project-stack-table-wrapper,
+  .risk-panel-table-container,
+  .project-plan-form,
+  .tab-section-block,
+  .project-charter-form,
+  .container-table-project-manager,
+  .change-request-form,
+  .change-data,
+  .schedule-table-container,
+  .dependency-table-container,
+  .table-BOQ,
+  .deliverables-table-container,
+  .build-team-table-container,
+  .workflow-table-container,
+  .competitions-table-container {
+    background: $teal-form-bg;
+    border: $teal-form-border;
+    box-shadow: $teal-form-shadow;
+  }
+  .document-buttons-I,
+  .header-project-risk,
+  .header-container-project-manager {
+    background: $teal-gradient;
+    border: 2px solid $teal-green;
+    box-shadow: $shadow-teal-medium;
+    color: $pure-white;
+  }
+  // Risk-Modal
+  .addrisk-modal-overlay,
+  .stakeholder-modal-overlay,
+  .add-document-modal-overlay,
+  .LinkModal-overlay,
+  .add-doc-panel-modal-overlay,
+  .project-closure-form-overlay,
+  .request-stake-overlay,
+  .epmo-modal-overlay,
+  .schedule-modal-overlay,
+  .boq-modal-overlay,
+  .deliverable-modal-overlay,
+  .deliverable-custom-modal-overlay,
+  .builder-modal-overlay,
+  .history-modal-overlay,
+  .workflow-modal-overlay,
+  .pdf-modal,
+  .sidebar-overlay,
+  .sidebar-overlay.active,
+  .chart-modal-overlay,
+  .add-project-overlay,
+  .competitionmodal-overlay {
+    background-color: $overlay-dark;
+  }
+  .addrisk-modal,
+  .stakeholder-modal-body,
+  .add-document-modal-box,
+  .LinkModal-content,
+  .add-doc-panel-modal-content,
+  .stakeholder-modal-container,
+  .charter-modal,
+  .project-closure-form-container,
+  .request-stake-content,
+  .epmo-modal,
+  .schedule-modal-box,
+  .boq-modal-content,
+  .deliverable-modal-content,
+  .deliverable-custom-modal-content,
+  .confirm-custom-modal-content,
+  .builder-modal-content,
+  .history-modal-box,
+  .add-project-container,
+  .competitionmodal,
+  .modal-body-comp {
+    background-color: $teal-green-alt;
+  }
+  .addrisk-modal-header,
+  .add-doc-panel-modal-header,
+  .project-closure-form-header,
+  .request-stake-header,
+  .add-project-header,
+  .modal-header-comp-modal,
+  .cm2-footer {
+    background-color: $bg-teal-green;
+    border-bottom: 1px solid $hover-teal-bg;
+  }
+  .addrisk-modal-footer,
+  .stakeholder-modal-footer,
+  .form-buttons,
+  .request-stake-footer,
+  .deliverable-modal-actions,
+  .add-project-actions,
+  .modal-footer-comp {
+    border-top: 1px solid $hover-teal-bg;
+  }
+  .no-folder-warning {
+    color: $white-muted;
+  }
+  .add-doc-panel-modal-header {
+    border-bottom: none;
+  }
+  // Form- Button
+  .project-details-form button,
+  .btn-project-plan,
+  .btn-project-charter,
+  .floating-card-list {
+    background: $teal-gradient;
+    color: $pure-white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $teal-gradient-hover;
+    }
+  }
+  //Scroll-Bar
+  .risk-center-table-container,
+  .risk-panel-table-container,
+  .project-stack-table-wrapper,
+  .project-manager-table-container,
+  .boq-modal-table {
+    scrollbar-color: $teal-green-alt transparent;
+  }
+  .risk-center-table-container::-webkit-scrollbar-thumb,
+  .risk-center-table-container::-webkit-scrollbar-track,
+  .risk-panel-table-container::-webkit-scrollbar-thumb,
+  .risk-panel-table-container::-webkit-scrollbar-track,
+  .project-stack-table-wrapper::-webkit-scrollbar-thumb,
+  .project-stack-table-wrapper::-webkit-scrollbar-track,
+  .project-manager-table-container::-webkit-scrollbar-thumb,
+  .project-manager-table-container::-webkit-scrollbar-track,
+  .schedule-table-container::-webkit-scrollbar-thumb,
+  .schedule-table-container::-webkit-scrollbar-track,
+  .dependency-table-container::-webkit-scrollbar-thumb,
+  .dependency-table-container::-webkit-scrollbar-track,
+  .table-BOQ::-webkit-scrollbar-thumb,
+  .table-BOQ::-webkit-scrollbar-track,
+  .deliverables-table-container::-webkit-scrollbar-track,
+  .deliverables-table-container::-webkit-scrollbar-thumb,
+  .build-team-table-container::-webkit-scrollbar-thumb,
+  .workflow-table-container::-webkit-scrollbar-thumb,
+  .table-wrapper::-webkit-scrollbar-thumb,
+  .table-wrapper::-webkit-scrollbar-track,
+  .modal-body-comp::-webkit-scrollbar-thumb,
+  .modal-body-comp::-webkit-scrollbar-track {
+    background-color: $teal-green-alt;
+  }
+  .content-templates {
+    background: $teal-gradient-green;
+  }
+  .floating-icon {
+    background-color: $bg-teal-green;
+    color: $pure-white;
+    box-shadow: $shadow-elevation-lg;
+  }
+  .main-container-floating-card {
+    background: $green-dark;
+    border: $gray-form-border;
+    box-shadow: $gray-form-shadow;
+    background-color: $teal-green-even-hover;
+  }
+  .main-container-floating-card:hover {
+    background: $green-dark;
+  }
+  .second-header-boq,
+  .header-delivrable-center {
+    background-color: $teal-header-green;
+  }
+  .first-card-boq,
+  .boq-purchase-card,
+  .po-card {
+    background: $teal-gradient-alt;
+  }
+  .boq-label,
+  .para-content,
+  .po-amount {
+    color: $overlay-dark;
+  }
+  .edit-button {
+    color: $teal-circle;
+  }
+  .sidebar-header {
+    box-shadow: inset 0 -1px 0 0 $light-aqua-border;
+    color: $pure-white;
+    background-color: $bg-teal-green;
+  }
+  // Existing Theme Colors for Curtain-Animation
+  .curtain {
+    background: $bg-teal-green;
+  }
+  .curtain-wrapper {
+    background-color: $dark-teal;
+  }
+  // New Theme Colors for Curtain-Animation
+  .curtain-wrapper {
+    background: $teal-fill;
+  }
+  .curtain-rod {
+    background: $teal-green-even-hover;
+  }
+  .curtain-rod::before {
+    background: $teal-green-odd-hover;
+  }
+  .curtain-fabric {
+    background: $teal-gradient-green;
+  }
+  .curtain-panel.right .curtain-fabric {
+    background: $teal-gradient-green;
+  }
+  .curtain-fold {
+    background: $fold-gradient-odd;
+  }
+  .curtain-fold:nth-child(odd) {
+    background: $fold-gradient;
+  }
+  .curtain-ring {
+    background: $bg-teal-green;
+    border: 1px solid $teal-header-green;
+    box-shadow: $shadow-soft-float;
+  }
+  .curtain-ring::before {
+    background: $green-dark;
+  }
+  .curtain-title {
+    background-color: $pure-white;
+  }
+
+
+
+  .add-project-header {
+    border-bottom: 1px solid $gray-header-light;
+  }
+
+  .accordion-grid p {
+    border: 0.5px solid $gray-header-light;
+    background: $teal-green-even-hover;
+    box-shadow: $shadow-teal-medium;
+  }
+  // Modal CSS
+  .cm2-content {
+    background-color: $teal-green-alt;
+  }
+  // Timeline
+  .cm2-step {
+    background: $active-gradient-green;
+    color: $pure-white;
+  }
+
+  .cm2-timeline::before {
+    content: "";
+    background-color: $muted-gray-bg;
+  }
+
+  .cm2-step.unlocked {
+    background: $active-gradient-green;
+  }
+
+  .cm2-step.active {
+    background: $teal-fill;
+    transform: scale(1.2);
+    box-shadow: $shadow-aqua-blur;
+  }
+
+  .action-btn {
+    background: $teal-gradient-hover;
+    color: $pure-white;
+    &:hover {
+      background: $teal-gradient-hover;
+    }
+  }
+  .No-btn,
+  .Yes-btn {
+    background-color: $aquamarine-border;
+    color: $pure-white;
+    &:hover {
+      background: $teal-gradient-hover;
+    }
+  }
+  .max-budget-text {
+    color: $gray-hover-bg-light;
+  }
+  .available {
+    background-color: $gray-softest;
+  }
+  .available .amount,
+  .available p {
+    color: $dark-gray-center;
+  }
+}

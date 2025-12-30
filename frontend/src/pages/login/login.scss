@@ -1,0 +1,129 @@
+@use "../../styles/variables" as *;
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background: var(--background-color);
+}
+
+.theme-toggle-btn-login {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.theme-toggle-btn-login:hover {
+  opacity: 0.85;
+}
+
+.login-box {
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.login-box h2 {
+  margin-top: -12px;
+  margin-bottom: 9px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  // margin-bottom: 2px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.login-box form label {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  padding: 5px 0 0px;
+  font-weight: 500;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.login-box form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: $dark-gray;
+  background-color: $pure-white;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.error-message {
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: $radical-rose;
+  font-size: 0.675rem;
+  line-height: 1rem;
+  margin-bottom: 4px;
+  margin-top: -13px;
+}
+
+.logo-separator {
+  border: none;
+  width: 80%;
+  opacity: 0.6;
+  margin: 0px auto 20px;
+}

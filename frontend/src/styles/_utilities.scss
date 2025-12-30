@@ -1,0 +1,82 @@
+// _utilities.scss
+
+// Display Utilities
+.d-block         { display: block !important; }
+.d-inline        { display: inline !important; }
+.d-inline-block  { display: inline-block !important; }
+.d-flex          { display: flex !important; }
+.d-grid          { display: grid !important; }
+
+
+// Flexbox Alignment
+.ai-center   { align-items: center !important; }
+.ai-start    { align-items: flex-start !important; }
+.ai-end      { align-items: flex-end !important; }
+
+.jc-center   { justify-content: center !important; }
+.jc-start    { justify-content: flex-start !important; }
+.jc-end      { justify-content: flex-end !important; }
+.jc-between  { justify-content: space-between !important; }
+.jc-around   { justify-content: space-around !important; }
+
+// Shorthand Combos
+.flex-center {
+  @extend .d-flex;
+  @extend .ai-center;
+  @extend .jc-center;
+}
+
+.flex-between {
+  @extend .d-flex;
+  @extend .jc-between;
+  @extend .ai-center;
+}
+
+// Font Weights
+.fw-100 { font-weight: 100 !important; } 
+.fw-200 { font-weight: 200 !important; }
+.fw-300 { font-weight: 300 !important; } 
+.fw-400 { font-weight: 400 !important; } 
+.fw-500 { font-weight: 500 !important; }
+.fw-600 { font-weight: 600 !important; }
+.fw-700 { font-weight: 700 !important; } 
+
+// Text Alignment
+.text-left    { text-align: left !important; }
+.text-center  { text-align: center !important; }
+.text-right   { text-align: right !important; }
+.text-start   {text-align: start !important;}
+
+// Font sizes
+.fs-s   {font-size: 0.625rem !important;}
+.fs-xs   {font-size: 0.725rem !important;}
+.fs-sm   { font-size: 0.8125rem !important; }
+.fs-m   { font-size: 0.9125rem !important; }
+.fs-md   { font-size: 1rem !important; }
+.fs-lg   { font-size: 1.25rem !important; }
+.fs-l   { font-size: 1.3rem !important; }
+.fs-xl   { font-size: 1.4rem !important; }
+.fs-2xl  { font-size: 2rem !important; }
+
+// Line Heights
+.lh-1     { line-height: 1rem !important; }
+.lh-1-2   { line-height: 1.2rem !important; }
+.lh-1-25  { line-height: 1.25rem !important; }
+.lh-1-3   { line-height: 1.3rem !important; }
+.lh-1-4   { line-height: 1.4rem !important; }
+.lh-1-5   { line-height: 1.5rem !important; }
+.lh-1-75  { line-height: 1.75rem !important; }
+.lh-1-9     { line-height: 1.9rem !important; }
+.lh-2     { line-height: 2rem !important; }
+
+
+// Gaps 
+.gap-5   { gap: 5px !important; }
+.gap-10  { gap: 10px !important; }
+.gap-20  { gap: 20px !important; }
+
+// media-queries 
+@media (max-width: 768px) {
+  .fs-xs-mob { font-size: 0.4rem !important; }
+  .fs-s-mob { font-size: 0.825rem !important; }
+}
