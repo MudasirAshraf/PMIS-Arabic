@@ -84,7 +84,7 @@ const ForgetPassword = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "جاري الإرسال..." : "إرسال رمز التحقق"}

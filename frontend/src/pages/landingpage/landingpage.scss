@@ -1,0 +1,174 @@
+@use "../../styles/variables" as *;
+.main-container-HomePage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 30px;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+}
+// @media (min-width: 1442px) {
+//   .main-container-HomePage {
+//     padding: 10px 3px;
+//   }
+// }
+.section-I-Homepage {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .section-I-Homepage {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.first-section-homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.second-section-homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.second-paragraphs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.scroll-event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  max-height: 220px;
+  position: relative;
+}
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: scrollUp 15s linear infinite;
+  animation-play-state: running;
+}
+.scroll-event-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+.homepage-btn-I {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+// .homepage-btn-I button {
+//   border: none;
+//   padding: 5px 30px;
+//   font-weight: 700;
+//   font-size: 1rem;
+//   line-height: 1.2rem;
+//   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+//   &:hover {
+//     transform: scale(0.99);
+//     box-shadow: $shadow-contrast-float;
+//     cursor: pointer;
+//     border: 1px solid $gray-hover;
+//   }
+//   &:active {
+//     transform: scale(0.68);
+//   }
+// }
+// Section-II
+.Section-II-Homepage-container {
+  width: 100%;
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  gap: 20px;
+  border-radius: 8px;
+}
+/* Section-III styles */
+.Section-III-Homepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.Section-III-Homepage::-webkit-scrollbar {
+  height: 3.5px;
+}
+
+.Section-III-Homepage::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.Section-III-Homepage::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.Section-III-Homepage .outlet-container {
+  display: flex;
+  flex-direction: row;
+  animation: scroll 45s linear infinite;
+  width: max-content;
+  gap: 20px;
+  animation-play-state: running;
+}
+/* Scroll animation */
+@keyframes scroll {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.Section-III-Homepage .outlet-container {
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.Section-III-Homepage:hover .outlet-container {
+  animation-play-state: paused;
+}
+.outlet-I {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.outlet-I p {
+  color: $sunshine-yellow;
+}
+.outlet-II {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+// Section-IV
+.section-iv-hp {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.section-iv-hp button {
+  border: none;
+  padding: 10px 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:hover {
+    box-shadow: $shadow-contrast-float;
+    cursor: pointer;
+    border: 1px solid $focus-gray-border;
+  }
+}

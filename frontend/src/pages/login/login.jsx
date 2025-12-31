@@ -91,7 +91,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 تسجيل الدخول

@@ -147,7 +147,7 @@ const Signup = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "جاري التسجيل..." : "إنشاء حساب"}

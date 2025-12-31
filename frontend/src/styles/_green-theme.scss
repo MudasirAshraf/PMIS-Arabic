@@ -9,7 +9,7 @@
   .login-box {
     background: $teal-gradient-hover;
   }
-  .login-btn {
+  .auth-btn {
     color: $pure-white;
     background: $emerald-gradient;
     transition: background 0.3s ease;
@@ -47,6 +47,12 @@
   }
 
   // HomePage
+  // Homepage-Button & Event-Button CSS
+    .homepage-button,
+    .event-button {
+    background: $teal-green-alt;
+    color: $white-light;
+  }
   // First Row (Header)
   .header-details,
   .header-details-data-center {
@@ -160,8 +166,6 @@
   .panel-header-para,
   .span-paragraph-i,
   .para-event-card,
-  .homepage-btn-I button,
-  .section-iv-hp button,
   .modalIII-close,
   .modalIII-content h2,
   .builder-modal-content label,
@@ -476,8 +480,6 @@
   .main-container-value-card,
   .main-container-BUDGET,
   .container-event-card,
-  .homepage-btn-I button,
-  .section-iv-hp button,
   .Section-III-Homepage::-webkit-scrollbar-track,
   .header-risk-center,
   .table-Risk-Center,

@@ -1,0 +1,210 @@
+@use "../../styles/variables" as *;
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $shadow-dark-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Close Button */
+.modal-close-button-custom {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header-custom {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+}
+
+.modal-header-custom h2 {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Modal Content */
+.custom-modal-content {
+  border-radius: 8px;
+  overflow-y: auto;
+  max-width: 1200px;
+  max-height: 80%;
+  overflow: hidden;
+  background-color: $teal-green-alt;
+}
+.custom-modal-content-details {
+  background-color: $red-light;
+  padding: 10px;
+}
+
+.custom-modal-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.custom-modal-header {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  background: $indigo-navy-gradient;
+  border-radius: 8px;
+  padding: 10px 100px;
+  box-shadow: $shadow-soft-medium;
+  color: $white-light;
+}
+/* Modal Body */
+.custom-modal-body {
+  display: flex;
+  gap: 20px;
+  padding: 0px 10px;
+}
+
+.custom-budget-section-details-I {
+  background: $tangerine-blaze-gradient;
+  border-radius: 8px;
+  padding: 10px 80px;
+  box-shadow: $shadow-soft-medium;
+  color: $white-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.custom-budget-section-details-II {
+  background: $grape-magenta-gradient;
+  border-radius: 8px;
+  padding: 10px 50px;
+  box-shadow: $shadow-soft-medium;
+  color: $white-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.custom-budget-section {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-soft-medium;
+}
+
+/* Budget Cards */
+.custom-budget-cards-I {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.custom-budget-cards-II {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.custom-budget-card {
+  color: $white-light;
+  padding: 10px;
+  border-radius: 5px;
+  width: 160px;
+  text-align: center;
+  box-shadow: $shadow-soft-medium;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.details-custom-budget-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Styles for Screens 768px and Below */
+@media (max-width: 768px) {
+  /* Modal Overlay */
+  .custom-modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  /* Modal Content */
+  .custom-modal-content {
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .custom-modal-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Modal Header */
+  .custom-modal-header {
+    padding: 10px 70px;
+    text-align: center;
+  }
+
+  /* Modal Body */
+  .custom-modal-body {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  /* Budget Section Details */
+  .custom-budget-section-details-I {
+    padding: 10px 60px;
+  }
+  .custom-budget-section-details-II {
+    padding: 10px 60px;
+  }
+
+  /* Budget Cards */
+  .custom-budget-cards-I {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .custom-budget-cards-II {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Budget Card */
+  .custom-budget-card {
+    width: 100%;
+    max-width: 180px;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}

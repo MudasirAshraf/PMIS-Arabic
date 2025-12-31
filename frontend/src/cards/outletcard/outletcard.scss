@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+.main-container-outletcard {
+  display: flex;
+  flex-direction: column;
+  background-color: $pure-white;
+  width: 380px;
+  min-height: 360px;
+  max-height: 440px;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 10px;
+  transition: opacity 3s ease-in-out;
+  cursor: pointer;
+}
+.para-outlet-card,
+.multimedia-card p {
+  color: $vintage-gold;
+}

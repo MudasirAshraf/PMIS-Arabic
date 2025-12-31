@@ -92,7 +92,7 @@ const AccountVerification = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "جاري التحقق..." : "تأكيد الحساب"}

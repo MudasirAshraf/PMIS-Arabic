@@ -1,0 +1,244 @@
+@use "../../styles/variables" as *;
+.service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $shadow-dark-overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.service-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 85.5vh;
+  max-width: 1440px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: modalAppear 0.4s ease-out forwards;
+}
+.service-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.service-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-modal-close:hover {
+  color: $dark-gray-center;
+}
+.service-modal-content {
+  padding: 0px 13px;
+}
+.service-modal-buttons,
+.service-modal-buttons-top {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin-top: 4px;
+}
+.service-modal-buttons button,
+.service-modal-buttons-top button {
+  border: none;
+  padding: 6px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.service-modal-buttons button:hover,
+.service-modal-buttons-top button:hover {
+  transform: scale(1.05);
+}
+.service-modal-buttons .active-button,
+.service-modal-buttons-top .active-button {
+  transform: scale(1);
+}
+.service-modal-buttons-top button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.service-modal-buttons-top button .count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.service-modal-buttons-top button .icon {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+/* Fade-in and Fade-out Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+    visibility: hidden;
+  }
+}
+.service-modal-table-container {
+  height: 55vh;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-bottom: 13px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.service-modal-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+.service-modal-table-container::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+.service-modal-table-container::-webkit-scrollbar-thumb {
+  background-color: $smoky-haze;
+  border-radius: 10px;
+}
+.service-modal-table-container {
+  scrollbar-width: thin;
+  scrollbar-color: $smoky-haze transparent;
+}
+
+.service-modal-table-container.show {
+  animation: fadeIn 0.3s ease-in forwards;
+  display: block;
+}
+.service-modal-table-container.hide {
+  animation: fadeOut 0.3s ease-out forwards;
+  display: none;
+}
+.service-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.service-modal-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.service-modal-table th {
+  padding: 10px;
+  text-align: center;
+}
+.service-modal-table td {
+  padding: 10px;
+  text-align: center;
+  color: $pure-white;
+}
+.service-modal-table tbody tr:hover {
+  background: $light-gray-bg;
+}
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: none;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-modal-container {
+    width: 95%;
+    height: 85vh;
+  }
+  .service-modal-table-container::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+  }
+  .service-modal-table-container {
+    max-height: 60vh;
+    padding-bottom: 20px;
+  }
+  .service-modal-table th,
+  .service-modal-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .service-modal-buttons button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+.service-modal-content-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.srchbar-container {
+  flex: 1 1 100%;
+}
+
+.srchbar-input {
+  width: 100%;
+  outline: none;
+  padding: 10px 7px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: $text-black-light;
+}
+@media (max-width: 768px) {
+  .service-modal-content-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .srchbar-input {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+}

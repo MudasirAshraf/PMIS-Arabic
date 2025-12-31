@@ -6,7 +6,7 @@
   .login-box {
     background: $gray-form-bg;
   }
-  .login-btn {
+  .auth-btn {
     color: $pure-white;
     background: $smoky-charcoal-gradient;
     transition: background 0.3s ease;
@@ -42,6 +42,13 @@
     background-color: $bg-teal-green;
   }
   // HomePage SCSS
+  // Homepage-Button & Event-Button CSS
+      .homepage-button,
+      .event-button {
+    background: $bg-white-light;
+    border: 0.5px solid $gray-darker;
+    color: $text-gray-green;
+  }
   // First Row (Header)
   .header-details,
   .header-details-data-center,
@@ -148,11 +155,9 @@
   .no-results-message,
   .para-event-card,
   .header-icon,
-  .homepage-btn-I button,
   .available .amount,
   .available p,
   .step-para,
-  .section-iv-hp button,
   .chart-label,
   .summary-values span,
   .prjct-chrt-label,
@@ -487,11 +492,6 @@
   .po-center-filters,
   .header-PO-center {
     background: $white-light;
-  }
-  .homepage-btn-I button,
-  .section-iv-hp button {
-    background: $bg-white-light;
-    border: 0.5px solid $gray-darker;
   }
   .details-ist-section-i,
   .details-ist-section-ii,

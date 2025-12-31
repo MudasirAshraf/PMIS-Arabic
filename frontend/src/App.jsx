@@ -11,10 +11,7 @@ import VerifyOTP from "./pages/verifyotp/verify-otp.jsx";
 import ResetPassword from "./pages/resetpassword/reset-password.jsx";
 import Layout from "./components/layout/Layout.jsx";
 import LandingPage from "./pages/landingpage/Landing-Page.jsx";
-
-
-
-
+import Homepage from "./pages/homepage/Homepage.jsx";
 
 function App() {
    const { theme } = useTheme();
@@ -32,9 +29,9 @@ function App() {
           {/* All other routes with Layout */}
           <Route element={<Layout />}>
              <Route path="/Landing-Page" element={<LandingPage />} />
-            {/* <Route path="/Homepage" element={<Homepage />} />
-            <Route path="/Project-Center" element={<ProjectCenter />} />
-            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />  */}
+             <Route path="/Homepage" element={<Homepage />} />
+            {/* <Route path="/Project-Center" element={<ProjectCenter />} />
+            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />   */}
           </Route>
         </Routes>
       </Router>

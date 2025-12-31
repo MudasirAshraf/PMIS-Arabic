@@ -1,0 +1,31 @@
+// CARD-I(Project-Card) SCSS
+@use "../../styles/variables" as *;
+.main-conatiner-card-I {
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+}
+.first-container-card-I {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.value-card-I {
+  padding-left: 70px;
+}
+@media (max-width: 768px) {
+  .main-conatiner-card-I {
+    padding: 10px;
+  }
+
+  .first-container-card-I {
+    gap: 5px;
+  }
+    .value-card-I {
+    padding-left: 5px;
+  }
+}

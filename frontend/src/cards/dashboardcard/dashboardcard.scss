@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+.dashboard-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 3px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px $ash-faint;
+  min-width: 250px;
+  max-width: 280px;
+  transition: all 0.3s ease;
+}
+.dashboard-card:nth-child(1) {
+  background: $lime-forest-blend;
+}
+.dashboard-card:nth-child(2) {
+  background: $mint-jade-blend;
+}
+.dashboard-card:nth-child(3) {
+  background: $aloe-fern-blend;
+}
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+.icon-section {
+  color: $pure-white;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.divider {
+  width: 2px;
+  height: 65px;
+  background-color: $gray-soft-border;
+}
+.text-section-dashboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.para-dashboard-card {
+  color: $buttermilk-cream;
+}
+.value-dashboard-card {
+  color: $snow-drift;
+}

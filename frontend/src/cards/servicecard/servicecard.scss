@@ -1,0 +1,51 @@
+@use "../../styles/variables" as *;
+.main-container-card-II {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 114px;
+  padding-top: 30px;
+  padding-left: 38px;
+  padding-right: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main-container-card-II:hover {
+  transform: scale(1.05);
+  box-shadow: $shadow-elevation-lg;
+}
+.main-container-card-II p {
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+.value-card-ii {
+  position: absolute;
+  background-color: $radical-rose;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 5px;
+  bottom: 81%;
+  right: 4%;
+  color: $pure-white;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .main-container-card-II {
+    padding: 10px;
+     width: 100%;
+       height: auto;
+  }
+  .value-card-ii {
+    position: absolute;
+    bottom: 77%;
+    right: 7%;
+    color: $pure-white;
+  }
+}

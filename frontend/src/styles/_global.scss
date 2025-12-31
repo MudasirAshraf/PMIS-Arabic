@@ -13,13 +13,19 @@ body {
   text-align: right;
 }
 html,
-body,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
 #root,
 .App {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
-  direction: rtl; 
+  direction: rtl;
 }
+
 
 /* Global Styles */
 :root {
@@ -38,4 +44,56 @@ body,
 }
 .theme-toggle-button svg {
   transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+// Auth-Button
+.auth-btn {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+// Homepage-Button
+.homepage-button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:hover {
+    box-shadow: $shadow-contrast-float;
+    cursor: pointer;
+    border: 1px solid $focus-gray-border;
+  }
+}
+// Event-Button
+.event-button {
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:hover {
+    transform: scale(0.99);
+    box-shadow: $shadow-contrast-float;
+    cursor: pointer;
+    border: 1px solid $gray-hover;
+  }
+  &:active {
+    transform: scale(0.68);
+  }
 }

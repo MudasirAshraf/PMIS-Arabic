@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+.main-container-card-V {
+  border-radius: 16px;
+  display: flex;
+  padding: 7.4px 55px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-container-card-V:hover {
+  transform: scale(1.05);
+  box-shadow: $shadow-elevation-lg;
+}
+
+.title-card-v,
+.value-card-v {
+  color: $white-light;
+}
+@media (max-width: 768px) {
+  .main-container-card-V {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,88 @@
+@use "../../styles/variables" as *;
+.main-container-section-II{
+  display: flex;
+  flex-direction: column;
+}
+
+.first-container-section-II {
+  display: flex;
+  gap: 10px;
+}
+
+.second-container-section-II {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px 45px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.first-content-section-II {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content-I-section-II {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .main-container-section-II {
+    display: flex;
+    flex-direction: column;
+  }
+  .first-container-section-II{
+    display: flex;
+    gap: 10px;
+  }
+  .second-container-section-II {
+    padding: 10px;
+  }
+}
+// Carousel SCSS
+.carousel-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: $neutral-gray-border;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &.active {
+      background-color: $blue-bg;
+      transform: scale(1.4);
+      animation: pulse 0.6s ease-in-out infinite alternate;
+    }
+
+    &:hover {
+      transform: scale(1.4);
+      background-color: $blue-deep;
+    }
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+@media (max-width: 768px) {
+  .carousel-navigation .dot {
+    height: 8px;
+    width: 8px;
+  }
+}

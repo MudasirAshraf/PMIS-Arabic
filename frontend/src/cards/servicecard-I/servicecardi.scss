@@ -1,0 +1,29 @@
+@use "../../styles/variables" as *;
+.main-container-service-card-i {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 35px 20px;
+  background-color: $pure-white;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 20px;
+  box-shadow: $shadow-low-opacity;
+  cursor: pointer;
+  text-align: center;
+  word-wrap: break-word;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-heavy-lift;
+  }
+}
+
+.sc-para-i {
+  color: $vintage-gold;
+}

@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+.main-container-section-III {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-container-section-III {
+  display: flex;
+  gap: 10px;
+}
+
+.second-container-section-III {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 17px 26px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .main-container-section-III{
+    display: flex;
+    flex-direction: column;
+  }
+  .value-card-I {
+    padding-left: 5px;
+  }
+  .first-container-section-III {
+    display: flex;
+    gap: 10px;
+  }
+
+  .second-container-section-III{
+    padding: 10px;
+  }
+}

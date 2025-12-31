@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+.main-container-card-III {
+  border-radius: 20px;
+  display: flex;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.title-card-iii {
+  padding: 0 14px 70px 0;
+}
+.value-card-iii {
+  padding-top: 50px;
+}
+@media (max-width: 768px) {
+  .main-container-card-III {
+    width: 100%;
+    padding: 10px;
+  }
+}

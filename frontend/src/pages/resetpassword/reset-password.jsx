@@ -95,7 +95,7 @@ const ResetPassword = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 {isSubmitting

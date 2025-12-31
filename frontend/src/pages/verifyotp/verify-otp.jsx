@@ -92,7 +92,7 @@ const VerifyOTP = () => {
 
               <button
                 type="submit"
-                className="login-btn"
+                className="auth-btn"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "جاري التحقق..." : "التحقق"}
