@@ -1,0 +1,183 @@
+@use "../../styles/variables" as *;
+.add-project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal Box */
+.add-project-container {
+  border-radius: 16px;
+  width: 600px;
+  max-width: 95%;
+  animation: fadeInUp 0.3s ease;
+  direction: rtl;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.add-project-header {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 15px;
+  padding: 7px 10px;
+}
+
+.add-project-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+}
+
+.add-project-header button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.add-project-header button:hover {
+  transform: scale(1.2);
+}
+
+.add-project-header button:focus {
+  outline: none;
+}
+
+/* Body */
+.add-project-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .add-project-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-project-body label {
+  display: block;
+  font-weight: 500;
+  text-align: right;
+}
+
+.add-project-body div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.add-project-body > div:last-child {
+  grid-column: 1 / span 2;
+}
+
+.add-project-body textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+@media (max-width: 768px) {
+  .add-project-body > div:last-child {
+    grid-column: 1 / span 1;
+  }
+}
+
+.add-project-body input,
+.add-project-body select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.add-project-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 15px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+// .add-project-actions button {
+//   padding: 8px 16px;
+//   border-radius: 10px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   border: none;
+//   transition: all 0.2s;
+// }
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.no-projects-simple {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+  padding: 4rem 1rem;
+}
+.delete-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff7875;
+}
+.icon-color {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.no-results-message {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}

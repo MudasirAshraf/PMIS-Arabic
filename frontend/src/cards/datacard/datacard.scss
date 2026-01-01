@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+.main-container-data-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  box-shadow: $gentle-shadow;
+}
+.main-container-data-card-para-i,
+.main-container-data-card-para-ii {
+  padding: 5px 10px;
+}

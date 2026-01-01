@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+.main-container-value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 60px;
+  border-radius: 10px;
+  gap: 9px;
+  box-shadow: $gentle-shadow;
+}
+@media (max-width: 768px) {
+  .main-container-value-card {
+    padding: 36px 28px;
+  }
+}

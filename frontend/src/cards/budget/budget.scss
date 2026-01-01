@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+.main-container-BUDGET {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: $gentle-shadow;
+}
+.first-container-BUDGET {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 43px;
+  width: 43px;
+  border-radius: 100px;
+}
+.second-container-BUDGET {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}

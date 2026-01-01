@@ -1,0 +1,29 @@
+@use "../../styles/variables" as *;
+.main-container-floating-card {
+  cursor: pointer;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.floating-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 10px;
+}
+.floating-card-icon {
+  width: 20px;
+  height: 20px;
+}
+.floating-card-value {
+  background: $red-light;
+  padding: 20px 12px;
+  border-radius: 10px 0 0 10px;
+}
+.floating-card-value p {
+  color: $pure-white;
+}

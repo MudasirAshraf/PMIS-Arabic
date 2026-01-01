@@ -1,0 +1,66 @@
+@use "../../styles/variables" as *;
+.main-container-Data-III {
+  padding: 0px 2.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.section-i-Data-III,
+.section-ii-Data-III {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: $gentle-shadow;
+  align-items: center;
+}
+.content-section-Data-III {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .content-section-Data-III,
+  .content-section-ii-Data-III {
+    flex-direction: column;
+  }
+}
+.content-section-ii-Data-III {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .content-section-ii-Data-III {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.header-ist-section-i-data-II {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 0px;
+}
+.chart-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+}
+.chart-details p {
+  margin: 0;
+}
+.grid-container-second-content-data-II {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .grid-container-second-content-data-II {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 10px;
+  }
+}

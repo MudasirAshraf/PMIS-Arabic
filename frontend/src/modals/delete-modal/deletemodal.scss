@@ -1,0 +1,75 @@
+@use "../../styles/variables" as *;
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Box */
+.delete-modal-content {
+  padding: 20px;
+  width: 350px;
+  max-width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Modal Text */
+.delete-modal-content p {
+  display: flex;
+}
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-btn,
+.cancel-btn {
+  padding: 10px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px;
+  }
+  .modal-content p {
+    font-size: 16px;
+  }
+  .confirm-btn,
+  .cancel-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

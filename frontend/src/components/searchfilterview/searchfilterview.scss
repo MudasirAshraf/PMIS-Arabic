@@ -1,0 +1,62 @@
+@use "../../styles/variables" as *;
+.container-search-project-center {
+  padding: 10px;
+  border-radius: 20px;
+}
+.input-project-center {
+  width: 100%;
+  padding: 10px;
+  background-color: $pure-white;
+  color: $text-black-light;
+  outline: none;
+  border-radius: 15px;
+  border: none;
+}
+// Filter Container SCSS
+.main-container-filter {
+  padding: 10px;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+.sub-container-filter {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+.ist-label-filter {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: right;
+    gap: 5px;
+  }
+}
+.input-filter {
+  width: 300px;
+  padding: 10px;
+  color: $text-black-light;
+  outline: none;
+  border-radius: 2px;
+  border: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

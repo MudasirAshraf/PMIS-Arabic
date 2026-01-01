@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+.main-container-heatmap-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 70px;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .main-container-heatmap-card {
+    padding: 10px 48px;
+  }
+}
+.ist-section-heatmap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+  background-color: $text-black-light;
+  padding: 15px;
+}
+.ist-section-heatmap,
+.second-section-heatmap {
+  color: $white-light;
+}

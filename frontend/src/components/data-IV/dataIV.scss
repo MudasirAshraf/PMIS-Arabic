@@ -1,0 +1,75 @@
+@use "../../styles/variables" as *;
+.main-container-Data-IV {
+  padding: 0px 2.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.section-I-Data-IV {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: $gentle-shadow;
+  align-items: center;
+}
+.header-ist-section-i-data-II {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 0px;
+}
+.table-container-Data-IV {
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+  display: block;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.responsive-table-Data-IV {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-container-Data-IV::-webkit-scrollbar {
+  display: none;
+}
+.responsive-table-container-Data-IV {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.responsive-table-Data-IV tbody tr:hover {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.responsive-table-Data-IV th,
+.responsive-table-Data-IV td {
+  padding: 8px;
+}
+.responsive-table-Data-IV td {
+  border: 0.1px solid $gray-soft-border;
+}
+.responsive-table-Data-IV th {
+  background-color: $cloud-dust;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 8px;
+}
+@media (max-width: 768px) {
+  .responsive-table-container-Data-IV {
+    max-height: 400px;
+  }
+  .table-container-Data-IV {
+    max-height: 520px;
+  }
+  .responsive-table-Data-IV th,
+  .responsive-table-Data-IV td {
+    padding: 6px;
+    font-size: 0.725rem !important;
+  }
+}

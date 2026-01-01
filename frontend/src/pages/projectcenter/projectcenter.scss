@@ -1,0 +1,266 @@
+@use "../../styles/variables" as *;
+.home-page-grid-project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px 3px;
+}
+@media (max-width: 768px) {
+  .home-page-grid-project {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    // padding: 10px 10px;
+  }
+}
+// First-Row
+.header-details {
+  grid-column: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 13px;
+  border-radius: 30px;
+}
+.another-header-scroll-container {
+  grid-column: 2 / 4;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px;
+}
+.container-scroll-bar {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  padding: 6px;
+  cursor: pointer;
+}
+// Animation
+@keyframes scroll {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.scroll-container {
+  display: flex;
+  animation: scroll 46s linear infinite;
+  animation-timing-function: linear;
+  width: max-content;
+  gap: 30px;
+}
+.container-scroll-bar:hover .scroll-container {
+  animation-play-state: paused;
+}
+@media (max-width: 768px) {
+  .another-header-scroll-container {
+    grid-column: 1 / span 1;
+    padding: 15px;
+  }
+
+  .another-header-scroll-container {
+    padding: 5px;
+  }
+  .header-details p {
+    padding: 4px 0px;
+  }
+}
+// Profile-Center CSS
+.main-container-profile-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 20px;
+}
+@media (min-width: 1442px) {
+  .main-container-profile-center {
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 768px) {
+  .main-container-profile-center {
+    width: 100%;
+  }
+}
+.header-pc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  cursor: pointer;
+}
+.arrow::before {
+  content: ">";
+  font-size: 16px;
+  display: inline-block;
+}
+.iconlist-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.first-iconlist,
+.second-iconlist {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.image-hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.image-hover:hover {
+  transform: scale(1.1);
+}
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* For screens between 1024px and 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .grid-view {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For screens between 769px and 1023px */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For screens 768px wide or less */
+@media (max-width: 768px) {
+  .grid-view {
+    grid-template-columns: 1fr;
+  }
+}
+// Table 
+.project-table {
+  width: 100%;
+  border-collapse: separate;
+  margin: 20px 0;
+  text-align: right;
+  direction: rtl;
+  border-radius: 8px;
+  overflow: hidden;
+  border-spacing: 0 10px;
+}
+.project-table th {
+  padding: 15px;
+}
+.project-table td {
+  padding: 12px;
+  background-color: $teal-green-alt;
+  transition: background-color 0.3s ease;
+}
+
+/* Row Hover Effect */
+.project-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.project-table tbody tr:hover {
+  background-color: $green-dark;
+  cursor: pointer;
+}
+.td-div {
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 3px 0px;
+  color: $white-muted;
+}
+.icon-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.icon-cell img {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .project-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-table {
+    width: 100%;
+    margin: 0;
+    border-spacing: 0;
+  }
+  .project-table td,
+  .project-table th {
+    padding: 5px;
+  }
+  .project-table th {
+    padding: 10px 4px;
+  }
+  .td-div {
+    padding: 0px;
+    width: 30px;
+  }
+  .icon-cell {
+    gap: 2px;
+  }
+}
+// Pagination SCSS
+.pagination {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0;
+  }
+}
+.pagination-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.pagination-btn:hover {
+  border-radius: 2px;
+}
+.pagination-btn:disabled {
+  cursor: not-allowed;
+}
+.pagination-btn.active {
+  border-radius: 2px;
+}

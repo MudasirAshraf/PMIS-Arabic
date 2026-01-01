@@ -12,6 +12,8 @@ import ResetPassword from "./pages/resetpassword/reset-password.jsx";
 import Layout from "./components/layout/Layout.jsx";
 import LandingPage from "./pages/landingpage/Landing-Page.jsx";
 import Homepage from "./pages/homepage/Homepage.jsx";
+import ProjectCenter from "./pages/projectcenter/Project-Center.jsx";
+import ProjectDashboard from "./pages/projectdashboard/Project-Dashboard.jsx";
 
 function App() {
    const { theme } = useTheme();
@@ -30,8 +32,8 @@ function App() {
           <Route element={<Layout />}>
              <Route path="/Landing-Page" element={<LandingPage />} />
              <Route path="/Homepage" element={<Homepage />} />
-            {/* <Route path="/Project-Center" element={<ProjectCenter />} />
-            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />   */}
+             <Route path="/Project-Center" element={<ProjectCenter />} />
+            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />   
           </Route>
         </Routes>
       </Router>
