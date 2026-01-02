@@ -1,0 +1,98 @@
+@use "../../styles/variables" as *;
+.main-container-video-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+// @media (min-width: 1442px) {
+//   .main-container-video-center,
+//   .main-container-document-center {
+//     padding: 10px 3px;
+//   }
+// }
+.header-container-video-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.back-icon:hover {
+  transform: scale(1.2);
+}
+.header-video-center {
+  display: flex;
+  padding: 0px 4px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 5px;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header-video-center {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header-video-center {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header-video-center {
+    font-size: 1rem !important;
+  }
+}
+/* Pagination Controls */
+.video-pagination-controls {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 15px;
+  border-radius: 7px;
+  gap: 8px;
+}
+.video-pagination-btn {
+  background: transparent;
+  border: none;
+  padding: 3px 5px;
+  font-size: 0.825rem;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+.video-pagination-btn.active {
+  font-weight: bold;
+}
+.video-pagination-btn:disabled {
+  cursor: not-allowed;
+}
+.video-pagination-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $pure-white;
+}

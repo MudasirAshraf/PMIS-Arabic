@@ -1,0 +1,98 @@
+@use "../../styles/variables" as *;
+.main-container-doc-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+// @media (min-width: 1442px) {
+//   .main-container-doc-wrapper {
+//     padding: 10px 20px;
+//   }
+// }
+.back-icon-container {
+  position: absolute;
+  top: 1px;
+  right: 18px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.back-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.doc-title {
+  text-align: center;
+}
+.doc-details-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.doc-preview-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  height: 560px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid $frost-white-glow;
+  box-shadow: 0px 10px 30px $smoky-haze;
+  border-radius: 10px;
+}
+.doc-preview {
+  padding: 15px;
+  width: 100%;
+  max-width: 1100px;
+  height: 560px;
+  max-height: 700px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .doc-title {
+    font-size: 1.8rem;
+  }
+  .doc-preview-section {
+    max-width: 95%;
+    height: 600px;
+  }
+  .doc-preview {
+    max-width: 100%;
+    max-height: 550px;
+  }
+}
+@media (max-width: 768px) {
+  .doc-title {
+    font-size: 1.5rem;
+  }
+  .doc-preview-section {
+    height: 500px;
+  }
+  .doc-preview {
+    max-height: 500px;
+  }
+}
+@media (max-width: 480px) {
+  .doc-title {
+    font-size: 1.3rem;
+  }
+  .doc-preview-section {
+    height: 500px;
+  }
+  .doc-preview {
+    max-height: 500px;
+  }
+}

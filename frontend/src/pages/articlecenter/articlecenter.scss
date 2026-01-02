@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+.main-contaier-article-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+// @media (min-width: 1442px) {
+//   .main-contaier-article-center {
+//     padding: 10px 20px;
+//   }
+// }
+.header-container-video-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.back-icon:hover {
+  transform: scale(1.2);
+}
+.header-video-center {
+  display: flex;
+  padding: 0px 4px;
+}
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 5px;
+  align-items: center;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .article-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .article-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* Pagination Controls */
+.video-pagination-controls {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 15px;
+  border-radius: 7px;
+  gap: 8px;
+}
+.video-pagination-btn {
+  background: transparent;
+  border: none;
+  padding: 3px 5px;
+  font-size: 0.825rem;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+.video-pagination-btn.active {
+  font-weight: bold;
+}
+.video-pagination-btn:disabled {
+  cursor: not-allowed;
+}
+.video-pagination-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $pure-white;
+}

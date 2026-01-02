@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+.main-container-document-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 7px;
+  width: 100%;
+  cursor: pointer;
+}
+.main-container-document-card:hover {
+  border: 1px solid $focus-gray-border;
+}
+.para-document {
+  width: 100%;
+}
+.folder-icon {
+  height: 10rem;
+  width: 10rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.folder-icon:hover {
+  transform: scale(1.1) rotate(1deg);
+}

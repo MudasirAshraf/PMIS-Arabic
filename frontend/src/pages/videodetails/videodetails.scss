@@ -1,0 +1,56 @@
+@use "../../styles/variables" as *;
+.main-container-video-details{
+  max-width: 1440px;
+  margin: 0px auto;
+  // padding: 10px 20px;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+// @media (min-width: 1442px) {
+//   .main-container-video-details,
+//   .folder-view-container {
+//     padding: 10px 20px;
+//   }
+// }
+.back-icon-container {
+  position: absolute;
+  top: 1px;
+  right: 18px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.back-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.back-icon:hover {
+  transform: scale(1.2);
+}
+.video-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.video-fullscreen {
+  width: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px $smoky-haze;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid $frost-white-glow;
+  padding: 10px;
+}
+.video-description {
+  word-break: break-all;
+}

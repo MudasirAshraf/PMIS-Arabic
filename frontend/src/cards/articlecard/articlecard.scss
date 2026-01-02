@@ -1,0 +1,56 @@
+@use "../../styles/variables" as *;
+.main-container-article-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 400px;
+}
+.title-ac {
+  width: 100%;
+}
+.button-container-fv {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.article-image {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  align-self: center;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .article-image {
+    max-width: 300px;
+    height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .article-image {
+    max-width: 300px;
+    height: 150px;
+  }
+}
+.view-btn-fv {
+  background-color: $blue-bg;
+  color: $pure-white;
+}
+.view-btn-fv:hover {
+  background-color: $blue-deep;
+}
+.details-btn-fv {
+  background-color: $green-bg;
+  color: $pure-white;
+}
+.details-btn-fv:hover {
+  background-color: $pinewood-green;
+}
+.icon-fv {
+  font-size: 16px;
+}
