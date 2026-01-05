@@ -2,7 +2,6 @@
 @use "./variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +24,6 @@ body {
   width: 100%;
   direction: rtl;
 }
-
 
 /* Global Styles */
 :root {
@@ -97,13 +95,197 @@ body {
     transform: scale(0.68);
   }
 }
-// Modal-Buttons
+// Modal-Buttons used in modals for "save" and "cancel"
 .cancel-button,
-.save-button{
-   padding: 8px 16px;
+.save-button {
+  padding: 8px 16px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   cursor: pointer;
   border: none;
   transition: all 0.2s;
 }
+// Add-Modal-Button used in  header to get modal for "add new data" or "existing data"
+.add-modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .add-modal-button {
+    width: 100%;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+// query-btn used for search, filter
+.query-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+// Common-CSS 
+// Risk-Modal, Issue-Modal, Action-Modal, Stake-Modal
+.edit-risk-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $shadow-dark-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Modal content */
+.edit-risk-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 1440px;
+  height: 70vh;
+  max-width: 1440px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.edit-risk-modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header */
+.edit-risk-modal-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px 10px 0 0;
+}
+.second-header-risk-modal {
+  display: flex;
+  gap: 10px;
+}
+.risk-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Body grid */
+.edit-risk-modal-body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  align-items: start;
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.edit-risk-modal-body::-webkit-scrollbar {
+  display: none;
+}
+
+.labels-div {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  grid-column: span 3;
+}
+
+.labels-div label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.edit-risk-modal-body input,
+.edit-risk-modal-body textarea,
+.labels-div select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: $pure-white;
+  color: $text-black-light;
+}
+
+.edit-risk-modal-body textarea {
+  grid-column: span 6;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.labels-div input[disabled] {
+  grid-column: span 6;
+  cursor: not-allowed;
+}
+
+.labels-div input[type="number"],
+.labels-div input[type="date"],
+.labels-div select {
+  grid-column: span 3;
+}
+
+.labels-div span {
+  color: $red-light;
+  font-size: 13px;
+  margin-top: 3px;
+  display: block;
+}
+
+/* Footer buttons */
+.edit-risk-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .edit-risk-modal-content {
+  width: 90%;
+  }
+  .edit-risk-modal-body {
+    grid-template-columns: 1fr;
+  }
+  .second-header-risk-modal {
+    display: flex;
+    gap: 5px;
+  }
+  .labels-div {
+    grid-column: span 6;
+    margin-bottom: 15px;
+  }
+}
+

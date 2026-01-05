@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+.main-container-lesson-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 10px;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+}
+.header-lesson-center {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header-lesson-center {
+    flex-direction: column;
+    padding: 10px;
+    gap: 14px;
+  }
+}
+.first-header-lesson-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.first-header-lesson-center p {
+  display: flex;
+  align-items: center;
+}
+.section-I-lesson-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* Responsive Styles*/
+@media (max-width: 768px) {
+  .first-header-lesson-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-lesson-center p {
+    font-size: 1rem !important;
+  }
+  .react-icon {
+    margin-bottom: 20px;
+  }
+}

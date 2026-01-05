@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+.main-container-Issue-Center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 10px;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+}
+.header-issue-center {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header-issue-center {
+    flex-direction: column;
+    padding: 10px;
+    gap: 14px;
+  }
+}
+.first-header-issue-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.first-header-issue-center p {
+  display: flex;
+  align-items: center;
+}
+.section-I-issue-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* Responsive Styles*/
+@media (max-width: 768px) {
+  .first-header-issue-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-issue-center p {
+    font-size: 1rem !important;
+  }
+  .react-icon {
+    margin-bottom: 20px;
+  }
+}

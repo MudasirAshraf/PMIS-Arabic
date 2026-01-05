@@ -1,0 +1,104 @@
+@use "../../styles/variables" as *;
+.main-container-epmo-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 10px;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+}
+.header-epmo-center {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header-epmo-center {
+    flex-direction: column;
+    padding: 10px;
+    gap: 14px;
+  }
+}
+.first-header-epmo-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.first-header-epmo-center p {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Styles*/
+@media (max-width: 768px) {
+  .first-header-epmo-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-epmo-center p {
+    font-size: 1rem !important;
+  }
+  .react-icon {
+    margin-bottom: 20px;
+  }
+}
+.container-search-length {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 5px;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: $pure-white;
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.3s ease;
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      padding: 6px;
+      background-color: transparent;
+    }
+
+    .search-icon {
+      font-size: 20px;
+      color: $gray-deep;
+      cursor: pointer;
+    }
+  }
+}
+.search-span {
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+  background-color: $deep-jungle-green;
+  text-align: center;
+  padding: 5px;
+  margin-right: 5px;
+  color: $pure-white;
+}
+.epmo-buttton-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+

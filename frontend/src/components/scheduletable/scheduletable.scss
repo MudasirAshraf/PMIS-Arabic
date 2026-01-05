@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+.schedule-table-container {
+  padding: 5px 8px;
+  overflow-x: auto;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+.schedule-table-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb,
+.schedule-table-container::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+.schedule-table th {
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.schedule-table td {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.schedule-table-action-icon {
+  cursor: pointer;
+}
+.schedule-table-expand-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+@media (max-width: 768px) {
+  .schedule-table th,
+  .schedule-table td {
+    font-size: 0.85rem !important;
+    padding: 8px;
+  }
+  .schedule-table {
+    min-width: 500px;
+  }
+}

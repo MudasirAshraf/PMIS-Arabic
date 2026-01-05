@@ -22,6 +22,13 @@ import FolderView from "./pages/folderview/Folder-View.jsx";
 import DocumentDetails from "./pages/documentdetails/Document-Details.jsx";
 import ArticleCenter from "./pages/articlecenter/Article-Center.jsx";
 import ArticleDetails from "./pages/articledetails/Article-Details.jsx";
+import RiskCenter from "./pages/riskcenter/Risk-Center.jsx";
+import IssueCenter from "./pages/issuecenter/Issue-Center.jsx";
+import ActionCenter from "./pages/actioncenter/Action-Center.jsx";
+import StakeHolderCenter from "./pages/stakeholdercenter/StakeHolder-Center.jsx";
+import LessonLearnedCenter from "./pages/lessonlearnedcenter/LessonLearned-Center.jsx";
+import EPMOCenter from "./pages/epmocenter/EPMO-Center.jsx";
+import ScheduleCenter from "./pages/schedulecenter/Schedule-Center.jsx";
 
 function App() {
    const { theme } = useTheme();
@@ -51,6 +58,14 @@ function App() {
             <Route path="/document-details" element={<DocumentDetails />} />
             <Route path="/Article-Center" element={<ArticleCenter />} />
             <Route path="/article-details" element={<ArticleDetails />} />
+            {/* Data-Center  */}
+            <Route path="/Risk-Center" element={<RiskCenter />} />
+            <Route path="/Issue-Center" element={<IssueCenter />} />
+            <Route path="/Action-Center" element={<ActionCenter />} />
+            <Route path="/StakeHolder-Center" element={<StakeHolderCenter/>} />
+            <Route path="/LessonLearned-Center" element={<LessonLearnedCenter/>} />
+            <Route path="/EPMO-Center" element={<EPMOCenter />} />
+            <Route path="/Schedule-Center" element={<ScheduleCenter />} />
           </Route>
         </Routes>
       </Router>

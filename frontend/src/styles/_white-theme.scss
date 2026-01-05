@@ -2,7 +2,7 @@
 // White Theme
 .light-theme {
   background-color: $misty-silver;
-    // Login-CSS
+  // Login-CSS
   .login-box {
     background: $gray-form-bg;
   }
@@ -43,8 +43,8 @@
   }
   // HomePage SCSS
   // Homepage-Button & Event-Button CSS
-      .homepage-button,
-      .event-button {
+  .homepage-button,
+  .event-button {
     background: $bg-white-light;
     border: 0.5px solid $gray-darker;
     color: $text-gray-green;
@@ -86,7 +86,9 @@
   .temp-icon,
   .change-request-form label,
   .request-stake-close-btn,
+  .epmo-close-btn,
   .request-stake-header,
+   .epmo-modal-header,
   .ist-label-filter label,
   .para-dc,
   .header-ist-section-i p,
@@ -104,6 +106,8 @@
   .y-axis-title,
   .x-axis-title,
   .para-document,
+   .risk-close-btn,
+  .schedule-close-btn,
   .project-details-form label,
   .second-header-boq p,
   .header-delivrable-center p,
@@ -182,6 +186,7 @@
   .para-month,
   .choice-container h3,
   .add-document-modal-label,
+  .add-modal-button,
   .article-modal-title,
   .article-modal-description,
   .login-box h2,
@@ -204,10 +209,17 @@
   .responsive-table-Data-IV tbody tr:hover,
   .header-para-templates,
   .first-header-risk-center p,
+     .first-header-schedule-center p,
+  .first-header-issue-center p,
+  .first-header-stake-center p,
+  .first-header-action-center p,
+  .first-header-lesson-center p,
+  .first-header-epmo-center p, 
   .header-button-risk-center button,
   .epmo-button,
-  .search-button-rc,
-  .filter-button-rc,
+  .search-button,
+  .query-btn,
+  .filter-button,
   .risk-center-table th,
   .risk-center-table td,
   .delete-modal-content p,
@@ -216,9 +228,12 @@
   .addrisk-modal-header h3,
   .addrisk-close-btn,
   .edit-risk-modal-header,
+  .schedule-modal-header,
   .competitions-table th,
   .competitions-table td,
+  .second-header-risk-modal p,
   .chatbox-close-btn,
+  .risk-close-btn,
   .accordion-item summary,
   .edit-risk-modal-body label,
   .risk-chat-modal-header,
@@ -486,6 +501,12 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-thumb,
   .header-risk-center,
+  .header-schedule-center,
+  .header-epmo-center,
+  .header-lesson-center,
+  .header-issue-center,
+  .header-action-center,
+  .header-stake-center,
   .header-BOQ-center,
   .table-Risk-Center,
   .container-search-length,
@@ -573,15 +594,14 @@
   }
   // Risk-Center
   .header-button-risk-center button,
-  .search-button-rc,
-  .filter-button-rc,
-  .epmo-button {
+  .add-modal-button,
+  .query-btn {
     background: $mist-gradient;
     border: 1px solid $gray-muted-green;
   }
   .header-button-risk-center:hover,
-  .search-button-rc:hover,
-  .filter-button-rc:hover {
+  .add-modal-button:hover,
+  .query-btn:hover {
     background: $mist-gradient-hover;
     box-shadow: $shadow-neutral-fade;
   }
@@ -636,7 +656,9 @@
     box-shadow: $subtle-shadow-dark;
   }
   .edit-risk-modal-header,
+  .schedule-modal-header,
   .edit-risk-modal-footer,
+  .schedule-modal-actions,
   .risk-chat-modal-header,
   .add-project-actions,
   .modal-footer-comp {
@@ -664,7 +686,6 @@
   .add-doc-cancel-button,
   .cancel-button,
   .request-stake-cancel-btn,
-  .schedule-modal-actions .cancel-btn,
   .history-modal-close-btn,
   .workflow-cancel-button,
   .add-project-actions button:first-child,
@@ -692,7 +713,6 @@
   .save-button,
   .request-save-button,
   .request-stake-save-btn,
-  .schedule-modal-actions button,
   .btn-approvals,
   .add-project-actions button:last-child,
   .submit-btn-comp,
@@ -919,6 +939,7 @@
   .change-data,
   .schedule-table-container,
   .dependency-table-container,
+   .risk-center-table-container,
   .table-BOQ,
   .deliverables-table-container,
   .build-team-table-container,
@@ -989,6 +1010,7 @@
   .add-doc-panel-modal-header,
   .project-closure-form-header,
   .request-stake-header,
+   .epmo-modal-header,
   .deliverable-modal-actions,
   .add-project-header,
   .modal-header-comp-modal,
@@ -1149,8 +1171,6 @@
   .curtain-title {
     background-color: $gray-darker;
   }
-
-
 
   .add-project-header {
     border-bottom: 1px solid $dark-gray;

@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    // Login-CSS
+  // Login-CSS
   .login-box {
     background: $teal-gradient-hover;
   }
@@ -48,8 +48,8 @@
 
   // HomePage
   // Homepage-Button & Event-Button CSS
-    .homepage-button,
-    .event-button {
+  .homepage-button,
+  .event-button {
     background: $teal-green-alt;
     color: $white-light;
   }
@@ -140,7 +140,11 @@
   .accordion-item summary,
   .confirm-text-para,
   .request-stake-close-btn,
+  .epmo-close-btn,
+  .risk-close-btn,
+  .schedule-close-btn,
   .request-stake-header,
+  .epmo-modal-header,
   .request-stake-field,
   .add-btn,
   .modify-btn,
@@ -219,16 +223,23 @@
   .para-content-value,
   .po-span,
   .first-header-risk-center p,
+   .first-header-schedule-center p,
+  .first-header-issue-center p,
+  .first-header-action-center p,
+  .first-header-stake-center p,
+  .first-header-lesson-center p,
+  .first-header-epmo-center p,
   .no-projects-simple,
   .pdf-modal-close,
-  .header-button-risk-center button,
+  .add-modal-button,
   .epmo-button,
-  .search-button-rc,
+  .search-button,
+  .query-btn,
   .addrisk-modal-header h3,
   .stakeholder-modal-form-group label,
   .project-icon,
   .addrisk-close-btn,
-  .filter-button-rc,
+  .filter-button,
   .risk-center-table th,
   .risk-center-table td,
   .delete-modal-content p,
@@ -238,10 +249,13 @@
   .close-icon-dv,
   .cancel-btn,
   .edit-risk-modal-header,
+  .schedule-modal-header,
   .chatbox-close-btn,
+  .risk-close-btn,
   .edit-risk-modal-body label,
   .risk-chat-modal-header,
   .second-header-chatbox-modal p,
+  .second-header-risk-modal p,
   .editmodal-body label,
   .movemodal-body label,
   .service-modal-buttons button,
@@ -483,6 +497,12 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-track,
   .header-risk-center,
+  .header-schedule-center,
+  .header-epmo-center,
+  .header-issue-center,
+  .header-action-center,
+  .header-stake-center,
+  .header-lesson-center,
   .table-Risk-Center,
   .container-search-length,
   .section-schedule-center,
@@ -569,17 +589,15 @@
     box-shadow: $shadow-elevated-dark;
   }
   // Risk-Center
-  .header-button-risk-center button,
-  .search-button-rc,
-  .filter-button-rc,
+  .add-modal-button,
+  .query-btn,
   .epmo-button {
     background: $emerald-gradient;
     border: 1px solid $bg-teal-green;
   }
 
-  .header-button-risk-center:hover,
-  .search-button-rc:hover,
-  .filter-button-rc:hover {
+  .add-modal-button:hover,
+   .query-btn:hover {
     background: $emerald-gradient-hover;
     box-shadow: $shadow-depth-mid;
   }
@@ -629,12 +647,15 @@
   // Edit-Modal
   .edit-risk-modal-content,
   .risk-chat-modal-content,
-  .chart-modal-content-summary {
+  .chart-modal-content-summary,
+  .schedule-modal-box {
     background-color: $bg-teal-green;
     box-shadow: $shadow-elevation-xl;
   }
   .edit-risk-modal-header,
+  .schedule-modal-header,
   .edit-risk-modal-footer,
+  .schedule-modal-actions,
   .risk-chat-modal-header,
   .add-project-actions,
   .modal-footer-comp {
@@ -664,7 +685,6 @@
   .add-doc-cancel-button,
   .cancel-button,
   .request-stake-cancel-btn,
-  .schedule-modal-actions .cancel-btn,
   .history-modal-close-btn,
   .workflow-cancel-button,
   .add-project-actions button:first-child,
@@ -692,7 +712,6 @@
   .save-button,
   .request-save-button,
   .request-stake-save-btn,
-  .schedule-modal-actions button,
   .btn-approvals,
   .add-project-actions button:last-child,
   .submit-btn-comp,
@@ -934,6 +953,7 @@
   .change-data,
   .schedule-table-container,
   .dependency-table-container,
+  .risk-center-table-container,
   .table-BOQ,
   .deliverables-table-container,
   .build-team-table-container,
@@ -985,7 +1005,6 @@
   .project-closure-form-container,
   .request-stake-content,
   .epmo-modal,
-  .schedule-modal-box,
   .boq-modal-content,
   .deliverable-modal-content,
   .deliverable-custom-modal-content,
@@ -1001,6 +1020,7 @@
   .add-doc-panel-modal-header,
   .project-closure-form-header,
   .request-stake-header,
+  .epmo-modal-header,
   .add-project-header,
   .modal-header-comp-modal,
   .cm2-footer {
@@ -1146,8 +1166,6 @@
   .curtain-title {
     background-color: $pure-white;
   }
-
-
 
   .add-project-header {
     border-bottom: 1px solid $gray-header-light;

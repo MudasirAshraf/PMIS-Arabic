@@ -1,0 +1,123 @@
+.epmo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.epmo-modal {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+.epmo-modal-header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 12px 8px;
+  // padding: 3px 5px;
+  border-radius: 6px 6px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.sub-modal-header-epmo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.project-icon {
+  height: 20px;
+  width: 20px;
+}
+.epmo-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: -10%;
+  left: -1%;
+}
+.epmo-grid .row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+
+.row input,
+textarea {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+}
+
+.second-row {
+  display: flex;
+}
+
+.description {
+  flex: 1;
+  height: 150px;
+  resize: none;
+}
+
+.stacked-inputs {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.epmo-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.epmo-field label {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 700;
+  text-align: start;
+}
+.epmo-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .epmo-modal {
+    height: 90%;
+    overflow-y: auto;
+  }
+
+  .epmo-grid .row,
+  .second-row {
+    flex-direction: column;
+  }
+
+  .stacked-inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .epmo-field {
+    width: 100%;
+  }
+
+  .project-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

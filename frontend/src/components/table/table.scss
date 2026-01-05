@@ -1,0 +1,122 @@
+@use "../../styles/variables" as *;
+.risk-center-table-container {
+  width: 100%;
+  max-height: 500px;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+.risk-center-table-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.risk-center-table-container::-webkit-scrollbar-thumb,
+.risk-center-table-container::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+/* Table */
+.risk-center-table {
+  width: 100%;
+  border-collapse: collapse;
+  direction: rtl;
+  min-width: 600px;
+  table-layout: fixed;
+}
+.risk-center-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Table Rows */
+.risk-center-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Table Headers & Cells */
+.risk-center-table th,
+.risk-center-table td {
+  padding: 10px;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.cell-text {
+  position: relative;
+  display: inline-block;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Tooltip */
+.cell-text:hover::after {
+  content: attr(data-fulltext);
+  position: fixed;
+  z-index: 9999;
+  top: var(--tooltip-top);
+  left: var(--tooltip-left);
+  max-width: 300px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  word-break: break-word;
+  transform: translate(0, 6px);
+}
+
+.risk-center-table th {
+  font-weight: bold;
+}
+
+/* Icons */
+.icon {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.delete-icon {
+  color: $deep-crimson;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.15);
+}
+
+/* Actions Column */
+.actions-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .risk-center-table th,
+  .risk-center-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .risk-center-table-container {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  .risk-center-table {
+    min-width: 480px;
+  }
+  .risk-center-table th,
+  .risk-center-table td {
+    padding: 6px;
+    font-size: 12px;
+  }
+}

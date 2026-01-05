@@ -1,0 +1,130 @@
+@use "../../styles/variables" as *;
+.schedule-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.schedule-modal-box {
+  border-radius: 10px;
+  width: 900px;
+  max-width: 95vw;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.schedule-modal-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px 10px 0 0;
+}
+
+.second-header-schedule-modal {
+  display: flex;
+  gap: 10px;
+}
+
+.schedule-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.schedule-modal-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 10px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.grid-full {
+  width: 100%;
+}
+
+.grid-full label,
+.grid-full textarea {
+  width: 100%;
+  text-align: start;
+}
+
+.grid-full textarea {
+  resize: vertical;
+  min-height: 90px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  text-align: start;
+}
+.schedule-modal-box input,
+.schedule-modal-box select,
+.schedule-modal-box textarea {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  box-sizing: border-box;
+  text-align: start;
+  transition: border-color 0.2s ease;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-align: start;
+}
+
+/* Buttons */
+.schedule-modal-actions {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .schedule-modal-box {
+    width: 95vw;
+  }
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
