@@ -6,6 +6,8 @@
   overflow-y: auto;
   scrollbar-width: thin;
   -ms-overflow-style: auto;
+   padding: 5px 8px;
+   border-radius: 6px;
 }
 .risk-center-table-container::-webkit-scrollbar {
   width: 6px;

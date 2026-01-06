@@ -73,7 +73,8 @@
   .documents-header-deliverable h3,
   .main-container-card-II p,
   .second-header-boq p,
-  .header-delivrable-center p,
+  .header-deliverable-center p,
+  .header-build-center p,
   .deliverable-row label,
   .icon-color,
   .first-container-section-III p,
@@ -96,7 +97,9 @@
   .dates,
   .project-table th,
   .first-header-BOQ-center p,
+  .first-header-deliverable-center p,
   .first-header-PO-center p,
+  .first-header-build-center p,
   .change-request-form label,
   .form-group label,
   .project-table td,
@@ -139,10 +142,14 @@
   .sidebar-header p,
   .accordion-item summary,
   .confirm-text-para,
-  .request-stake-close-btn,
+  .builder-close-btn,
   .epmo-close-btn,
   .risk-close-btn,
   .schedule-close-btn,
+  .boq-close-btn,
+  .workflow-close-btn,
+  .history-close-btn,
+  .deliverable-close-btn,
   .request-stake-header,
   .epmo-modal-header,
   .request-stake-field,
@@ -223,7 +230,8 @@
   .para-content-value,
   .po-span,
   .first-header-risk-center p,
-   .first-header-schedule-center p,
+  .first-header-workflow-center p,
+  .first-header-schedule-center p,
   .first-header-issue-center p,
   .first-header-action-center p,
   .first-header-stake-center p,
@@ -250,6 +258,11 @@
   .cancel-btn,
   .edit-risk-modal-header,
   .schedule-modal-header,
+  .boq-modal-header,
+  .workflow-modal-header,
+  .history-modal-header,
+  .builder-modal-header,
+  .deliverable-modal-header,
   .chatbox-close-btn,
   .risk-close-btn,
   .edit-risk-modal-body label,
@@ -497,16 +510,18 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-track,
   .header-risk-center,
+  .header-workflow-center,
   .header-schedule-center,
   .header-epmo-center,
   .header-issue-center,
   .header-action-center,
   .header-stake-center,
   .header-lesson-center,
-  .table-Risk-Center,
   .container-search-length,
   .section-schedule-center,
   .header-BOQ-center,
+  .header-deliverable-center,
+  .header-build-center,
   .po-center-filters,
   .header-PO-center {
     background: $teal-green-alt;
@@ -597,7 +612,7 @@
   }
 
   .add-modal-button:hover,
-   .query-btn:hover {
+  .query-btn:hover {
     background: $emerald-gradient-hover;
     box-shadow: $shadow-depth-mid;
   }
@@ -648,13 +663,25 @@
   .edit-risk-modal-content,
   .risk-chat-modal-content,
   .chart-modal-content-summary,
-  .schedule-modal-box {
+  .schedule-modal-box,
+  .history-modal-box,
+  .deliverable-modal-content,
+  .builder-modal-content,
+  .deliverable-custom-modal-content {
     background-color: $bg-teal-green;
     box-shadow: $shadow-elevation-xl;
   }
   .edit-risk-modal-header,
   .schedule-modal-header,
+  .deliverable-modal-header,
+  .boq-modal-header,
+  .workflow-modal-header,
+  .history-modal-header,
+  .builder-modal-header,
   .edit-risk-modal-footer,
+  .builder-modal-buttons,
+  .deliverable-modal-actions,
+  .linked-modal-actions,
   .schedule-modal-actions,
   .risk-chat-modal-header,
   .add-project-actions,
@@ -685,8 +712,6 @@
   .add-doc-cancel-button,
   .cancel-button,
   .request-stake-cancel-btn,
-  .history-modal-close-btn,
-  .workflow-cancel-button,
   .add-project-actions button:first-child,
   .cancel-btn-comp,
   .modify-btn,
@@ -1006,11 +1031,7 @@
   .request-stake-content,
   .epmo-modal,
   .boq-modal-content,
-  .deliverable-modal-content,
-  .deliverable-custom-modal-content,
   .confirm-custom-modal-content,
-  .builder-modal-content,
-  .history-modal-box,
   .add-project-container,
   .competitionmodal,
   .modal-body-comp {
@@ -1032,6 +1053,7 @@
   .form-buttons,
   .request-stake-footer,
   .deliverable-modal-actions,
+  .linked-modal-actions,
   .add-project-actions,
   .modal-footer-comp {
     border-top: 1px solid $hover-teal-bg;
@@ -1104,8 +1126,7 @@
   .main-container-floating-card:hover {
     background: $green-dark;
   }
-  .second-header-boq,
-  .header-delivrable-center {
+  .second-header-boq {
     background-color: $teal-header-green;
   }
   .first-card-boq,

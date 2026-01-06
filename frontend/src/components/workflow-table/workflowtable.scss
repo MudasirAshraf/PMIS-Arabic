@@ -1,0 +1,43 @@
+@use "../../styles/variables" as *;
+.workflow-table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 350px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+.workflow-table-container::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.workflow-table-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+.workflow-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.workflow-table th {
+  padding: 12px;
+  text-align: start;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.workflow-table td {
+  padding: 12px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.workflow-table td:last-child div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.icon-td-I {
+  cursor: pointer;
+  color: $text-gray-green;
+}

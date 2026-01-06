@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+.main-container-deliverable-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.header-deliverable-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+.first-header-deliverable-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .first-header-deliverable-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-deliverable-center p {
+    font-size: 1rem !important;
+  }
+}
+
+.header-deliverable-center p {
+  display: flex;
+  gap: 8px;
+}
+.header-deliverable-center p span {
+  display: inline-block;
+  background-color: $dark-teal;
+  color: $pure-white;
+  width: 25px;
+  height: 25px;
+  border-radius: 100px;
+  justify-content: center;
+}

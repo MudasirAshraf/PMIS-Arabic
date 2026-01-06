@@ -1,0 +1,195 @@
+@use "../../styles/variables" as *;
+.main-container-build-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.header-build-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+.first-header-build-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .first-header-build-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-build-center p {
+    font-size: 1rem !important;
+  }
+}
+.container-search-length {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 5px;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: $pure-white;
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.3s ease;
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      padding: 6px;
+      background-color: transparent;
+    }
+
+    .search-icon {
+      font-size: 20px;
+      color: $gray-deep;
+      cursor: pointer;
+    }
+  }
+}
+.search-span {
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+  background-color: $deep-jungle-green;
+  text-align: center;
+  padding: 5px;
+  margin-right: 5px;
+  color: $pure-white;
+}
+// Table
+.build-team-table-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 6px;
+  padding: 6px 10px;
+  overflow-x: hidden;
+}
+.build-team-table-container::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.build-team-table-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+.build-team-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+}
+
+.build-team-table th {
+  padding: 12px;
+  text-align: start;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.build-team-table td {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.team-member-name {
+  display: inline-block;
+  // margin-left: 1rem;
+}
+.delete-icon {
+  color: $red-hover-light;
+  cursor: pointer;
+  vertical-align: middle;
+}
+// Builder-Modal-CSS
+.builder-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  direction: rtl;
+}
+
+.builder-modal-content {
+  width: 500px;
+  border-radius: 10px;
+}
+.builder-modal-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px 10px 0 0;
+}
+.second-header-builder-modal {
+  display: flex;
+  gap: 10px;
+}
+.builder-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.builder-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.builder-modal-content label {
+  display: block;
+}
+
+.builder-modal-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.builder-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+}

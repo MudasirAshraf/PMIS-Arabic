@@ -1,0 +1,166 @@
+@use "../../styles/variables" as *;
+.workflow-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.workflow-modal-content {
+  background: $pure-white;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  position: relative;
+  direction: rtl;
+  max-height: 80vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+.workflow-modal-content::-webkit-scrollbar {
+  display: none;
+}
+.workflow-modal-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px 10px 0 0;
+}
+.second-header-workflow-modal {
+  display: flex;
+  gap: 10px;
+}
+.workflow-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.info-box {
+  border: 1px solid $gray-mid-light;
+  border-radius: 5px;
+  padding: 10px;
+  background: $silver-fog-opacity;
+}
+
+.info-box h4 {
+  text-align: start;
+  color: $text-black-light;
+  margin-bottom: 6px;
+}
+
+.info-box p {
+  text-align: start;
+  color: $text-gray-green;
+}
+.attachments-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.attachments-header h4 {
+  margin: 0;
+  color: $text-black-light;
+}
+
+.attachments-header span {
+  background: $green-deep;
+  padding: 5px 5px;
+  border-radius: 100px;
+  color: $pure-white;
+}
+
+.attachments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.attachments-table th {
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.attachments-table td {
+  padding: 12px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.icon-action {
+  cursor: pointer;
+  color: $blue-bg;
+  font-size: 18px;
+}
+.icon-action:hover {
+  color: $blue-hover-deep;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+// Display-Modal
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.pdf-modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.pdf-viewer {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  border: none;
+  border-radius: 12px;
+  background: $pure-white;
+  box-shadow: $shadow-elevation-xl;
+  z-index: 2;
+}
+.pdf-modal-close {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.3s ease;
+}

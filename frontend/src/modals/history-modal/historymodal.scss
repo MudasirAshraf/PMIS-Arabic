@@ -1,0 +1,82 @@
+@use "../../styles/variables" as *;
+.history-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.history-modal-box {
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  text-align: right;
+}
+.history-modal-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px 10px 0 0;
+}
+.second-header-history-modal {
+  display: flex;
+  gap: 10px;
+}
+.history-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.history-modal-container {
+  padding: 10px;
+}
+.history-table-scroll {
+  max-height: 300px;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.modal-inner-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.modal-inner-table th {
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.modal-inner-table td {
+  padding: 12px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.history-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.history-modal-close-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

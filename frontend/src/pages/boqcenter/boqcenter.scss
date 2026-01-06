@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+.main-container-BOQ-Center {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.header-BOQ-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+.first-header-BOQ-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .first-header-BOQ-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-BOQ-center p {
+    font-size: 1rem !important;
+  }
+}
+.second-header-boq {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.first-card-boq {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 500px;
+}
+.value-card-boq {
+  align-self: flex-start;
+}
+.content-card-boq {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-self: flex-start;
+}
+.file-icon {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+.boq-purchase-card {
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.boq-header {
+  display: flex;
+  justify-content: flex-start;
+}
+.boq-values {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+.boq-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+.boq-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

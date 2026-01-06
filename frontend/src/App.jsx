@@ -29,26 +29,41 @@ import StakeHolderCenter from "./pages/stakeholdercenter/StakeHolder-Center.jsx"
 import LessonLearnedCenter from "./pages/lessonlearnedcenter/LessonLearned-Center.jsx";
 import EPMOCenter from "./pages/epmocenter/EPMO-Center.jsx";
 import ScheduleCenter from "./pages/schedulecenter/Schedule-Center.jsx";
+import BOQCenter from "./pages/boqcenter/BOQ-Center.jsx";
+import DeliverablesCenter from "./pages/deliverablecenter/Deliverable-Center.jsx";
+import BuildTeamCenter from "./pages/buildteamcenter/Build-Team-Center.jsx";
+import WorkflowCenter from "./pages/workflowcenter/Workflow-Center.jsx";
 
 function App() {
-   const { theme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className={`App ${theme}-theme`}>
       <Router>
         <Routes>
           {/* Login route  */}
-          <Route path="/" element={ <CurtainReveal>  {" "} <Login />{" "}  </CurtainReveal> }  />
-           <Route path="/signup" element={<Signup />} />
-          <Route path="/Account-Verification" element={<AccountVerification />} />
+          <Route
+            path="/"
+            element={
+              <CurtainReveal>
+                {" "}
+                <Login />{" "}
+              </CurtainReveal>
+            }
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/Account-Verification"
+            element={<AccountVerification />}
+          />
           <Route path="/forgot-password" element={<ForgetPassword />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
-          <Route path="/reset-password" element={<ResetPassword />} /> 
+          <Route path="/reset-password" element={<ResetPassword />} />
           {/* All other routes with Layout */}
           <Route element={<Layout />}>
-             <Route path="/Landing-Page" element={<LandingPage />} />
-             <Route path="/Homepage" element={<Homepage />} />
-             <Route path="/Project-Center" element={<ProjectCenter />} />
-            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />  
+            <Route path="/Landing-Page" element={<LandingPage />} />
+            <Route path="/Homepage" element={<Homepage />} />
+            <Route path="/Project-Center" element={<ProjectCenter />} />
+            <Route path="/Project-Dashboard" element={<ProjectDashboard />} />
             {/* Multimedia-Centers  */}
             <Route path="/Knowledge-Center" element={<KnowledgeCenter />} />
             <Route path="/Video-Center" element={<VideoCenter />} />
@@ -62,10 +77,20 @@ function App() {
             <Route path="/Risk-Center" element={<RiskCenter />} />
             <Route path="/Issue-Center" element={<IssueCenter />} />
             <Route path="/Action-Center" element={<ActionCenter />} />
-            <Route path="/StakeHolder-Center" element={<StakeHolderCenter/>} />
-            <Route path="/LessonLearned-Center" element={<LessonLearnedCenter/>} />
+            <Route path="/StakeHolder-Center" element={<StakeHolderCenter />} />
+            <Route
+              path="/LessonLearned-Center"
+              element={<LessonLearnedCenter />}
+            />
             <Route path="/EPMO-Center" element={<EPMOCenter />} />
             <Route path="/Schedule-Center" element={<ScheduleCenter />} />
+            <Route path="/BOQ-Center" element={<BOQCenter />} />
+            <Route
+              path="/Deliverable-Center"
+              element={<DeliverablesCenter />}
+            />
+            <Route path="/Build-Team-Center" element={<BuildTeamCenter />} />
+            <Route path="/Workflow-Center" element={<WorkflowCenter />} />
           </Route>
         </Routes>
       </Router>
