@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+.po-card {
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.po-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.po-amount {
+  text-align: center;
+  margin-top: 5px;
+}
+.po-span {
+  text-align: center;
+  padding: 10px 5px 0 0;
+}
+
+.po-card-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 18px;
+}
+.po-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.file-icon {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .po-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .po-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+@use "../../styles/variables" as *;
+.tab-section-block {
+  padding: 15px;
+  border-radius: 8px;
+}
+.tab-section-label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: start;
+}
+.tab-section-content {
+  display: flex;
+  flex-direction: column;
+}
+.tab-section-content textarea {
+  resize: vertical;
+  padding: 10px;
+  border-radius: 6px;
+  min-height: 150px;
+  color: $text-black-light;
+}

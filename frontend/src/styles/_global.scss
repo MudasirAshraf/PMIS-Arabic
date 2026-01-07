@@ -289,3 +289,92 @@ body {
   }
 }
 
+// Common css for project-charter, project-plan 
+.main-container-project-plan,
+.main-container-project-charter {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.container-progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 2px;
+}
+.header-project-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 10px;
+  width: 100%;
+}
+.header-icon {
+  height: 30px;
+  width: 30px;
+}
+.progress-bar-wrapper {
+  width: 100%;
+  height: 6px;
+  position: relative;
+  border-radius: 12px;
+}
+.progress-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.main-container-tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 7px 3px;
+  border-radius: 8px;
+  gap: 7px;
+}
+.tab-i {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 7px;
+}
+.tab-i.active,
+.tab-i.active-tab {
+  border-radius: 7px;
+}
+.tab-content {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main-container-tab-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px 7px;
+  }
+
+  .tab-i {
+    flex: 1 1 45%;
+    text-align: center;
+    border: 1px solid $warm-gray-border;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+// shuffle-Buttons
+.shuffle-btns-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+

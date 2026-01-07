@@ -1,0 +1,64 @@
+@use "../../styles/variables" as *;
+.project-details-form {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.row {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.row-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.full-width {
+  grid-template-columns: 1fr;
+}
+
+.project-details-form label {
+  display: block;
+  margin-bottom: 6px;
+}
+.project-details-form input,
+.project-details-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid $neutral-gray-border;
+  border-radius: 8px;
+  background-color: $pure-white;
+  color: $text-black-light;
+  outline: none;
+}
+.row-full-width {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.project-details-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .row-2,
+  .row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+.error {
+  color: $red-hover-light;
+  display: block;
+  text-align: start;
+  margin-top: 2px;
+}

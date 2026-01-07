@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+.chart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.chart-modal-content-summary {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.chart-modal-header {
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.second-header-chart-modal {
+  display: flex;
+  gap: 10px;
+}
+.chart-close-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.charts-container-modal-po {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .charts-container-modal-po {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.summary-values {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.summary-values div {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  max-width: 200px;
+}
+.chart-box {
+  text-align: center;
+}
+.chart-label {
+  // font-weight: 700;
+  // font-size: 1rem;
+  // line-height: 1.2rem;
+  text-align: center;
+}
+.close-btn-cont-chart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}

@@ -33,6 +33,10 @@ import BOQCenter from "./pages/boqcenter/BOQ-Center.jsx";
 import DeliverablesCenter from "./pages/deliverablecenter/Deliverable-Center.jsx";
 import BuildTeamCenter from "./pages/buildteamcenter/Build-Team-Center.jsx";
 import WorkflowCenter from "./pages/workflowcenter/Workflow-Center.jsx";
+import POCenter from "./pages/pocenter/PO-Center.jsx";
+import DocumentPanel from "./pages/documentpanel/Document-Panel.jsx";
+import ProjectCharter from "./pages/projectcharter/Project-Charter.jsx";
+import ProjectPlan from "./pages/projectplan/Project-Plan.jsx";
 
 function App() {
   const { theme } = useTheme();
@@ -40,21 +44,10 @@ function App() {
     <div className={`App ${theme}-theme`}>
       <Router>
         <Routes>
-          {/* Login route  */}
-          <Route
-            path="/"
-            element={
-              <CurtainReveal>
-                {" "}
-                <Login />{" "}
-              </CurtainReveal>
-            }
-          />
+          {/* Auth route   */}
+          <Route path="/" element={ <CurtainReveal>  {" "}  <Login />{" "}</CurtainReveal>} />
           <Route path="/signup" element={<Signup />} />
-          <Route
-            path="/Account-Verification"
-            element={<AccountVerification />}
-          />
+          <Route path="/Account-Verification" element={<AccountVerification />} />
           <Route path="/forgot-password" element={<ForgetPassword />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
           <Route path="/reset-password" element={<ResetPassword />} />
@@ -78,19 +71,19 @@ function App() {
             <Route path="/Issue-Center" element={<IssueCenter />} />
             <Route path="/Action-Center" element={<ActionCenter />} />
             <Route path="/StakeHolder-Center" element={<StakeHolderCenter />} />
-            <Route
-              path="/LessonLearned-Center"
-              element={<LessonLearnedCenter />}
-            />
+            <Route path="/LessonLearned-Center" element={<LessonLearnedCenter />}/>
             <Route path="/EPMO-Center" element={<EPMOCenter />} />
             <Route path="/Schedule-Center" element={<ScheduleCenter />} />
             <Route path="/BOQ-Center" element={<BOQCenter />} />
-            <Route
-              path="/Deliverable-Center"
-              element={<DeliverablesCenter />}
-            />
+            <Route path="/Deliverable-Center" element={<DeliverablesCenter />}/>
             <Route path="/Build-Team-Center" element={<BuildTeamCenter />} />
             <Route path="/Workflow-Center" element={<WorkflowCenter />} />
+            <Route path="/PO-Center" element={<POCenter />} />
+            {/* Document-Panel */}
+            <Route path="/Document-Panel" element={<DocumentPanel />} />
+            {/* Project-Section */}
+            <Route path="/Project-Charter" element={<ProjectCharter/>}/>
+            <Route path="/Project-Plan" element={<ProjectPlan/>}/>
           </Route>
         </Routes>
       </Router>

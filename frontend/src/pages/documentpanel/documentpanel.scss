@@ -1,0 +1,268 @@
+@use "../../styles/variables" as *;
+.btn-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.action-button {
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.action-button.edit {
+  background-color: $green-bg;
+  color: $pure-white;
+}
+.action-button.edit:hover {
+  background-color: $forest-emeral;
+}
+
+.action-button.move {
+  background-color: $golden-sunburst;
+  color: $text-black-light;
+}
+.action-button.move:hover {
+  background-color: $amber-radiance;
+}
+
+.action-button.delete {
+  background-color: $red-light;
+  color: $pure-white;
+}
+.action-button.delete:hover {
+  background-color: $red-hover-light;
+}
+.action-button.chat {
+  background-color: $blue-bg;
+  color: $pure-white;
+}
+.action-button.chat:hover {
+  background-color: $blue-deep;
+}
+.main-container-Document-Panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 10px;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+}
+.header-document-panel-center {
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+.first-header-document-panel-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.first-header-document-panel-center p {
+  display: flex;
+  align-items: center;
+}
+.section-I-document-panel-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .header-document-panel-center {
+    flex-direction: column;
+    padding: 10px;
+    gap: 14px;
+  }
+  .first-header-document-panel-center {
+    display: flex;
+    align-items: center;
+  }
+  .first-header-document-panel-center p {
+    font-size: 1rem !important;
+  }
+  .react-icon {
+    margin-bottom: 20px;
+  }
+}
+// Document-Table
+.document-table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.document-table-container::-webkit-scrollbar {
+  display: none;
+}
+.document-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  position: relative;
+}
+.document-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.document-table th {
+  text-align: start;
+  padding: 12px;
+}
+.document-table td {
+  padding: 12px;
+  text-align: start;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .document-table th,
+  .centers-table th,
+  .document-table td,
+  .centers-table td {
+    padding: 10px;
+    white-space: nowrap;
+  }
+  .action-button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .document-table {
+    min-width: 100%;
+  }
+  .document-table th,
+  .centers-table th,
+  .document-table td,
+  .centers-table td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  .action-button {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+}
+/*  Modal Overlays */
+.edit-modal-open-overlay,
+.movemodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $shadow-dark-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.editmodal-content,
+.movemodal-content {
+  animation: slideDown 0.3s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 480px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.editmodal-body,
+.movemodal-body {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 5px 10px;
+  gap: 10px;
+}
+.editmodal-body label,
+.movemodal-body label {
+  display: block;
+}
+.editmodal-body input,
+.movemodal-body select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  outline: none;
+  background-color: $pure-white;
+  color: $text-black-light;
+}
+.container-editmodal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.editmodal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.editmodal-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.editmodal-footer .cancel-button {
+  color: $pure-white;
+}
+.editmodal-footer .cancel-button:hover {
+  background-color: $gray-hover;
+}
+.editmodal-footer .save-button {
+  color: $pure-white;
+  margin-right: 5px;
+}
+@media (max-width: 768px) {
+  .editmodal-content,
+  .movemodal-content {
+    width: 95%;
+    max-width: 400px;
+  }
+  .editmodal-body,
+  .movemodal-body {
+    padding: 10px;
+  }
+  .editmodal-footer button {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.825rem;
+  }
+}

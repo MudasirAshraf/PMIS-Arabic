@@ -1,0 +1,80 @@
+@use "../../styles/variables" as *;
+.add-doc-panel-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.add-doc-panel-modal-content {
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.add-doc-panel-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 10px;
+  position: relative;
+}
+.add-doc-panel-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-doc-panel-close-btn {
+  position: absolute;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  left: -5px;
+  top: -7px;
+}
+.add-doc-panel-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 0px 10px;
+  text-align: right;
+}
+.add-doc-panel-modal-body input,
+.add-doc-panel-modal-body select {
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+}
+.add-doc-panel-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+}
+.no-folder-warning {
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .add-doc-panel-modal-content {
+    width: 90%;
+  }
+  .add-doc-panel-modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 8px;
+  }
+  .add-doc-panel-header-title {
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .add-doc-panel-modal-body {
+    padding: 0px 8px;
+  }
+}

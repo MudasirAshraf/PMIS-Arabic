@@ -90,6 +90,8 @@
   .temp-icon,
   .change-request-form label,
   .builder-close-btn,
+  .addlink-modal-close-btn,
+  .adddocument-modal-close-btn,
   .epmo-close-btn,
   .request-stake-header,
   .epmo-modal-header,
@@ -101,6 +103,7 @@
   .main-container-data-card-para-ii,
   .pdf-modal-close,
   .header-approvals-page p,
+  .header-po-page p,
   .content-ii-section-ii-para,
   .hr,
   .details-content-i-pII,
@@ -141,6 +144,7 @@
   .add-btn,
   .modify-btn,
   .header-project-risk,
+  .header-charter-stack,
   .header-project-section p,
   .builder-modal-content label,
   .first-header-PO-center p,
@@ -216,6 +220,7 @@
   .responsive-table-Data-IV tbody tr:hover,
   .header-para-templates,
   .first-header-risk-center p,
+  .first-header-document-panel-center p,
   .first-header-workflow-center p,
   .first-header-schedule-center p,
   .first-header-issue-center p,
@@ -234,6 +239,8 @@
   .header-video-center,
   .back-button,
   .addrisk-modal-header h3,
+  .stackholder-modal-header h3,
+  .adddocument-modal-header h3,
   .addrisk-close-btn,
   .edit-risk-modal-header,
   .schedule-modal-header,
@@ -246,12 +253,15 @@
   .competitions-table td,
   .second-header-risk-modal p,
   .chatbox-close-btn,
+  .chart-close-btn,
   .risk-close-btn,
   .accordion-item summary,
   .edit-risk-modal-body label,
   .risk-chat-modal-header,
+  .chart-modal-header,
   .search-para,
   .second-header-chatbox-modal p,
+  .second-header-chart-modal p,
   .po-center-amount,
   .editmodal-body label,
   .movemodal-body label,
@@ -514,6 +524,7 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-thumb,
   .header-risk-center,
+  .header-document-panel-center,
   .header-schedule-center,
   .header-epmo-center,
   .header-lesson-center,
@@ -681,6 +692,7 @@
   .edit-risk-modal-footer,
   .schedule-modal-actions,
   .risk-chat-modal-header,
+  .chart-modal-header,
   .add-project-actions,
   .modal-footer-comp {
     background-color: $soft-gray-bg;
@@ -853,6 +865,7 @@
   .deliverable-modal-content input,
   .builder-modal-select,
   .po-center-dropdown select,
+  .po-center-search input,
   .po-center-search,
   .add-project-body input,
   .add-project-body select,
@@ -970,7 +983,8 @@
   }
 
   .document-buttons-I,
-  .header-project-risk {
+  .header-project-risk,
+  .header-charter-stack {
     background: $gray-gradient;
     border: 2px solid $medium-gray;
     box-shadow: $shadow-teal-medium;
@@ -1026,6 +1040,8 @@
     box-shadow: $shadow-light-float;
   }
   .addrisk-modal-header,
+  .stackholder-modal-header,
+  .adddocument-modal-header,
   .add-doc-panel-modal-header,
   .project-closure-form-header,
   .request-stake-header,

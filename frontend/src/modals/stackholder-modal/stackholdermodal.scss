@@ -1,0 +1,102 @@
+@use "../../styles/variables" as *;
+.stakeholder-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.stakeholder-modal-container {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 6px;
+  direction: rtl;
+}
+.stackholder-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.sub-stackholder-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stakeholder-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  top: -10px;
+  left: -9px;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .addlink-modal-header h3 {
+    font-size: 0.95rem !important;
+    text-align: left;
+  }
+}
+.stakeholder-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 5px;
+  gap: 10px;
+}
+.stakeholder-modal-form-group {
+  display: flex;
+  flex-direction: column;
+}
+.stakeholder-modal-form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: start;
+}
+.stakeholder-modal-required {
+  color: $pure-white;
+  margin-right: 4px;
+}
+.stakeholder-modal-form-group input,
+.stakeholder-modal-form-group select,
+.stakeholder-modal-form-group textarea {
+  border: 1px solid $cloud-gray;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  background-color: $pure-white;
+  color: $text-black-light;
+  transition: border 0.2s ease;
+}
+.stakeholder-modal-form-group input:focus,
+.stakeholder-modal-form-group select:focus,
+.stakeholder-modal-form-group textarea:focus {
+  outline: none;
+  border-color: $juniper-green;
+}
+.stakeholder-modal-full-width {
+  grid-column: span 2;
+}
+/* Footer */
+.stakeholder-modal-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 1px solid $focus-gray-border;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .stakeholder-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .stakeholder-modal-full-width {
+    grid-column: span 1;
+  }
+}
+

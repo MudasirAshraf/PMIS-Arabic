@@ -1,0 +1,84 @@
+@use "../../styles/variables" as *;
+.add-document-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.add-document-modal-box {
+  width: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.adddocument-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.sub-adddocument-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.adddocument-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  top: -10px;
+  left: -9px;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .adddocument-modal-header h3 {
+    font-size: 0.95rem !important;
+    text-align: left;
+  }
+}
+.add-document-modal-body {
+  padding: 10px;
+}
+.add-document-modal-label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: start;
+}
+.add-document-modal-required {
+  color: $pure-white;
+  margin-right: 4px;
+}
+.add-document-modal-select {
+  width: 100%;
+  padding: 8px;
+  background-color: $pure-white;
+  color: $dark-gray-center;
+  border-radius: 5px;
+}
+.add-document-modal-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.add-document-modal-cancel-btn {
+  background: $weathered-slate;
+  color: $pure-white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}
+.add-document-modal-save-btn {
+  background: $verdant-shade;
+  color: $pure-white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}

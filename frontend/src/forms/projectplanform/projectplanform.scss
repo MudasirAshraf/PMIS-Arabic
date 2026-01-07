@@ -1,0 +1,65 @@
+@use "../../styles/variables" as *;
+.project-plan-form {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 10px;
+  border-radius: 8px;
+}
+.row-1,
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row-4 {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.field label {
+  margin-bottom: 10px;
+}
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid $neutral-gray-border;
+  border-radius: 6px;
+  color: $text-black-light;
+  outline: none;
+  background-color: $pure-white;
+}
+.error {
+  color: $red-hover-light;
+  display: block;
+  text-align: start;
+  margin-top: 2px;
+}
+.container-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn-project-plan {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .row-1,
+  .row-2,
+  .row-3,
+  .row-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
