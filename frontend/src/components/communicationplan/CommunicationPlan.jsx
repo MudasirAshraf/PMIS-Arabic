@@ -4,41 +4,41 @@ import { PiSquaresFour } from "react-icons/pi";
 import { toast, ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
-  const [plans, setPlans] = useState([]);
-  const [showPlanModal, setShowPlanModal] = useState(false);
-
-  const [form, setForm] = useState({
-    description: "",
-    impact: "",
-    likelihood: "",
-    owner: "",
-    mitigation: "",
-  });
+const CommunicationPlan = ({ goToNextTab, goToPreviousTab }) => {
+  const [communications, setCommunications] = useState([]);
+  const [showCommunicationModal, setShowCommunicationModal] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const toggleModal = () => setShowPlanModal(!showPlanModal);
+  const [form, setForm] = useState({
+    typeofcontact: "",
+    responsible: "",
+    recipients: "",
+    frequency: "",
+    communicationmethod: "",
+  });
+
+  const toggleModal = () => setShowCommunicationModal(!showCommunicationModal);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name] && value.trim() !== "") {
       setErrors((prevErrors) => {
-        const updated = { ...prevErrors };
-        delete updated[name];
-        return updated;
+        const updatedErrors = { ...prevErrors };
+        delete updatedErrors[name];
+        return updatedErrors;
       });
     }
   };
 
   const handleSave = () => {
     const newErrors = {};
-    if (!form.description.trim()) newErrors.description = "مطلوب";
-    if (!form.impact.trim()) newErrors.impact = "مطلوب";
-    if (!form.likelihood.trim()) newErrors.likelihood = "مطلوب";
-    if (!form.owner.trim()) newErrors.owner = "مطلوب";
-    if (!form.mitigation.trim()) newErrors.mitigation = "مطلوب";
+    if (!form.typeofcontact.trim()) newErrors.typeofcontact = "مطلوب";
+    if (!form.responsible.trim()) newErrors.responsible = "مطلوب";
+    if (!form.recipients.trim()) newErrors.recipients = "مطلوب";
+    if (!form.frequency.trim()) newErrors.frequency = "مطلوب";
+    if (!form.communicationmethod.trim())
+      newErrors.communicationmethod = "مطلوب";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -46,21 +46,21 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
       return;
     }
 
-    setPlans([...plans, form]);
+    setCommunications([...communications, form]);
     setForm({
-      description: "",
-      impact: "",
-      likelihood: "",
-      owner: "",
-      mitigation: "",
+      typeofcontact: "",
+      responsible: "",
+      recipients: "",
+      frequency: "",
+      communicationmethod: "",
     });
     setErrors({});
-    setShowPlanModal(false);
-    toast.success("تمت إضافة الخطر بنجاح");
+    setShowCommunicationModal(false);
+    toast.success("تمت إضافة العنصر بنجاح");
   };
 
   useEffect(() => {
-    if (showPlanModal) {
+    if (showCommunicationModal) {
       document.body.classList.add("modal-open");
     } else {
       document.body.classList.remove("modal-open");
@@ -69,39 +69,37 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
     return () => {
       document.body.classList.remove("modal-open");
     };
-  }, [showPlanModal]);
-
+  }, [showCommunicationModal]);
   return (
     <div>
       {/* Header */}
       <div className="ui-header-container">
         <div className="ui-header-action" onClick={toggleModal}>
           <IoMdAdd className="ui-icon-sm" />
-          <p className="fs-md fw-700 lh-1-2">إضافة الخطر</p>
+          <p className="fs-md fw-700 lh-1-2">إضافة العنصر</p>
         </div>
       </div>
-
-      {/* Risk Table */}
-      <div className="uil-table-container">
+      {/* Communication-Table */}
+      <div className="ui-table-container">
         <table className="ui-table">
           <thead className="fs-md lh-1-2 fw-700">
             <tr>
-              <th>وصف الخطر</th>
-              <th>تأثير الخطر</th>
-              <th>احتمالية حدوث الخطر</th>
-              <th>المالك</th>
-              <th>لتخفيف الخطر</th>
+              <th>نوع الاتصال </th>
+              <th>المسؤول</th>
+              <th>التكرار</th>
+              <th>المستلمين</th>
+              <th>طريقة التواصل</th>
             </tr>
           </thead>
           <tbody className="fs-m fw-500 lh-1">
-            {plans.length > 0 ? (
-              plans.map((plan, idx) => (
+            {communications.length > 0 ? (
+              communications.map((communication, idx) => (
                 <tr key={idx}>
-                  <td>{plan.description}</td>
-                  <td>{plan.impact}</td>
-                  <td>{plan.likelihood}</td>
-                  <td>{plan.owner}</td>
-                  <td>{plan.mitigation}</td>
+                  <td>{communication.typeofcontact}</td>
+                  <td>{communication.responsible}</td>
+                  <td>{communication.frequency}</td>
+                  <td>{communication.recipients}</td>
+                  <td>{communication.communicationmethod}</td>
                 </tr>
               ))
             ) : (
@@ -116,13 +114,13 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
       </div>
 
       {/* Modal */}
-      {showPlanModal && (
+      {showCommunicationModal && (
         <div className="ui-modal-overlay">
           <div className="ui-modal">
             <div className="ui-modal-header">
               <div className="ui-modal-header-left">
                 <PiSquaresFour className="ui-icon-sm" />
-                <h3>إضافة الخطر</h3>
+                <h3>إضافة العنصر</h3>
               </div>
               <button className="ui-modal-close-btn" onClick={toggleModal}>
                 ×
@@ -131,84 +129,81 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
             <div className="ui-modal-body">
               <div className="ui-modal-row">
                 <label className="fs-md fw-700 lh-1-2">
-                  وصف الخطر <span>*</span>
-                  <textarea
-                    name="description"
-                    placeholder="وصف الخطر"
-                    value={form.description}
+                  نوع الاتصال <span>*</span>
+                  <input
+                    type="text"
+                    name="typeofcontact"
+                    placeholder="نوع الاتصال "
+                    value={form.typeofcontact}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.description && (
+                  {errors.typeofcontact && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.description}
+                      {errors.typeofcontact}
                     </span>
                   )}
                 </label>
-
                 <label className="fs-md fw-700 lh-1-2">
-                  تخفيف الخطر <span>*</span>
-                  <textarea
-                    name="mitigation"
-                    placeholder="تخفيف الخطر"
-                    value={form.mitigation}
+                  المسؤول<span>*</span>
+                  <input
+                    type="text"
+                    name="responsible"
+                    placeholder="المسؤول"
+                    value={form.responsible}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.mitigation && (
+                  {errors.responsible && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.mitigation}
+                      {errors.responsible}
+                    </span>
+                  )}
+                </label>
+                <label className="fs-md fw-700 lh-1-2">
+                  التكرار <span>*</span>
+                  <input
+                    name="frequency"
+                    type="text"
+                    value={form.frequency}
+                    onChange={handleChange}
+                    className="fs-md fw-500 lh-1-2"
+                  />
+                  {errors.frequency && (
+                    <span className="error fs-sm fw-700 lh-1">
+                      {errors.frequency}
                     </span>
                   )}
                 </label>
               </div>
               <div className="ui-modal-row">
                 <label className="fs-md fw-700 lh-1-2">
-                  تأثير الخطر <span>*</span>
-                  <input
-                    name="impact"
-                    type="number"
-                    min="1"
-                    value={form.impact}
+                  المستلمين <span>*</span>
+                  <textarea
+                    name="recipients"
+                    placeholder="نوع الاتصال "
+                    value={form.recipients}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.impact && (
+                  {errors.recipients && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.impact}
+                      {errors.recipients}
                     </span>
                   )}
                 </label>
-
                 <label className="fs-md fw-700 lh-1-2">
-                  احتمالية حدوث الخطر <span>*</span>
-                  <input
-                    name="likelihood"
-                    type="number"
-                    min="1"
-                    value={form.likelihood}
+                  طريقة التواصل <span>*</span>
+                  <textarea
+                    name="communicationmethod"
+                    placeholder="المسؤول"
+                    value={form.communicationmethod}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.likelihood && (
+                  {errors.communicationmethod && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.likelihood}
-                    </span>
-                  )}
-                </label>
-
-                <label className="fs-md fw-700 lh-1-2">
-                  المالك <span>*</span>
-                  <input
-                    name="owner"
-                    type="text"
-                    value={form.owner}
-                    onChange={handleChange}
-                    className="fs-md fw-500 lh-1-2"
-                  />
-                  {errors.owner && (
-                    <span className="error fs-sm fw-700 lh-1">
-                      {errors.owner}
+                      {errors.communicationmethod}
                     </span>
                   )}
                 </label>
@@ -233,7 +228,7 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
       )}
 
       {/* Shuffle-Buttons */}
-      <div className="shuffle-btns-container">
+      <div className="shuffle-btns-cotainer">
         {goToPreviousTab && (
           <button
             className="prev fs-md fw-600 lh-1-2"
@@ -268,4 +263,4 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
   );
 };
 
-export default ProjectPlanRisks;
+export default CommunicationPlan;

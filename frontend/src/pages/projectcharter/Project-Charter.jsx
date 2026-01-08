@@ -46,7 +46,7 @@ const ProjectCharter = () => {
   };
 
   return (
-    <div className="main-container-project-charter">
+    <div className="main-content-wrapper">
       {/* Header and Progress-Bar Container */}
       <div className="container-progress-wrapper">
         <div className="header-project-section">

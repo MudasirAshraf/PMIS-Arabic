@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+.main-container-templates {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 10px 20px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.header-para-templates {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 10px;
+}
+.content-templates {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 13px 10px;
+}
+.temp-icon {
+  height: 30px;
+  width: 30px;
+}
+.grid-templates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .grid-templates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .grid-templates {
+    grid-template-columns: 1fr;
+  }
+  .main-container-template-card {
+    padding: 16px;
+  }
+}

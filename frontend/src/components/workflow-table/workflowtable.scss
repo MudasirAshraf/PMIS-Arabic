@@ -19,6 +19,33 @@
   width: 100%;
   border-collapse: collapse;
 }
+.cell-text {
+  position: relative;
+  display: inline-block;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.cell-text:hover::after {
+  content: attr(data-fulltext);
+  position: fixed;
+  z-index: 9999;
+  top: var(--tooltip-top);
+  left: var(--tooltip-left);
+  max-width: 300px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  word-break: break-word;
+  transform: translate(0, 6px);
+}
+
 .workflow-table th {
   padding: 12px;
   text-align: start;

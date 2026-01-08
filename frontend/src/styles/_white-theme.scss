@@ -113,7 +113,7 @@
   .y-axis-title,
   .x-axis-title,
   .para-document,
-  .risk-close-btn,
+  .layout-close-btn,
   .schedule-close-btn,
   .boq-close-btn,
   .workflow-close-btn,
@@ -144,6 +144,11 @@
   .add-btn,
   .modify-btn,
   .header-project-risk,
+  .sub-header-add-document,
+  .header-request-stake-holder,
+  .subheader-project-manager,
+  .closure-header-action,
+  .ui-header-action,
   .header-charter-stack,
   .header-project-section p,
   .builder-modal-content label,
@@ -162,7 +167,8 @@
   .sidebar-header p,
   .view-btn,
   .edit-btn,
-  .addrisk-close-btn,
+  .ui-modal-close-btn,
+  .closure-modal-close-btn,
   .close-sidebar-btn,
   .boq-id,
   .boq-value,
@@ -217,6 +223,12 @@
   .deliverable-row label,
   .documents-header-deliverable h3,
   .project-icon,
+  .add-document-icon,
+  .stake-holder-icon,
+  .request-icon,
+  .second-icon,
+  .closure-icon,
+  .ui-icon-sm,
   .responsive-table-Data-IV tbody tr:hover,
   .header-para-templates,
   .first-header-risk-center p,
@@ -238,11 +250,14 @@
   .delete-modal-content p,
   .header-video-center,
   .back-button,
-  .addrisk-modal-header h3,
+  .ui-modal-header h3,
+  .closure-modal-header h3,
   .stackholder-modal-header h3,
   .adddocument-modal-header h3,
+  .addlink-modal-header h3,
   .addrisk-close-btn,
-  .edit-risk-modal-header,
+  .request-stake-close-btn,
+  .layout-header,
   .schedule-modal-header,
   .boq-modal-header,
   .workflow-modal-header,
@@ -251,12 +266,12 @@
   .deliverable-modal-header,
   .competitions-table th,
   .competitions-table td,
-  .second-header-risk-modal p,
+  .layout-header-actions p,
   .chatbox-close-btn,
   .chart-close-btn,
-  .risk-close-btn,
+  .layout-close-btn,
   .accordion-item summary,
-  .edit-risk-modal-body label,
+  .layout-grid label,
   .risk-chat-modal-header,
   .chart-modal-header,
   .search-para,
@@ -285,7 +300,8 @@
   .panel-header-para,
   .back-icon-container,
   .stakeholder-modal-close-btn,
-  .addrisk-modal-body label,
+  .ui-modal-body label,
+  .closure-modal-body label,
   .video-description,
   .doc-title,
   .document-title {
@@ -676,12 +692,12 @@
     background: $gray-hover-light;
   }
   // Edit-Modal & Chat-Modal
-  .edit-risk-modal-content,
+  .layout-container,
   .risk-chat-modal-content {
     background-color: $white-light;
     box-shadow: $subtle-shadow-dark;
   }
-  .edit-risk-modal-header,
+  .layout-header,
   .schedule-modal-header,
   .deliverable-modal-header,
   .boq-modal-header,
@@ -689,7 +705,7 @@
   .history-modal-header,
   .builder-modal-buttons,
   .builder-modal-header,
-  .edit-risk-modal-footer,
+  .layout-footer,
   .schedule-modal-actions,
   .risk-chat-modal-header,
   .chart-modal-header,
@@ -697,8 +713,8 @@
   .modal-footer-comp {
     background-color: $soft-gray-bg;
   }
-  .edit-risk-modal-body input,
-  .edit-risk-modal-body textarea,
+  .layout-grid input,
+  .layout-grid textarea,
   .risk-chat-textarea,
   .editmodal-body input,
   .movemodal-body select,
@@ -774,25 +790,29 @@
     color: $dark-gray-center;
   }
   .document-table tr:nth-child(odd),
-  .risk-panel-table tbody tr:nth-child(odd) td,
+  .ui-table tbody tr:nth-child(odd) td,
+  .closure-table tbody tr:nth-child(odd) td,
   .project-stack-table tbody tr:nth-child(even) td,
   .project-manager-table tbody tr:nth-child(odd) td {
     background-color: $light-gray-bg;
   }
   .document-table tr:nth-child(odd):hover,
-  .risk-panel-table tbody tr:nth-child(odd) td:hover,
+  .ui-table tbody tr:nth-child(odd) td:hover,
+  .closure-table tbody tr:nth-child(odd) td:hover,
   .project-stack-table tbody tr:nth-child(even) td:hover,
   .project-manager-table tbody tr:nth-child(odd) td:hover {
     background-color: $gray-odd-row-hover;
   }
   .document-table tr:nth-child(even),
-  .risk-panel-table tbody tr:nth-child(even) td,
+  .ui-table tbody tr:nth-child(even) td,
+  .closure-table tbody tr:nth-child(even) td,
   .project-stack-table tbody tr:nth-child(odd) td,
   .project-manager-table tbody tr:nth-child(even) td {
     background-color: $pure-white;
   }
   .document-table tr:nth-child(even):hover,
-  .risk-panel-table tbody tr:nth-child(even) td :hover,
+  .ui-table tbody tr:nth-child(even) td :hover,
+  .closure-table tbody tr:nth-child(even) td :hover,
   .project-stack-table tbody tr:nth-child(odd) td:hover,
   .project-manager-table tbody tr:nth-child(even) td:hover {
     background-color: $gray-even-row-hover;
@@ -911,7 +931,8 @@
   .video-modal-close {
     background: $misty-white-medium;
   }
-  .risk-panel-table th,
+  .ui-table th,
+  .closure-table th,
   .project-stack-table th,
   .project-manager-table th,
   .schedule-table th,
@@ -930,7 +951,8 @@
     background-color: $gray-header-light;
     color: $dark-gray-center;
   }
-  .risk-panel-table td,
+  .ui-table td,
+  .closure-table td,
   .project-stack-table td,
   .project-manager-table td,
   .schedule-table td,
@@ -962,7 +984,8 @@
   }
   .project-details-form,
   .project-stack-table-wrapper,
-  .risk-panel-table-container,
+  .ui-table-container,
+  .closure-table-container,
   .project-plan-form,
   .tab-section-block,
   .project-charter-form,
@@ -984,6 +1007,11 @@
 
   .document-buttons-I,
   .header-project-risk,
+  .sub-header-add-document,
+  .header-request-stake-holder,
+  .subheader-project-manager,
+  .closure-header-action,
+  .ui-header-action,
   .header-charter-stack {
     background: $gray-gradient;
     border: 2px solid $medium-gray;
@@ -992,7 +1020,8 @@
   }
 
   // Risk-Modal
-  .addrisk-modal-overlay,
+  .ui-modal-overlay,
+  .closure-modal-overlay,
   .stakeholder-modal-overlay,
   .add-document-modal-overlay,
   .LinkModal-overlay,
@@ -1016,7 +1045,8 @@
   .competitionmodal-overlay {
     background-color: $overlay-light;
   }
-  .addrisk-modal,
+  .ui-modal,
+  .closure-modal,
   .stakeholder-modal-body,
   .add-document-modal-box,
   .LinkModal-content,
@@ -1039,7 +1069,8 @@
     background-color: $pure-white;
     box-shadow: $shadow-light-float;
   }
-  .addrisk-modal-header,
+  .ui-modal-header,
+  .closure-modal-header,
   .stackholder-modal-header,
   .adddocument-modal-header,
   .add-doc-panel-modal-header,
@@ -1054,7 +1085,8 @@
     background-color: $soft-gray-bg;
     border-bottom: 1px solid $medium-gray;
   }
-  .addrisk-modal-footer,
+  .ui-modal-footer,
+  .closure-modal-footer,
   .stakeholder-modal-footer,
   .form-buttons,
   .request-stake-footer,
@@ -1064,7 +1096,8 @@
     border-top: 1px solid $medium-gray;
   }
   .stakeholder-modal-container,
-  .addrisk-modal,
+  .ui-modal,
+  .closure-modal,
   .add-document-modal-box,
   .LinkModal-content {
     border: 1px solid $gray-muted-green;
@@ -1096,15 +1129,18 @@
   }
   //Scroll-Bar
   .risk-center-table-container,
-  .risk-panel-table-container,
+  .ui-table-container,
+  .closure-table-container,
   .project-stack-table-wrapper,
   .project-manager-table-container {
     scrollbar-color: $medium-gray transparent;
   }
   .risk-center-table-container::-webkit-scrollbar-thumb,
   .risk-center-table-container::-webkit-scrollbar-track,
-  .risk-panel-table-container::-webkit-scrollbar-thumb,
-  .risk-panel-table-container::-webkit-scrollbar-track,
+  .ui-table-container::-webkit-scrollbar-thumb,
+  .ui-table-container::-webkit-scrollbar-track,
+  .closure-table-container::-webkit-scrollbar-thumb,
+  .closure-table-container::-webkit-scrollbar-track,
   .project-stack-table-wrapper::-webkit-scrollbar-thumb,
   .project-stack-table-wrapper::-webkit-scrollbar-track,
   .project-manager-table-container::-webkit-scrollbar-thumb,

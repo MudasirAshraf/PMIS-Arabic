@@ -1,0 +1,96 @@
+@use "../../styles/variables" as *;
+.change-data {
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.change-data-row {
+  display: grid;
+  gap: 20px;
+}
+
+.change-data-row.row-1 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.change-data-row.row-2 {
+  grid-template-columns: 1.5fr 1.5fr;
+}
+
+.change-data-row.row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.change-data-row.row-4,
+.change-data-row.row-5 {
+  grid-template-columns: 1fr;
+}
+
+.change-data-row.row-6 {
+  grid-template-columns: 1.5fr 1.5fr;
+}
+
+.change-data-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.change-data-field label {
+  display: block;
+  margin: 12px 0px 8px 0px;
+  text-align: start;
+}
+
+.change-data-field input,
+.change-data-field textarea {
+  padding: 10px;
+  border-radius: 6px;
+}
+.change-data-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.change-data .select__control {
+  border-radius: 6px;
+  min-height: 30px;
+  text-align: right;
+  box-shadow: none;
+}
+.change-data .select__control--is-focused {
+  border-color: $blue-hover;
+  box-shadow: 0 0 0 1px $blue-hover;
+}
+.change-data .select__multi-value {
+  background-color: $light-aqua-border;
+  color: $text-black-light;
+  border-radius: 4px;
+}
+.change-data .select__multi-value__label {
+  padding: 0 6px;
+}
+.change-data .select__multi-value__remove {
+  padding: 0 6px;
+  cursor: pointer;
+}
+.change-data .select__menu {
+  z-index: 100;
+  background-color: $pure-white;
+  text-align: right;
+  color: $text-black-light;
+}
+.change-data .select__option {
+  padding: 8px;
+  cursor: pointer;
+}
+.change-data .select__option--is-selected {
+  background-color: $aquamarine-border;
+  color: $text-black-light;
+}
+.change-data .select__option--is-focused {
+  background-color: $blue-hover;
+}
+@media (max-width: 768px) {
+  .change-data-row {
+    grid-template-columns: 1fr !important;
+  }
+}

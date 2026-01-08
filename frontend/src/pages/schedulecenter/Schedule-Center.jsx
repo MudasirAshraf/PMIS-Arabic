@@ -70,38 +70,37 @@ const ScheduleCenter = () => {
   ]);
 
   const [dependencies, setDependencies] = useState([
-  {
-    id: 1,
-    fromTask: "مهمة 1",
-    fromStart: "01/05/2024",
-    fromEnd: "01/06/2024",
-    type: "Finish-to-Start",
-    toTask: "مهمة 2",
-    toStart: "02/06/2024",
-    toEnd: "10/06/2024",
-  },
-  {
-    id: 2,
-    fromTask: "تحليل المتطلبات",
-    fromStart: "05/05/2024",
-    fromEnd: "15/05/2024",
-    type: "Start-to-Start",
-    toTask: "تصميم النظام",
-    toStart: "15/05/2024",
-    toEnd: "25/05/2024",
-  },
-  {
-    id: 3,
-    fromTask: "برمجة قاعدة البيانات",
-    fromStart: "20/05/2024",
-    fromEnd: "30/05/2024",
-    type: "Finish-to-Finish",
-    toTask: "اختبارات النظام",
-    toStart: "25/05/2024",
-    toEnd: "30/05/2024",
-  },
-]);
-
+    {
+      id: 1,
+      fromTask: "مهمة 1",
+      fromStart: "01/05/2024",
+      fromEnd: "01/06/2024",
+      type: "Finish-to-Start",
+      toTask: "مهمة 2",
+      toStart: "02/06/2024",
+      toEnd: "10/06/2024",
+    },
+    {
+      id: 2,
+      fromTask: "تحليل المتطلبات",
+      fromStart: "05/05/2024",
+      fromEnd: "15/05/2024",
+      type: "Start-to-Start",
+      toTask: "تصميم النظام",
+      toStart: "15/05/2024",
+      toEnd: "25/05/2024",
+    },
+    {
+      id: 3,
+      fromTask: "برمجة قاعدة البيانات",
+      fromStart: "20/05/2024",
+      fromEnd: "30/05/2024",
+      type: "Finish-to-Finish",
+      toTask: "اختبارات النظام",
+      toStart: "25/05/2024",
+      toEnd: "30/05/2024",
+    },
+  ]);
 
   const totalTasks = data.reduce(
     (acc, task) => acc + 1 + (task.children?.length || 0),
@@ -171,51 +170,48 @@ const ScheduleCenter = () => {
   };
 
   // Save
-const handleSaveTask = (task) => {
-  const formattedTask = {
-    ...task,
-    startDate: formatToDisplayDate(task.startDate),
-    endDate: formatToDisplayDate(task.endDate),
-  };
+  const handleSaveTask = (task) => {
+    const formattedTask = {
+      ...task,
+      startDate: formatToDisplayDate(task.startDate),
+      endDate: formatToDisplayDate(task.endDate),
+    };
 
-  if (editTask) {
-    let updated = false;
+    if (editTask) {
+      let updated = false;
 
-    const newData = data.map((parent) => {
-      if (parent.id === task.id) {
-        updated = true;
-        return { ...parent, ...formattedTask };
-      }
-
-      const updatedChildren = parent.children?.map((child) => {
-        if (child.id === task.id) {
+      const newData = data.map((parent) => {
+        if (parent.id === task.id) {
           updated = true;
-          return { ...child, ...formattedTask };
+          return { ...parent, ...formattedTask };
         }
-        return child;
+
+        const updatedChildren = parent.children?.map((child) => {
+          if (child.id === task.id) {
+            updated = true;
+            return { ...child, ...formattedTask };
+          }
+          return child;
+        });
+
+        return { ...parent, children: updatedChildren };
       });
 
-      return { ...parent, children: updatedChildren };
-    });
-
-    if (updated) {
-      setData(newData);
+      if (updated) {
+        setData(newData);
+      }
+    } else {
+      const newTask = {
+        ...formattedTask,
+        id: task.id || Date.now(),
+        children: [],
+      };
+      setData((prev) => [...prev, newTask]);
     }
-  } else {
-    const newTask = {
-      ...formattedTask,
-      id: task.id || Date.now(),
-      children: []
-    };
-    setData((prev) => [...prev, newTask]);
-  }
 
-  setEditTask(null);
-  setModalOpen(false);
-};
-
-
-
+    setEditTask(null);
+    setModalOpen(false);
+  };
 
   return (
     <div className="main-container-schedule-center">
@@ -236,7 +232,7 @@ const handleSaveTask = (task) => {
         </div>
         <div>
           <button
-          className="add-modal-button fs-md fw-600 lh-1-2"
+            className="add-modal-button fs-md fw-600 lh-1-2"
             onClick={() => {
               setEditTask(null);
               setModalOpen(true);
@@ -268,7 +264,10 @@ const handleSaveTask = (task) => {
       {/* Filter & Upload */}
       <div className="filter-container-sc">
         <div className="schedule-buttton-container">
-          <button className="query-btn fs-md fw-700 lh-1" onClick={() => setFilter("الكل")}>
+          <button
+            className="query-btn fs-md fw-700 lh-1"
+            onClick={() => setFilter("الكل")}
+          >
             الكل
           </button>
           <button
@@ -277,7 +276,10 @@ const handleSaveTask = (task) => {
           >
             متأخر جدا
           </button>
-          <button className="query-btn fs-md fw-700 lh-1" onClick={() => setFilter("مغلق")}>
+          <button
+            className="query-btn fs-md fw-700 lh-1"
+            onClick={() => setFilter("مغلق")}
+          >
             مغلق
           </button>
         </div>
@@ -298,7 +300,10 @@ const handleSaveTask = (task) => {
           >
             تعيين خط الأساسي
           </button>
-          <button className="query-btn fs-md fw-700 lh-1" onClick={triggerFileInput}>
+          <button
+            className="query-btn fs-md fw-700 lh-1"
+            onClick={triggerFileInput}
+          >
             رفع جدول الزمني
           </button>
         </div>
@@ -345,20 +350,70 @@ const handleSaveTask = (task) => {
               <th>تاريخ النهاية</th>
             </tr>
           </thead>
-         <tbody className="dependency-table-body fs-m fw-500 lh-1-2">
-  {dependencies.map((dep, idx) => (
-    <tr key={dep.id}>
-      <td>{idx + 1}</td>
-      <td>{dep.fromTask}</td>
-      <td>{dep.fromStart}</td>
-      <td>{dep.fromEnd}</td>
-      <td>{dep.type}</td>
-      <td>{dep.toTask}</td>
-      <td>{dep.toStart}</td>
-      <td>{dep.toEnd}</td>
-    </tr>
-  ))}
-</tbody>
+
+          <tbody className="dependency-table-body fs-m fw-500 lh-1-2">
+            {dependencies.map((dep, idx) => (
+              <tr key={dep.id}>
+                <td>{idx + 1}</td>
+
+                <td>
+                  <span
+                    className="cell-text"
+                    onMouseEnter={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      e.currentTarget.style.setProperty(
+                        "--tooltip-top",
+                        `${rect.top + rect.height}px`
+                      );
+                      e.currentTarget.style.setProperty(
+                        "--tooltip-left",
+                        `${rect.left}px`
+                      );
+                    }}
+                    data-fulltext={dep.fromTask ?? "_"}
+                  >
+                    {dep.fromTask ?? "_"}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.fromStart}>
+                    {dep.fromStart}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.fromEnd}>
+                    {dep.fromEnd}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.type}>
+                    {dep.type}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.toTask}>
+                    {dep.toTask}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.toStart}>
+                    {dep.toStart}
+                  </span>
+                </td>
+
+                <td>
+                  <span className="cell-text" data-fulltext={dep.toEnd}>
+                    {dep.toEnd}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

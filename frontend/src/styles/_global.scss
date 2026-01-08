@@ -135,7 +135,7 @@ body {
 }
 // Common-CSS 
 // Risk-Modal, Issue-Modal, Action-Modal, Stake-Modal
-.edit-risk-modal-overlay {
+.layout-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -149,8 +149,7 @@ body {
   overflow-y: auto;
 }
 
-/* Modal content */
-.edit-risk-modal-content {
+.layout-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -167,12 +166,12 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.edit-risk-modal-content::-webkit-scrollbar {
+.layout-container::-webkit-scrollbar {
   display: none;
 }
 
 /* Header */
-.edit-risk-modal-header {
+.layout-header {
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -184,11 +183,11 @@ body {
   z-index: 10;
   border-radius: 10px 10px 0 0;
 }
-.second-header-risk-modal {
+.layout-header-actions {
   display: flex;
   gap: 10px;
 }
-.risk-close-btn {
+.layout-close-btn {
   position: absolute;
   top: 0.5%;
   left: 0.5%;
@@ -199,7 +198,7 @@ body {
 }
 
 /* Body grid */
-.edit-risk-modal-body {
+.layout-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
@@ -210,11 +209,11 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.edit-risk-modal-body::-webkit-scrollbar {
+.layout-grid::-webkit-scrollbar {
   display: none;
 }
 
-.labels-div {
+.layout-field {
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -226,9 +225,9 @@ body {
   font-weight: 500;
 }
 
-.edit-risk-modal-body input,
-.edit-risk-modal-body textarea,
-.labels-div select {
+.layout-grid input,
+.layout-grid textarea,
+.layout-field select {
   width: 100%;
   padding: 8px;
   font-size: 16px;
@@ -239,32 +238,31 @@ body {
   color: $text-black-light;
 }
 
-.edit-risk-modal-body textarea {
+.layout-grid textarea {
   grid-column: span 6;
   min-height: 80px;
   resize: vertical;
 }
 
-.labels-div input[disabled] {
+.layout-field input[disabled] {
   grid-column: span 6;
   cursor: not-allowed;
 }
 
-.labels-div input[type="number"],
-.labels-div input[type="date"],
-.labels-div select {
+.layout-field input[type="number"],
+.layout-field input[type="date"],
+.layout-field select {
   grid-column: span 3;
 }
 
-.labels-div span {
+.layout-field span {
   color: $red-light;
   font-size: 13px;
   margin-top: 3px;
   display: block;
 }
 
-/* Footer buttons */
-.edit-risk-modal-footer {
+.layout-footer {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
@@ -273,25 +271,24 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .edit-risk-modal-content {
+  .layout-container {
   width: 90%;
   }
-  .edit-risk-modal-body {
+  .layout-grid {
     grid-template-columns: 1fr;
   }
-  .second-header-risk-modal {
+  .layout-header-actions {
     display: flex;
     gap: 5px;
   }
-  .labels-div {
+  .layout-field {
     grid-column: span 6;
     margin-bottom: 15px;
   }
 }
 
-// Common css for project-charter, project-plan 
-.main-container-project-plan,
-.main-container-project-charter {
+// Common css for Project-Charter, Project-Plan, Project-Closure, Change-Request 
+.main-content-wrapper {
   max-width: 1440px;
   margin: 0 auto;
   // padding: 10px 20px;
@@ -318,6 +315,11 @@ body {
 .header-icon {
   height: 30px;
   width: 30px;
+}
+.top-corner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .progress-bar-wrapper {
   width: 100%;
@@ -369,12 +371,229 @@ body {
     padding: 10px;
   }
 }
-// shuffle-Buttons
+
+// CSS for Project-Charter-Risk, Project-Plan-Risks, Communication-Plan, StakeHolders
+.ui-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.ui-header-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid $focus-gray-border;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+.ui-header-action:hover {
+  transform: scale(1.05);
+  box-shadow: $subtle-shadow-dark;
+}
+
+.ui-icon-sm {
+  height: 20px;
+  width: 20px;
+}
+// Table  
+// Also used this table-class in Previous-Change Component
+.ui-table-container {
+  padding: 5px 8px;
+  overflow-x: auto;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+.ui-table-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ui-table-container::-webkit-scrollbar-thumb,
+.ui-table-container::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+.ui-table th {
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.ui-table td {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .ui-header-container {
+    justify-content: end;
+  }
+ .ui-header-action {
+    padding: 6px 12px;
+  }
+  .ui-header-action p {
+    font-size: 0.9rem !important;
+  }
+ .ui-icon-sm {
+    width: 18px;
+    height: 18px;
+  }
+  .ui-table th,
+  .ui-table td {
+    font-size: 0.85rem !important;
+    padding: 8px;
+  }
+ .ui-table {
+    min-width: 500px;
+  }
+}
+// Modal
+.ui-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.ui-modal {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+  animation: addrisk-fadeInUp 0.3s ease;
+}
+@keyframes addrisk-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ui-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.ui-modal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ui-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  top: -10px;
+  left: -9px;
+  position: absolute;
+}
+.ui-modal-body {
+  padding: 10px;
+}
+.ui-modal-body label {
+  display: block;
+  text-align: start;
+}
+.ui-modal-body textarea,
+.ui-modal-body input {
+  width: 100%;
+  background-color: $pure-white;
+  color: $text-black-light;
+  padding: 4px;
+  border: 1px solid $focus-gray-border;
+  border-radius: 5px;
+  margin-top: 5px;
+  align-items: center;
+  outline: none;
+}
+.ui-modal-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.ui-modal-row label {
+  flex: 1;
+}
+.ui-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 0px 0px 8px 8px;
+}
+@keyframes addrisk-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .ui-modal {
+    width: 95%;
+    max-width: 95%;
+  }
+ .ui-modal-header h3 {
+    font-size: 0.95rem !important;
+    text-align: left;
+  }
+ .ui-modal-body {
+    padding: 8px;
+  }
+  .ui-modal-body label {
+    font-size: 0.95rem !important;
+  }
+  .ui-modal-body textarea,
+  .ui-modal-body input {
+    font-size: 0.9rem !important;
+    padding: 6px;
+  }
+ .ui-modal-row {
+    flex-direction: column;
+  }
+}
 .shuffle-btns-container {
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: flex-end;
   margin-top: 14px;
+}
+.submit-stack-button {
+  background-color: $red-light;
+  color: $pure-white;
+  padding: 8px 16px;
+  border-radius: 6px;
 }
 

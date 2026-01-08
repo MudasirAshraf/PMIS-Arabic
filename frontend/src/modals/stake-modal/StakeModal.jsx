@@ -90,10 +90,10 @@ const StakeModal = ({ isOpen, onClose, stakeData, onSave }) => {
   };
 
   return (
-    <div className="edit-risk-modal-overlay">
-      <div className="edit-risk-modal-content">
-        <div className="edit-risk-modal-header">
-          <div className="second-header-risk-modal">
+    <div className="layout-overlay">
+      <div className="layout-container">
+        <div className="layout-header">
+          <div className="layout-header-actions">
             <GrAppsRounded
               size={20}
               color={
@@ -102,13 +102,13 @@ const StakeModal = ({ isOpen, onClose, stakeData, onSave }) => {
             />
             <p>إضافة أصحاب المصلحة</p>
           </div>
-          <button className="risk-close-btn" onClick={onClose}>
+          <button className="layout-close-btn" onClick={onClose}>
             ×
           </button>
         </div>
-        <div className="edit-risk-modal-body">
+        <div className="layout-grid">
           {Object.keys(fieldLabels).map((field, index) => (
-            <div key={index} className="labels-div">
+            <div key={index} className="layout-field">
               <label className="fs-md fw-700 lh-1-2">
                 {fieldLabels[field]}
               </label>
@@ -132,7 +132,7 @@ const StakeModal = ({ isOpen, onClose, stakeData, onSave }) => {
             </div>
           ))}
         </div>
-        <div className="edit-risk-modal-footer">
+        <div className="layout-footer">
           <button
             className="cancel-button fs-lg fw-600 lh-1-2"
             onClick={onClose}

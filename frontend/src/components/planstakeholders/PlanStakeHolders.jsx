@@ -1,66 +1,64 @@
 import React, { useState, useEffect } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { PiSquaresFour } from "react-icons/pi";
-import { toast, ToastContainer, Slide } from "react-toastify";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
-  const [plans, setPlans] = useState([]);
-  const [showPlanModal, setShowPlanModal] = useState(false);
+const PlanStakeholders = ({ goToPreviousTab }) => {
+  const [stakeholders, setStakeholders] = useState([]);
+  const [showStakeholderModal, setShowStakeholderModal] = useState(false);
 
   const [form, setForm] = useState({
-    description: "",
-    impact: "",
-    likelihood: "",
-    owner: "",
-    mitigation: "",
+    stakeholdername: "",
+    jobtitle: "",
+    type: "",
+    roleandresp: "",
   });
+
   const [errors, setErrors] = useState({});
 
-  const toggleModal = () => setShowPlanModal(!showPlanModal);
+  const toggleModal = () => setShowStakeholderModal(!showStakeholderModal);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+
     if (errors[name] && value.trim() !== "") {
       setErrors((prevErrors) => {
-        const updated = { ...prevErrors };
-        delete updated[name];
-        return updated;
+        const updatedErrors = { ...prevErrors };
+        delete updatedErrors[name];
+        return updatedErrors;
       });
     }
   };
 
   const handleSave = () => {
     const newErrors = {};
-    if (!form.description.trim()) newErrors.description = "مطلوب";
-    if (!form.impact.trim()) newErrors.impact = "مطلوب";
-    if (!form.likelihood.trim()) newErrors.likelihood = "مطلوب";
-    if (!form.owner.trim()) newErrors.owner = "مطلوب";
-    if (!form.mitigation.trim()) newErrors.mitigation = "مطلوب";
+    if (!form.stakeholdername.trim()) newErrors.stakeholdername = "مطلوب";
+    if (!form.jobtitle.trim()) newErrors.jobtitle = "مطلوب";
+    if (!form.type.trim()) newErrors.type = "مطلوب";
+    if (!form.roleandresp.trim()) newErrors.roleandresp = "مطلوب";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      toast.error("يرجى تعبئة جميع الحقول المطلوبة");
+      toast.error("يرجى ملء جميع الحقول المطلوبة");
       return;
     }
 
-    setPlans([...plans, form]);
+    setStakeholders([...stakeholders, form]);
     setForm({
-      description: "",
-      impact: "",
-      likelihood: "",
-      owner: "",
-      mitigation: "",
+      stakeholdername: "",
+      jobtitle: "",
+      type: "",
+      roleandresp: "",
     });
     setErrors({});
-    setShowPlanModal(false);
-    toast.success("تمت إضافة الخطر بنجاح");
+    setShowStakeholderModal(false);
+    toast.success("تمت إضافة صاحب العلاقة بنجاح");
   };
 
   useEffect(() => {
-    if (showPlanModal) {
+    if (showStakeholderModal) {
       document.body.classList.add("modal-open");
     } else {
       document.body.classList.remove("modal-open");
@@ -69,44 +67,41 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
     return () => {
       document.body.classList.remove("modal-open");
     };
-  }, [showPlanModal]);
-
+  }, [showStakeholderModal]);
   return (
     <div>
       {/* Header */}
       <div className="ui-header-container">
         <div className="ui-header-action" onClick={toggleModal}>
           <IoMdAdd className="ui-icon-sm" />
-          <p className="fs-md fw-700 lh-1-2">إضافة الخطر</p>
+          <p className="fs-md fw-700 lh-1-2">إضافة صاحب العلاقة</p>
         </div>
       </div>
 
-      {/* Risk Table */}
-      <div className="uil-table-container">
+      {/* Stakeholders-Table */}
+      <div className="ui-table-container">
         <table className="ui-table">
           <thead className="fs-md lh-1-2 fw-700">
             <tr>
-              <th>وصف الخطر</th>
-              <th>تأثير الخطر</th>
-              <th>احتمالية حدوث الخطر</th>
-              <th>المالك</th>
-              <th>لتخفيف الخطر</th>
+              <th>اسم صاحب العلاقة</th>
+              <th>المسمى الوظيفي </th>
+              <th>النوع</th>
+              <th>الدور والمسؤوليات بالمشروع</th>
             </tr>
           </thead>
           <tbody className="fs-m fw-500 lh-1">
-            {plans.length > 0 ? (
-              plans.map((plan, idx) => (
+            {stakeholders.length > 0 ? (
+              stakeholders.map((stakeholder, idx) => (
                 <tr key={idx}>
-                  <td>{plan.description}</td>
-                  <td>{plan.impact}</td>
-                  <td>{plan.likelihood}</td>
-                  <td>{plan.owner}</td>
-                  <td>{plan.mitigation}</td>
+                  <td>{stakeholder.stakeholdername}</td>
+                  <td>{stakeholder.jobtitle}</td>
+                  <td>{stakeholder.type}</td>
+                  <td>{stakeholder.roleandresp}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="5" style={{ textAlign: "start" }}>
+                <td colSpan="4" style={{ textAlign: "start" }}>
                   لا يوجد
                 </td>
               </tr>
@@ -116,13 +111,13 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
       </div>
 
       {/* Modal */}
-      {showPlanModal && (
+      {showStakeholderModal && (
         <div className="ui-modal-overlay">
           <div className="ui-modal">
             <div className="ui-modal-header">
               <div className="ui-modal-header-left">
                 <PiSquaresFour className="ui-icon-sm" />
-                <h3>إضافة الخطر</h3>
+                <h3>إضافة صاحب العلاقة</h3>
               </div>
               <button className="ui-modal-close-btn" onClick={toggleModal}>
                 ×
@@ -131,84 +126,67 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
             <div className="ui-modal-body">
               <div className="ui-modal-row">
                 <label className="fs-md fw-700 lh-1-2">
-                  وصف الخطر <span>*</span>
-                  <textarea
-                    name="description"
-                    placeholder="وصف الخطر"
-                    value={form.description}
+                  اسم <span>*</span>
+                  <input
+                    type="text"
+                    name="stakeholdername"
+                    placeholder="اسم"
+                    value={form.stakeholdername}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.description && (
+                  {errors.stakeholdername && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.description}
+                      {errors.stakeholdername}
                     </span>
                   )}
                 </label>
-
                 <label className="fs-md fw-700 lh-1-2">
-                  تخفيف الخطر <span>*</span>
-                  <textarea
-                    name="mitigation"
-                    placeholder="تخفيف الخطر"
-                    value={form.mitigation}
+                  المسؤول<span>*</span>
+                  <input
+                    type="text"
+                    name="jobtitle"
+                    placeholder="المسمى الوظيفي"
+                    value={form.jobtitle}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.mitigation && (
+                  {errors.jobtitle && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.mitigation}
+                      {errors.jobtitle}
                     </span>
                   )}
                 </label>
               </div>
               <div className="ui-modal-row">
                 <label className="fs-md fw-700 lh-1-2">
-                  تأثير الخطر <span>*</span>
+                  النوع <span>*</span>
                   <input
-                    name="impact"
-                    type="number"
-                    min="1"
-                    value={form.impact}
-                    onChange={handleChange}
-                    className="fs-md fw-500 lh-1-2"
-                  />
-                  {errors.impact && (
-                    <span className="error fs-sm fw-700 lh-1">
-                      {errors.impact}
-                    </span>
-                  )}
-                </label>
-
-                <label className="fs-md fw-700 lh-1-2">
-                  احتمالية حدوث الخطر <span>*</span>
-                  <input
-                    name="likelihood"
-                    type="number"
-                    min="1"
-                    value={form.likelihood}
-                    onChange={handleChange}
-                    className="fs-md fw-500 lh-1-2"
-                  />
-                  {errors.likelihood && (
-                    <span className="error fs-sm fw-700 lh-1">
-                      {errors.likelihood}
-                    </span>
-                  )}
-                </label>
-
-                <label className="fs-md fw-700 lh-1-2">
-                  المالك <span>*</span>
-                  <input
-                    name="owner"
                     type="text"
-                    value={form.owner}
+                    name="type"
+                    placeholder="النوع"
+                    value={form.type}
                     onChange={handleChange}
                     className="fs-md fw-500 lh-1-2"
                   />
-                  {errors.owner && (
+                  {errors.type && (
                     <span className="error fs-sm fw-700 lh-1">
-                      {errors.owner}
+                      {errors.type}
+                    </span>
+                  )}
+                </label>
+                <label className="fs-md fw-700 lh-1-2">
+                  الدور والمسؤوليات بالمشروع<span>*</span>
+                  <textarea
+                    name="roleandresp"
+                    placeholder="الدور والمسؤوليات بالمشروع"
+                    value={form.roleandresp}
+                    onChange={handleChange}
+                    className="fs-md fw-500 lh-1-2"
+                  />
+                  {errors.roleandresp && (
+                    <span className="error fs-sm fw-700 lh-1">
+                      {errors.roleandresp}
                     </span>
                   )}
                 </label>
@@ -242,11 +220,12 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
             السابق
           </button>
         )}
-        {goToNextTab && (
-          <button className="next fs-md fw-600 lh-1-2" onClick={goToNextTab}>
-            التالي
-          </button>
-        )}
+        <button
+          className="submit-stack-button fs-md fw-600 lh-1-2"
+          onClick={() => toast.success("تم إرسال النموذج بنجاح")}
+        >
+          إرسال
+        </button>
       </div>
       {/* Toast-Container */}
       <ToastContainer
@@ -260,7 +239,7 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
           backgroundColor: "rgba(1,113,98,1)",
           boxShadow: "none",
           color: "#FFF",
-          fontSize: "14px",
+          fontSize: "1rem",
           padding: "8px 12px",
         }}
       />
@@ -268,4 +247,4 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
   );
 };
 
-export default ProjectPlanRisks;
+export default PlanStakeholders;

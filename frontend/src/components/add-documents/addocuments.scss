@@ -1,0 +1,112 @@
+@use "../../styles/variables" as *;
+.add-document-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.sub-header-add-document {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid $focus-gray-border;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+.sub-header-add-document:hover {
+  transform: scale(1.05);
+  box-shadow: $subtle-shadow-dark;
+}
+
+.add-document-icon {
+  height: 20px;
+  width: 20px;
+}
+@media (max-width: 768px) {
+  .add-document-header-container {
+    justify-content: end;
+  }
+  .sub-header-add-document {
+    padding: 6px 12px;
+  }
+  .sub-header-add-document p {
+    font-size: 0.9rem !important;
+  }
+  .add-document-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+// Table
+.project-stack-table-wrapper {
+  padding: 5px 8px;
+  overflow-x: auto;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 400px;
+  margin-top: 20px;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+.project-stack-table-wrapper::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.project-stack-table-wrapper::-webkit-scrollbar-thumb,
+.project-stack-table-wrapper::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+.project-stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.project-stack-table th {
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.project-stack-table td {
+  padding: 0.45rem;
+  text-align: center;
+}
+.project-stack-note {
+  margin-top: 10px;
+  text-align: start;
+}
+@media (max-width: 768px) {
+  .project-stack-table-wrapper {
+    padding: 0.5rem;
+  }
+  .project-stack-table th,
+  .project-stack-table td {
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+  .project-stack-note {
+    font-size: 0.8rem !important;
+  }
+  .project-stack-table {
+    min-width: 500px;
+  }
+}
+@media (max-width: 480px) {
+  .project-stack-table th,
+  .project-stack-table td {
+    padding: 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+  .project-stack-note {
+    font-size: 0.75rem !important;
+    text-align: start;
+  }
+  .project-stack-table {
+    min-width: 500px;
+  }
+}

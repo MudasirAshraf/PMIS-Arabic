@@ -3,7 +3,6 @@ import { IoMdAdd } from "react-icons/io";
 import { PiSquaresFour } from "react-icons/pi";
 import { toast, ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./projectchartrisk.scss";
 
 const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
   const [showRiskModal, setShowRiskModal] = useState(false);
@@ -66,16 +65,16 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
   return (
     <div>
       {/* Header */}
-      <div className="container-header-risk">
-        <div className="header-project-risk" onClick={toggleModal}>
-          <IoMdAdd className="project-icon" />
+      <div className="ui-header-container">
+        <div className="ui-header-action" onClick={toggleModal}>
+          <IoMdAdd className="ui-icon-sm" />
           <p className="fs-md fw-700 lh-1-2">إضافة الخطر</p>
         </div>
       </div>
 
       {/* Risk Table */}
-      <div className="risk-panel-table-container">
-        <table className="risk-panel-table">
+      <div className="ui-table-container">
+        <table className="ui-table">
           <thead className="fs-md lh-1-2 fw-700">
             <tr>
               <th>وصف الخطر</th>
@@ -107,18 +106,18 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
 
       {/* Modal */}
       {showRiskModal && (
-        <div className="addrisk-modal-overlay">
-          <div className="addrisk-modal">
-            <div className="addrisk-modal-header">
-              <div className="sub-addrisk-modal-header">
-                <PiSquaresFour className="project-icon" />
+        <div className="ui-modal-overlay">
+          <div className="ui-modal">
+            <div className="ui-modal-header">
+              <div className="ui-modal-header-left">
+                <PiSquaresFour className="ui-icon-sm" />
                 <h3>إضافة الخطر</h3>
               </div>
-              <button className="addrisk-close-btn" onClick={toggleModal}>
+              <button className="ui-modal-close-btn" onClick={toggleModal}>
                 ×
               </button>
             </div>
-            <div className="addrisk-modal-body">
+            <div className="ui-modal-body">
               <label className="fs-md fw-700 lh-1-2">
                 وصف الخطر <span>*</span>
                 <textarea
@@ -149,7 +148,7 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
                   </span>
                 )}
               </label>
-              <div className="addrisk-modal-row">
+              <div className="ui-modal-row">
                 <label className="fs-md fw-700 lh-1-2">
                   تأثير الخطر <span>*</span>
                   <input
@@ -184,7 +183,7 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
                 </label>
               </div>
             </div>
-            <div className="addrisk-modal-footer">
+            <div className="ui-modal-footer">
               <button
                 className="cancel-button fs-md fw-600 lh-1-2"
                 onClick={toggleModal}
@@ -201,7 +200,7 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
           </div>
         </div>
       )}
-      <div className="shuffle-btns-cotainer">
+      <div className="shuffle-btns-container">
         {goToPreviousTab && (
           <button
             className="prev fs-md fw-600 lh-1-2"

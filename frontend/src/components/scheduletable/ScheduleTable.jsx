@@ -9,6 +9,23 @@ const ScheduleTable = ({ data, onDelete, onEdit }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   const toggleRow = (id) => {
     setExpandedRow(expandedRow === id ? null : id);
   };
@@ -49,6 +66,7 @@ const ScheduleTable = ({ data, onDelete, onEdit }) => {
             <th>الإجراءات</th>
           </tr>
         </thead>
+
         <tbody className="schedule-table-body fs-m fw-500 lh-1-2">
           {data.map((row, parentIndex) => (
             <React.Fragment key={row.id}>
@@ -64,14 +82,14 @@ const ScheduleTable = ({ data, onDelete, onEdit }) => {
                   )}
                 </td>
                 <td>{parentIndex + 1}</td>
-                <td>{row.title}</td>
-                <td>{row.startDate}</td>
-                <td>{row.endDate}</td>
-                <td>{row.planned}</td>
-                <td>{row.actual}</td>
-                <td>{row.cost}</td>
-                <td>{row.available}</td>
-                <td>{row.status}</td>
+                <td>{renderCell(row.title)}</td>
+                <td>{renderCell(row.startDate)}</td>
+                <td>{renderCell(row.endDate)}</td>
+                <td>{renderCell(row.planned)}</td>
+                <td>{renderCell(row.actual)}</td>
+                <td>{renderCell(row.cost)}</td>
+                <td>{renderCell(row.available)}</td>
+                <td>{renderCell(row.status)}</td>
                 <td>
                   <MdEdit
                     className="schedule-table-action-icon"
@@ -89,16 +107,16 @@ const ScheduleTable = ({ data, onDelete, onEdit }) => {
                   <tr key={child.id} className="schedule-table-child-row">
                     <td></td>
                     <td>
-                      {parentIndex + 1}.{childIndex + 1}{" "}
+                      {parentIndex + 1}.{childIndex + 1}
                     </td>
-                    <td>↳ {child.title}</td>
-                    <td>{child.startDate}</td>
-                    <td>{child.endDate}</td>
-                    <td>{child.planned}</td>
-                    <td>{child.actual}</td>
-                    <td>{child.cost}</td>
-                    <td>{child.available}</td>
-                    <td>{child.status}</td>
+                    <td>{renderCell(`↳ ${child.title}`)}</td>
+                    <td>{renderCell(child.startDate)}</td>
+                    <td>{renderCell(child.endDate)}</td>
+                    <td>{renderCell(child.planned)}</td>
+                    <td>{renderCell(child.actual)}</td>
+                    <td>{renderCell(child.cost)}</td>
+                    <td>{renderCell(child.available)}</td>
+                    <td>{renderCell(child.status)}</td>
                     <td>
                       <MdEdit
                         className="schedule-table-action-icon"
@@ -115,7 +133,7 @@ const ScheduleTable = ({ data, onDelete, onEdit }) => {
           ))}
         </tbody>
       </table>
-      {/* Delete Modal */}
+
       <DeleteModal
         isOpen={isModalOpen}
         onConfirm={handleConfirmDelete}

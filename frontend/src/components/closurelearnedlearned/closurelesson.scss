@@ -1,11 +1,11 @@
 @use "../../styles/variables" as *;
-.container-header-risk {
+.closure-header-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 10px;
 }
-.header-project-risk {
+.closure-header-action {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -17,17 +17,17 @@
   transition: transform 0.1s ease, box-shadow 0.2s ease;
   user-select: none;
 }
-.header-project-risk:hover {
+.closure-header-action:hover {
   transform: scale(1.05);
   box-shadow: $subtle-shadow-dark;
 }
 
-.project-icon {
+.closure-icon {
   height: 20px;
   width: 20px;
 }
 // Table
-.risk-panel-table-container {
+.closure-table-container {
   padding: 5px 8px;
   overflow-x: auto;
   border-radius: 8px;
@@ -36,60 +36,59 @@
   scrollbar-width: thin;
   -ms-overflow-style: auto;
 }
-.risk-panel-table-container::-webkit-scrollbar {
+.closure-table-container::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.risk-panel-table-container::-webkit-scrollbar-thumb,
-.risk-panel-table-container::-webkit-scrollbar-track {
+.closure-table-container::-webkit-scrollbar-thumb,
+.closure-table-container::-webkit-scrollbar-track {
   border-radius: 6px;
 }
 
-.risk-panel-table {
+.closure-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 600px;
 }
-.risk-panel-table th {
+.closure-table th {
   padding: 12px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 2;
 }
-.risk-panel-table td {
+.closure-table td {
   padding: 10px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 @media (max-width: 768px) {
-  .container-header-risk {
+  .closure-header-container {
     justify-content: end;
   }
-  .header-project-risk {
+  .closure-header-action {
     padding: 6px 12px;
   }
-  .header-project-risk p {
+  .closure-header-action p {
     font-size: 0.9rem !important;
   }
-  .project-icon {
+  .closure-icon {
     width: 18px;
     height: 18px;
   }
-  .risk-panel-table th,
-  .risk-panel-table td {
+  .closure-table th,
+  .closure-table td {
     font-size: 0.85rem !important;
     padding: 8px;
   }
-  .risk-panel-table {
+  .closure-table {
     min-width: 500px;
   }
 }
 // Modal
-.addrisk-modal-overlay {
+.closure-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -100,14 +99,14 @@
   align-items: center;
   z-index: 999;
 }
-.addrisk-modal {
+.closure-modal {
   width: 90%;
-  max-width: 600px;
+  max-width: 1000px;
   border-radius: 8px;
   position: relative;
-  animation: addrisk-fadeInUp 0.3s ease;
+  animation: charter-fadeInUp 0.3s ease;
 }
-@keyframes addrisk-fadeInUp {
+@keyframes charter-fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -117,7 +116,7 @@
     transform: translateY(0);
   }
 }
-.addrisk-modal-header {
+.closure-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,12 +124,12 @@
   border-radius: 8px 8px 0 0;
   position: relative;
 }
-.sub-addrisk-modal-header {
+.closure-modal-header-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.addrisk-close-btn {
+.closure-modal-close-btn {
   background: transparent;
   border: none;
   font-size: 1.4rem;
@@ -139,15 +138,15 @@
   left: -9px;
   position: absolute;
 }
-.addrisk-modal-body {
+.closure-modal-body {
   padding: 10px;
 }
-.addrisk-modal-body label {
+.closure-modal-body label {
   display: block;
   text-align: start;
 }
-.addrisk-modal-body textarea,
-.addrisk-modal-body input {
+.closure-modal-body textarea,
+.closure-modal-body input {
   width: 100%;
   background-color: $pure-white;
   color: $text-black-light;
@@ -158,81 +157,64 @@
   align-items: center;
   outline: none;
 }
-.addrisk-modal-row {
-  display: flex;
+@media (max-width: 768px) {
+  .closure-modal {
+    width: 95%;
+    max-width: 95%;
+  }
+  .closure-modal-header h3 {
+    font-size: 0.95rem !important;
+    text-align: left;
+  }
+  .closure-modal-body {
+    padding: 8px;
+  }
+  .closure-modal-body label {
+    font-size: 0.95rem !important;
+  }
+  .closure-modal-body textarea,
+  .closure-modal-body input {
+    font-size: 0.9rem !important;
+    padding: 6px;
+  }
+}
+// Form
+.closure-grd-I,
+.closure-grd-II,
+.closure-grd-III,
+.closure-grd-IV {
+  display: grid;
   gap: 10px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.addrisk-modal-row label {
-  flex: 1;
+.closure-grd-I {
+  grid-template-columns: 1fr 3fr;
 }
-.addrisk-modal-footer {
+
+.closure-grd-II,
+.closure-grd-III {
+  grid-template-columns: 2fr 2fr;
+}
+
+.closure-grd-IV {
+  grid-template-columns: 1fr;
+  max-width: 300px;
+}
+// Responsive
+@media (max-width: 768px) {
+  .closure-grd-I,
+  .closure-grd-II,
+  .closure-grd-III,
+  .closure-grd-IV {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+.closure-modal-footer {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   margin-top: 15px;
   padding: 10px;
   border-radius: 0px 0px 8px 8px;
-}
-
-.addrisk-cancel-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: $pure-white;
-}
-.addrisk-save-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: $pure-white;
-}
-.addrisk-save-btn:hover {
-  background-color: $pine-forest;
-}
-.addrisk-cancel-btn:hover {
-  background-color: $gray-hover;
-}
-@keyframes addrisk-fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media (max-width: 768px) {
-  .addrisk-modal {
-    width: 95%;
-    max-width: 95%;
-  }
-  .addrisk-modal-header h3 {
-    font-size: 0.95rem !important;
-    text-align: left;
-  }
-  .addrisk-modal-body {
-    padding: 8px;
-  }
-  .addrisk-modal-body label {
-    font-size: 0.95rem !important;
-  }
-  .addrisk-modal-body textarea,
-  .addrisk-modal-body input {
-    font-size: 0.9rem !important;
-    padding: 6px;
-  }
-  .addrisk-modal-row {
-    flex-direction: column;
-  }
-}
-.shuffle-btns-cotainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-end;
-  margin-top: 14px;
 }

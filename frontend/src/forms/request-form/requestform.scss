@@ -1,0 +1,60 @@
+@use "../../styles/variables" as *;
+.change-request-form {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.change-request-form label {
+  display: block;
+  margin: 5px 0px 8px 0px;
+  text-align: start;
+}
+.change-request-form input,
+.change-request-form textarea,
+.change-request-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.change-request-form .change-request-error {
+  color: $red-hover-light;
+  display: block;
+  text-align: start;
+}
+
+.change-request-form .change-request-row {
+  display: grid;
+  gap: 15px;
+}
+
+.change-request-form .change-request-row-1 {
+  grid-template-columns: 1fr 3fr;
+}
+
+.change-request-form .change-request-row-2 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.change-request-form .change-request-row-3,
+.change-request-form .change-request-row-4 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.change-request-form .change-request-row-full {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .change-request-form .change-request-row-1,
+  .change-request-form .change-request-row-2,
+  .change-request-form .change-request-row-3,
+  .change-request-form .change-request-row-4 {
+    grid-template-columns: 1fr;
+  }
+}

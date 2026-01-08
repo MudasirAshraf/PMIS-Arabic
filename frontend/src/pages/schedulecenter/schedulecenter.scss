@@ -166,6 +166,12 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.dependency-table td,
+.dependency-table th{
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+}
 @media (max-width: 768px) {
   .dependency-table th,
   .dependency-table td {

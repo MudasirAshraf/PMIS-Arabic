@@ -10,6 +10,26 @@ const WorkflowTable = ({
   onViewHistory,
   columns,
 }) => {
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty(
+          "--tooltip-left",
+          `${rect.left}px`
+        );
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="workflow-table-container">
       <table className="workflow-table">
@@ -26,14 +46,14 @@ const WorkflowTable = ({
           {tableData.map((item, index) => (
             <tr key={`${item.id}-${index}`}>
               <td>{index + 1}</td>
-              <td>{item.projectName}</td>
-              <td>{item.list}</td>
-              <td>{item.stageItem}</td>
-              <td>{item.requester}</td>
-              <td>{item.assignedTo}</td>
-              <td>{item.sentDate}</td>
-              <td>{item.dueDate}</td>
-              <td>{item.status}</td>
+              <td>{renderCell(item.projectName)}</td>
+              <td>{renderCell(item.list)}</td>
+              <td>{renderCell(item.stageItem)}</td>
+              <td>{renderCell(item.requester)}</td>
+              <td>{renderCell(item.assignedTo)}</td>
+              <td>{renderCell(item.sentDate)}</td>
+              <td>{renderCell(item.dueDate)}</td>
+              <td>{renderCell(item.status)}</td>
               <td>
                 <div className="td-icon-container">
                   <FaEye

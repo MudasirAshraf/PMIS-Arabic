@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+.main-container-template-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.main-container-template-card:hover {
+  transform: translateY(-2px);
+}
+.main-container-template-card:nth-child(1) {
+  background: $purple-plum-gradient;
+}
+
+.main-container-template-card:nth-child(2) {
+  background: $cyan-gradient-green;
+}
+
+.main-container-template-card:nth-child(3) {
+  background: $tangerine-blaze-gradient;
+}
+
+.main-container-template-card:nth-child(4) {
+  background: $yellow-gradient;
+}
+
+.main-container-template-card p {
+  word-break: normal;
+  color: $pure-white;
+}

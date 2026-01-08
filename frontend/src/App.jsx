@@ -37,6 +37,11 @@ import POCenter from "./pages/pocenter/PO-Center.jsx";
 import DocumentPanel from "./pages/documentpanel/Document-Panel.jsx";
 import ProjectCharter from "./pages/projectcharter/Project-Charter.jsx";
 import ProjectPlan from "./pages/projectplan/Project-Plan.jsx";
+import ProjectClosure from "./pages/projectclosure/Project-Closure.jsx";
+import ProjectManager from "./pages/project-manager/Project-Manager.jsx";
+import ChangeRequest from "./pages/change-request/Change-Request.jsx";
+import Templates from "./pages/templatelanding/Template-Landing.jsx";
+import Approval from "./pages/approval/Approval.jsx";
 
 function App() {
   const { theme } = useTheme();
@@ -84,6 +89,13 @@ function App() {
             {/* Project-Section */}
             <Route path="/Project-Charter" element={<ProjectCharter/>}/>
             <Route path="/Project-Plan" element={<ProjectPlan/>}/>
+            <Route path="/Project-Closure" element={<ProjectClosure/>}/>
+            <Route path="/Project-Manager" element={<ProjectManager/>}/>
+            {/* Requuest-Change */}
+            <Route path="/Change-Request" element={<ChangeRequest/>}/>
+            {/* Template */}
+            <Route path="/Template-Landing" element={<Templates />} />
+            <Route path="/Approval" element={<Approval />} />
           </Route>
         </Routes>
       </Router>

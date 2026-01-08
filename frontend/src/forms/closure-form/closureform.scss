@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+.project-charter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.prjct-chrt-info-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px;
+}
+
+.prjct-chrt-details-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.prjct-chrt-textarea-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.prjct-chrt-label {
+  display: block;
+  margin-bottom: 6px;
+  text-align: start;
+}
+.prjct-chrt-input,
+.prjct-chrt-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.prjct-chrt-submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-project-charter {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.prjct-chrt-error-message {
+  color: $radical-rose;
+  margin-top: 2px;
+  display: block;
+  text-align: start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prjct-chrt-info-row {
+    grid-template-columns: 1fr;
+  }
+  .prjct-chrt-details-row {
+    grid-template-columns: 1fr;
+  }
+  .prjct-chrt-textarea-row {
+    grid-template-columns: 1fr;
+  }
+}

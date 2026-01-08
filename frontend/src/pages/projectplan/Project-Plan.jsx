@@ -5,9 +5,9 @@ import ProjectPlanOutputs from "../../components/projectplanoutputs/ProjectPlanO
 import ProjectPlanRisks from "../../components/projectplanrisks/ProjectPlanRisks";
 import ConstraintAssumptions from "../../components/constraintassumptions/ConstraintAssumptions";
 import Approvals from "../../components/approvals/Approvals";
-// import CommunicationPlan from "../components/CommunicationPlan";
+import CommunicationPlan from "../../components/communicationplan/CommunicationPlan";
 import EscalationProcess from "../../components/escalationprocess/EscalationProcess";
-// import Stakeholders from "../components/PlanStakeHolders";
+import PlanStakeholders from "../../components/planstakeholders/PlanStakeHolders";
 
 const ProjectPlan = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -56,27 +56,27 @@ const ProjectPlan = () => {
             goToPreviousTab={goToPreviousTab}
           />
         );
-      //   case 6:
-      //     return <CommunicationPlan
-      //     goToNextTab={goToNextTab}
-      //     goToPreviousTab={goToPreviousTab}
-      //     />;
+        case 6:
+          return <CommunicationPlan
+          goToNextTab={goToNextTab}
+          goToPreviousTab={goToPreviousTab}
+          />;
         case 7:
           return <EscalationProcess
           goToNextTab={goToNextTab}
           goToPreviousTab={goToPreviousTab}
           />;
-      //   case 8:
-      //     return <Stakeholders
-      //     goToPreviousTab={goToPreviousTab}
-      //     activeTab={activeTab}
-      //     />;
+        case 8:
+          return <PlanStakeholders
+          goToPreviousTab={goToPreviousTab}
+          activeTab={activeTab}
+          />;
       default:
         return null;
     }
   };
   return (
-    <div className="main-container-project-plan">
+    <div className="main-content-wrapper">
       {/* Header and Progress-Bar Container */}
       <div className="container-progress-wrapper">
         <div className="header-project-section">
