@@ -4,8 +4,8 @@ import "./table.scss";
 
 const Table = ({ columns, displayedData, onDelete, onChat, onEdit }) => {
   return (
-    <div className="risk-center-table-container">
-      <table className="risk-center-table">
+    <div className="data-table-container">
+      <table className="data-table">
         <thead className="fs-md fw-700 lh-1-2">
           <tr>
             {columns.map((col, index) => (
@@ -38,7 +38,7 @@ const Table = ({ columns, displayedData, onDelete, onChat, onEdit }) => {
                   </span>
                 </td>
               ))}
-              <td className="actions-column">
+              <td className="data-table-actions">
                 {onEdit && (
                   <FaEdit
                     className="icon edit-icon"

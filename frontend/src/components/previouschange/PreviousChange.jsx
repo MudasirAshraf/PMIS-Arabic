@@ -27,6 +27,23 @@ const PreviousChange = ({ goToPreviousTab, goToNextTab }) => {
     setDocuments(Documents);
   }, []);
 
+    const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="main-container-previous-change">
       {/* Table-Container */}
@@ -44,10 +61,10 @@ const PreviousChange = ({ goToPreviousTab, goToNextTab }) => {
             {documents.length > 0 ? (
               documents.map((document, idx) => (
                 <tr key={idx}>
-                  <td>{document.code}</td>
-                  <td>{document.requestTitle}</td>
-                  <td>{document.requestDate}</td>
-                  <td>{document.requestType}</td>
+                  <td>{renderCell(document.code)}</td>
+                  <td>{renderCell(document.requestTitle)}</td>
+                  <td>{renderCell(document.requestDate)}</td>
+                  <td>{renderCell(document.requestType)}</td>
                 </tr>
               ))
             ) : (

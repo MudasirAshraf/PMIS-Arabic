@@ -206,6 +206,7 @@
   .add-modal-button,
   .article-modal-title,
   .article-modal-description,
+  .no-result,
   .login-box h2,
   .article-close-btn,
   .add-project-header h3,
@@ -232,6 +233,7 @@
   .responsive-table-Data-IV tbody tr:hover,
   .header-para-templates,
   .first-header-risk-center p,
+  .sub-header-competition p,
   .first-header-document-panel-center p,
   .first-header-workflow-center p,
   .first-header-schedule-center p,
@@ -247,6 +249,8 @@
   .filter-button,
   .risk-center-table th,
   .risk-center-table td,
+  .data-table th,
+  .data-table td,
   .delete-modal-content p,
   .header-video-center,
   .back-button,
@@ -540,6 +544,7 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-thumb,
   .header-risk-center,
+  .competition-header,
   .header-document-panel-center,
   .header-schedule-center,
   .header-epmo-center,
@@ -648,22 +653,27 @@
     box-shadow: $shadow-neutral-fade;
   }
   .risk-center-table,
+  .data-table,
   .competitions-table {
     background-color: $silver-fog-opacity;
   }
   .risk-center-table thead,
+  .data-table thead,
   .competitions-table thead {
     background-color: $pearl-smoke;
   }
-  .risk-center-table tbody tr {
+  .risk-center-table tbody tr,
+  .data-table tbody tr {
     border-bottom: 1px solid $shadow-tint;
   }
   .risk-center-table tbody tr:nth-child(even),
+  .data-table tbody tr:nth-child(even),
   .competitions-table tr:nth-child(even) {
     background-color: $ash-faint;
   }
 
   .risk-center-table tbody tr:hover,
+  .data-table tbody tr:hover,
   .competitions-table tr:hover {
     background-color: $ash-glow-hover;
     transition: 0.3s;
@@ -995,6 +1005,7 @@
   .schedule-table-container,
   .dependency-table-container,
   .risk-center-table-container,
+  .data-table-container,
   .table-BOQ,
   .deliverables-table-container,
   .build-team-table-container,
@@ -1129,6 +1140,7 @@
   }
   //Scroll-Bar
   .risk-center-table-container,
+  .data-table-container,
   .ui-table-container,
   .closure-table-container,
   .project-stack-table-wrapper,
@@ -1137,6 +1149,8 @@
   }
   .risk-center-table-container::-webkit-scrollbar-thumb,
   .risk-center-table-container::-webkit-scrollbar-track,
+  .data-table-container::-webkit-scrollbar-thumb,
+  .data-table-container::-webkit-scrollbar-track,
   .ui-table-container::-webkit-scrollbar-thumb,
   .ui-table-container::-webkit-scrollbar-track,
   .closure-table-container::-webkit-scrollbar-thumb,

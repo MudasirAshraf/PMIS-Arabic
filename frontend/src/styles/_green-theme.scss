@@ -245,6 +245,7 @@
   .para-content-value,
   .po-span,
   .first-header-risk-center p,
+  .sub-header-competition p,
   .first-header-document-panel-center p,
   .first-header-workflow-center p,
   .first-header-schedule-center p,
@@ -258,6 +259,7 @@
   .add-modal-button,
   .epmo-button,
   .search-button,
+  .no-result,
   .query-btn,
   .ui-modal-header h3,
   .closure-modal-header h3,
@@ -277,6 +279,8 @@
   .filter-button,
   .risk-center-table th,
   .risk-center-table td,
+  .data-table th,
+  .data-table td,
   .delete-modal-content p,
   .confirm-btn,
   .para-document,
@@ -540,6 +544,7 @@
   .container-event-card,
   .Section-III-Homepage::-webkit-scrollbar-track,
   .header-risk-center,
+  .competition-header,
   .header-document-panel-center,
   .header-workflow-center,
   .header-schedule-center,
@@ -648,21 +653,26 @@
     box-shadow: $shadow-depth-mid;
   }
   .risk-center-table,
+  .data-table,
   .competitions-table {
     background-color: $deep-emerald-opacity;
   }
   .risk-center-table thead,
-  .competitions-table thead {
+  .competitions-table thead,
+  .data-table thead {
     background-color: $forest-emerald;
   }
-  .risk-center-table tbody tr {
+  .risk-center-table tbody tr,
+  .data-table tbody tr {
     border-bottom: 1px solid $frost-white-glow;
   }
   .risk-center-table tbody tr:nth-child(even),
+  .data-table tbody tr:nth-child(even),
   .competitions-table tr:nth-child(even) {
     background-color: $frost-white-glow;
   }
   .risk-center-table tbody tr:hover,
+  .data-table tbody tr:hover,
   .competitions-table tr:hover {
     background-color: $frost-white-hover;
     transition: 0.3s;
@@ -1019,6 +1029,7 @@
   .schedule-table-container,
   .dependency-table-container,
   .risk-center-table-container,
+  .data-table-container,
   .table-BOQ,
   .deliverables-table-container,
   .build-team-table-container,
@@ -1132,6 +1143,7 @@
   }
   //Scroll-Bar
   .risk-center-table-container,
+  .data-table-container,
   .ui-table-container,
   .closure-table-container,
   .project-stack-table-wrapper,
@@ -1141,6 +1153,8 @@
   }
   .risk-center-table-container::-webkit-scrollbar-thumb,
   .risk-center-table-container::-webkit-scrollbar-track,
+  .data-table-container::-webkit-scrollbar-thumb,
+  .data-table-container::-webkit-scrollbar-track,
   .ui-table-container::-webkit-scrollbar-thumb,
   .ui-table-container::-webkit-scrollbar-track,
   .closure-table-container::-webkit-scrollbar-thumb,

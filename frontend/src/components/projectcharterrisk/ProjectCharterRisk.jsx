@@ -62,6 +62,23 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
     };
   }, [showRiskModal]);
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div>
       {/* Header */}
@@ -87,10 +104,10 @@ const ProjectCharterRisks = ({ goToNextTab, goToPreviousTab }) => {
             {risks.length > 0 ? (
               risks.map((risk, idx) => (
                 <tr key={idx}>
-                  <td>{risk.description}</td>
-                  <td>{risk.impact}</td>
-                  <td>{risk.probability}</td>
-                  <td>{risk.mitigation}</td>
+                  <td>{renderCell(risk.description)}</td>
+                  <td>{renderCell(risk.impact)}</td>
+                  <td>{renderCell(risk.probability)}</td>
+                  <td>{renderCell(risk.mitigation)}</td>
                 </tr>
               ))
             ) : (

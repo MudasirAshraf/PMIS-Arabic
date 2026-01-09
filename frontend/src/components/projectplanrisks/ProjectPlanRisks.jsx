@@ -4,7 +4,6 @@ import { PiSquaresFour } from "react-icons/pi";
 import { toast, ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
   const [plans, setPlans] = useState([]);
   const [showPlanModal, setShowPlanModal] = useState(false);
@@ -71,6 +70,23 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
     };
   }, [showPlanModal]);
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div>
       {/* Header */}
@@ -97,11 +113,11 @@ const ProjectPlanRisks = ({ goToNextTab, goToPreviousTab }) => {
             {plans.length > 0 ? (
               plans.map((plan, idx) => (
                 <tr key={idx}>
-                  <td>{plan.description}</td>
-                  <td>{plan.impact}</td>
-                  <td>{plan.likelihood}</td>
-                  <td>{plan.owner}</td>
-                  <td>{plan.mitigation}</td>
+                  <td>{renderCell(plan.description)}</td>
+                  <td>{renderCell(plan.impact)}</td>
+                  <td>{renderCell(plan.likelihood)}</td>
+                  <td>{renderCell(plan.owner)}</td>
+                  <td>{renderCell(plan.mitigation)}</td>
                 </tr>
               ))
             ) : (

@@ -227,11 +227,11 @@ const DocumentPanel = () => {
         <React.Fragment key={doc.id}>
           <tr>
             <td onClick={() => doc.type === "📁" && toggleFolder(doc.id)}>
-              {doc.name}
+              {renderCell(doc.name)}
             </td>
             <td>{doc.type}</td>
-            <td>{doc.modifiedBy || "-"}</td>
-            <td>{doc.modifiedDate}</td>
+            <td>{renderCell(doc.modifiedBy) || "-"}</td>
+            <td>{renderCell(doc.modifiedDate)}</td>
             <td className="btn-icon-container">
               <button
                 className="action-button edit"
@@ -272,6 +272,23 @@ const DocumentPanel = () => {
         </React.Fragment>
       ));
   };
+
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
 
   return (
     <div className="main-container-Document-Panel">

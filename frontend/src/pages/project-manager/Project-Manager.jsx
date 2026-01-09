@@ -107,13 +107,32 @@ const ProjectManager = () => {
     };
   }, [isEditModalOpen, isAddModalOpen]);
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="main-container-project-manager">
       {/* Header */}
       <div className="header-container-project-manager">
         <div className="header-project-manager">
           <RxPadding className="header-icon" />
-          <p className="fs-lg fw-700 lh-1-5">تعيين مدير المشروع-this is a beta test project</p>
+          <p className="fs-lg fw-700 lh-1-5">
+            تعيين مدير المشروع-this is a beta test project
+          </p>
         </div>
         {/* Button */}
         <div className="subheader-project-manager" onClick={handleAddClick}>
@@ -149,12 +168,13 @@ const ProjectManager = () => {
               {projects.map((project) => (
                 <tr key={project.id}>
                   <td>{project.id}</td>
-                  <td>{project.name}</td>
-                  <td>{project.date}</td>
-                  <td>{project.specialization}</td>
-                  <td>{project.delivered}</td>
-                  <td>{project.deliveryDate}</td>
-                  <td>{project.previousManager}</td>
+                  <td>{renderCell(project.name)}</td>
+                  <td>{renderCell(project.date)}</td>
+                  <td>{renderCell(project.specialization)}</td>
+                  <td>{renderCell(project.delivered)}</td>
+                  <td>{renderCell(project.deliveryDate)}</td>
+                  <td>{renderCell(project.previousManager)}</td>
+
                   <td>
                     <FaPencilAlt
                       className="edit-icon"

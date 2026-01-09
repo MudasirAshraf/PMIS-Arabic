@@ -70,6 +70,24 @@ const CommunicationPlan = ({ goToNextTab, goToPreviousTab }) => {
       document.body.classList.remove("modal-open");
     };
   }, [showCommunicationModal]);
+
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div>
       {/* Header */}
@@ -95,11 +113,11 @@ const CommunicationPlan = ({ goToNextTab, goToPreviousTab }) => {
             {communications.length > 0 ? (
               communications.map((communication, idx) => (
                 <tr key={idx}>
-                  <td>{communication.typeofcontact}</td>
-                  <td>{communication.responsible}</td>
-                  <td>{communication.frequency}</td>
-                  <td>{communication.recipients}</td>
-                  <td>{communication.communicationmethod}</td>
+                  <td>{renderCell(communication.typeofcontact)}</td>
+                  <td>{renderCell(communication.responsible)}</td>
+                  <td>{renderCell(communication.frequency)}</td>
+                  <td>{renderCell(communication.recipients)}</td>
+                  <td>{renderCell(communication.communicationmethod)}</td>
                 </tr>
               ))
             ) : (

@@ -1,0 +1,160 @@
+@use "../../styles/variables" as *;
+.competition-details-wrapper {
+  padding: 1rem;
+  direction: rtl;
+  text-align: center;
+}
+.sector-info-container {
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sector-header {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  margin-bottom: 10px;
+}
+
+.container-sector-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sector-title {
+  background: $gray-hover-bg-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gray-dark-light;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.sector-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.annual-budget,
+.spent-budget,
+.remaining-budget {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.value-colors,
+.value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.green {
+  color: $pine-forest;
+}
+
+.red {
+  color: $red-hover;
+}
+
+.sector-note {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  text-align: center;
+  margin-top: 14px;
+}
+// form
+.competition-details-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+}
+
+.competition-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+  width: 100%;
+}
+
+.competition-details-item input,
+.competition-details-item select,
+.competition-details-item textarea,
+.competition-details-item .css-13cymwt-control {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.competition-details-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.competition-details-item label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  // color: red;
+}
+
+.competition-details-item input,
+.competition-details-item select,
+.competition-details-item textarea {
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  background: $pure-white !important;
+  color: $text-black-light !important;
+}
+.competition-details-item input,
+.competition-details-item select,
+.competition-details-item textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.competition-details-textarea {
+  grid-column: span 2;
+}
+
+.competition-details-upload {
+  grid-column: span 2;
+}
+
+.competition-details-file {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: $gray-darker;
+}
+
+@media (max-width: 768px) {
+  .competition-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competition-details-textarea,
+  .competition-details-upload {
+    grid-column: span 1;
+  }
+}
+.competition-details-btn-continer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}

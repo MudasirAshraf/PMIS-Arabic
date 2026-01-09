@@ -29,6 +29,27 @@ const ProjectCharterStacks = ({ goToPreviousTab }) => {
     setAddDocModalOpen(false); 
   };
 
+  const renderCell = (value) => (
+  <span
+    className="cell-text"
+    onMouseEnter={(e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      e.currentTarget.style.setProperty(
+        "--tooltip-top",
+        `${rect.top + rect.height}px`
+      );
+      e.currentTarget.style.setProperty(
+        "--tooltip-left",
+        `${rect.left}px`
+      );
+    }}
+    data-fulltext={value ?? "_"}
+  >
+    {value ?? "_"}
+  </span>
+);
+
+
   return (
     <div>
       {/* ========== Stakeholder Section ========== */}
@@ -68,12 +89,12 @@ const ProjectCharterStacks = ({ goToPreviousTab }) => {
               ) : (
                 stakeholders.map((s, idx) => (
                   <tr key={idx}>
-                    <td>{s.reviewer}</td>
-                    <td>{s.department}</td>
-                    <td>{s.relatedToProject}</td>
-                    <td>{s.includedInDoc}</td>
-                    <td>{s.isSigned ? "✅" : "-"}</td>
-                    <td>{s.notes}</td>
+                    <td>{renderCell(s.reviewer)}</td>
+                    <td>{renderCell(s.department)}</td>
+                    <td>{renderCell(s.relatedToProject)}</td>
+                    <td>{renderCell(s.includedInDoc)}</td>
+                    <td>{renderCell(s.isSigned ? "✅" : "-")}</td>
+                    <td>{renderCell(s.notes)}</td>
                   </tr>
                 ))
               )}
@@ -143,9 +164,9 @@ const ProjectCharterStacks = ({ goToPreviousTab }) => {
               ) : (
                 documents.map((doc, idx) => (
                   <tr key={idx}>
-                    <td>{doc.name}</td>
-                    <td>{doc.modifiedBy}</td>
-                    <td>{doc.uploadDate}</td>
+                    <td>{renderCell(doc.name)}</td>
+                    <td>{renderCell(doc.modifiedBy)}</td>
+                    <td>{renderCell(doc.uploadDate)}</td>
                   </tr>
                 ))
               )}

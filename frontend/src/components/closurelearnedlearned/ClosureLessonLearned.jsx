@@ -76,6 +76,24 @@ const ClosureLessonLearned = ({ goToPreviousTab, goToNextTab }) => {
       document.body.classList.remove("modal-open");
     };
   }, [showLessonModal]);
+
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div>
       {/* Header */}
@@ -102,10 +120,10 @@ const ClosureLessonLearned = ({ goToPreviousTab, goToNextTab }) => {
                 const { name, happen, suggestions, date } = lesson;
                 return (
                   <tr key={idx}>
-                    <td>{name}</td>
-                    <td>{happen}</td>
-                    <td>{suggestions}</td>
-                    <td>{date}</td>
+                    <td>{renderCell(name)}</td>
+                    <td>{renderCell(happen)}</td>
+                    <td>{renderCell(suggestions)}</td>
+                    <td>{renderCell(date)}</td>
                   </tr>
                 );
               })

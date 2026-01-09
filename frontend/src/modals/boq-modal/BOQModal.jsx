@@ -5,6 +5,26 @@ import "./boqmodal.scss";
 const BOQModal = ({ isOpen, onClose, title, headers, data }) => {
   if (!isOpen) return null;
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty(
+          "--tooltip-left",
+          `${rect.left}px`
+        );
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="boq-modal-overlay">
       <div className="boq-modal-content">
@@ -17,6 +37,7 @@ const BOQModal = ({ isOpen, onClose, title, headers, data }) => {
             ×
           </button>
         </div>
+
         <div className="table-BOQ">
           <table className="boq-modal-table">
             <thead className="fs-md fw-700 lh-1-2">
@@ -26,11 +47,12 @@ const BOQModal = ({ isOpen, onClose, title, headers, data }) => {
                 ))}
               </tr>
             </thead>
+
             <tbody className="fs-md fw-500 lh-1-2">
               {data.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex}>{cell}</td>
+                    <td key={cellIndex}>{renderCell(cell)}</td>
                   ))}
                 </tr>
               ))}

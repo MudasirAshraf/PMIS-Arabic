@@ -68,6 +68,23 @@ const PlanStakeholders = ({ goToPreviousTab }) => {
       document.body.classList.remove("modal-open");
     };
   }, [showStakeholderModal]);
+
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
   return (
     <div>
       {/* Header */}
@@ -93,10 +110,10 @@ const PlanStakeholders = ({ goToPreviousTab }) => {
             {stakeholders.length > 0 ? (
               stakeholders.map((stakeholder, idx) => (
                 <tr key={idx}>
-                  <td>{stakeholder.stakeholdername}</td>
-                  <td>{stakeholder.jobtitle}</td>
-                  <td>{stakeholder.type}</td>
-                  <td>{stakeholder.roleandresp}</td>
+                  <td>{renderCell(stakeholder.stakeholdername)}</td>
+                  <td>{renderCell(stakeholder.jobtitle)}</td>
+                  <td>{renderCell(stakeholder.type)}</td>
+                  <td>{renderCell(stakeholder.roleandresp)}</td>
                 </tr>
               ))
             ) : (

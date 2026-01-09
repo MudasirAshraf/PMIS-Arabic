@@ -226,6 +226,24 @@ const ProjectCenter = () => {
       ? Array.from({ length: totalGridPages }, (_, i) => totalGridPages - i)
       : Array.from({ length: totalTablePages }, (_, i) => totalTablePages - i);
 
+  // Table-Cell-Hover
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div>
       {/* Header */}
@@ -389,15 +407,19 @@ const ProjectCenter = () => {
                 <tbody className="fs-md fw-500 lh-1-25 text-center fs-xs-mob">
                   {currentTableItems.map((item) => (
                     <tr key={item.id} style={{ cursor: "pointer" }}>
-                      <td>{`مشروع-${item.id}`}</td>
-                      <td>{item.project_title}</td>
-                      <td>{item.manager}</td>
-                      <td>{item.department}</td>
+                      <td>{renderCell(`مشروع-${item.id}`)}</td>
+                      <td>{renderCell(item.project_title)}</td>
+                      <td>{renderCell(item.manager)}</td>
+                      <td>{renderCell(item.department)}</td>
                       <td>
-                        {new Date(item.start_date).toLocaleDateString("ar-EG")}
+                        {renderCell(
+                          new Date(item.start_date).toLocaleDateString("ar-EG")
+                        )}
                       </td>
                       <td>
-                        {new Date(item.end_date).toLocaleDateString("ar-EG")}
+                        {renderCell(
+                          new Date(item.end_date).toLocaleDateString("ar-EG")
+                        )}
                       </td>
                       <td>
                         <div
@@ -406,7 +428,7 @@ const ProjectCenter = () => {
                             background: bgColors[item.id % bgColors.length],
                           }}
                         >
-                          {item.phase}
+                          {renderCell(item.phase)}
                         </div>
                       </td>
                       <td>

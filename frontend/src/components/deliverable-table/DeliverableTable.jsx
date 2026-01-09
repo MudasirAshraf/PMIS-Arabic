@@ -192,6 +192,23 @@ const DeliverableTable = ({ onDataLengthChange }) => {
     },
   ]);
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   useEffect(() => {
     onDataLengthChange?.(deliverablesData.length);
   }, [deliverablesData, onDataLengthChange]);
@@ -218,15 +235,16 @@ const DeliverableTable = ({ onDataLengthChange }) => {
           {deliverablesData.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.startDate}</td>
-              <td>{item.endDate}</td>
-              <td>{item.planned}</td>
-              <td>{item.achieved}</td>
-              <td>{item.cost}</td>
-              <td>{item.delivered}</td>
-              <td>{item.status}</td>
-              <td>{item.phase}</td>
+              <td>{renderCell(item.name)}</td>
+              <td>{renderCell(item.startDate)}</td>
+              <td>{renderCell(item.endDate)}</td>
+              <td>{renderCell(item.planned)}</td>
+              <td>{renderCell(item.achieved)}</td>
+              <td>{renderCell(item.cost)}</td>
+              <td>{renderCell(item.delivered)}</td>
+              <td>{renderCell(item.status)}</td>
+              <td>{renderCell(item.phase)}</td>
+
               <td>
                 <button
                   onClick={() => handleEdit(item)}

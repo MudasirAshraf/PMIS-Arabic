@@ -42,6 +42,7 @@ import ProjectManager from "./pages/project-manager/Project-Manager.jsx";
 import ChangeRequest from "./pages/change-request/Change-Request.jsx";
 import Templates from "./pages/templatelanding/Template-Landing.jsx";
 import Approval from "./pages/approval/Approval.jsx";
+import Competitions from "./pages/competitions/Competitions.jsx";
 
 function App() {
   const { theme } = useTheme();
@@ -96,6 +97,8 @@ function App() {
             {/* Template */}
             <Route path="/Template-Landing" element={<Templates />} />
             <Route path="/Approval" element={<Approval />} />
+            {/* Competitions */}
+            <Route path="/Competitions" element={<Competitions />} />
           </Route>
         </Routes>
       </Router>

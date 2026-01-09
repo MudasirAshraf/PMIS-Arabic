@@ -114,6 +114,8 @@ const RiskCenter = () => {
   const [showRiskChat, setShowRiskChat] = useState(false);
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState({});
   // Delete
   const handleDeleteClick = (index) => {
     setDeleteIndex(index);
@@ -211,6 +213,18 @@ const RiskCenter = () => {
     setIsEditModalOpen(false);
   };
 
+  const filteredData = data.filter((row) => {
+    const title = row[1]?.toLowerCase() || "";
+
+    if (searchQuery && !title.includes(searchQuery.toLowerCase())) {
+      return false;
+    }
+    if (filters.priority && row[6] !== filters.priority) return false;
+    if (filters.status && row[7] !== filters.status) return false;
+
+    return true;
+  });
+
   return (
     <div className="main-Container-Risk-Center">
       {/* Header */}
@@ -295,18 +309,27 @@ const RiskCenter = () => {
         showFilter={showFilter}
         setShowSearch={setShowSearch}
         setShowFilter={setShowFilter}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        filters={filters}
+        setFilters={setFilters}
         filterLabels={["التصنيف", "الأولوية", "المصدر", "التاريخ"]}
+        filterKeys={["category", "priority", "source", "date"]}
       />
+
       {/* Section-II */}
       <div className="table-Risk-Center">
         <Table
           columns={displayedColumns}
-          data={data}
-          displayedData={data.map((row) => row.slice(0, 5))}
+          data={filteredData}
+          displayedData={filteredData.map((row) => row.slice(0, 5))}
           onDelete={handleDeleteClick}
           onChat={handleChatClick}
-          onEdit={(index) => handleRiskClick(data[index], index)}
+          onEdit={(index) => handleRiskClick(filteredData[index], index)}
         />
+        {filteredData.length === 0 && (
+          <p className="no-result">لا توجد نتائج</p>
+        )}
 
         {/* Delete Modal */}
         <DeleteModal

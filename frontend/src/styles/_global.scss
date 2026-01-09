@@ -133,7 +133,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-// Common-CSS 
+// Common-CSS
 // Risk-Modal, Issue-Modal, Action-Modal, Stake-Modal
 .layout-overlay {
   position: fixed;
@@ -272,7 +272,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .layout-container {
-  width: 90%;
+    width: 90%;
   }
   .layout-grid {
     grid-template-columns: 1fr;
@@ -287,7 +287,7 @@ body {
   }
 }
 
-// Common css for Project-Charter, Project-Plan, Project-Closure, Change-Request 
+// Common css for Project-Charter, Project-Plan, Project-Closure, Change-Request
 .main-content-wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -400,8 +400,8 @@ body {
   height: 20px;
   width: 20px;
 }
-// Table  
-// Also used this table-class in Previous-Change Component
+// Table
+// Also used this table-class in (Previous-Change Component)
 .ui-table-container {
   padding: 5px 8px;
   overflow-x: auto;
@@ -444,13 +444,13 @@ body {
   .ui-header-container {
     justify-content: end;
   }
- .ui-header-action {
+  .ui-header-action {
     padding: 6px 12px;
   }
   .ui-header-action p {
     font-size: 0.9rem !important;
   }
- .ui-icon-sm {
+  .ui-icon-sm {
     width: 18px;
     height: 18px;
   }
@@ -459,7 +459,7 @@ body {
     font-size: 0.85rem !important;
     padding: 8px;
   }
- .ui-table {
+  .ui-table {
     min-width: 500px;
   }
 }
@@ -564,11 +564,11 @@ body {
     width: 95%;
     max-width: 95%;
   }
- .ui-modal-header h3 {
+  .ui-modal-header h3 {
     font-size: 0.95rem !important;
     text-align: left;
   }
- .ui-modal-body {
+  .ui-modal-body {
     padding: 8px;
   }
   .ui-modal-body label {
@@ -579,7 +579,7 @@ body {
     font-size: 0.9rem !important;
     padding: 6px;
   }
- .ui-modal-row {
+  .ui-modal-row {
     flex-direction: column;
   }
 }
@@ -597,3 +597,69 @@ body {
   border-radius: 6px;
 }
 
+/* React Select custom styles */
+.css-yk16xz-control {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #aaa;
+}
+.css-1uccc91-singleValue {
+  color: #000;
+}
+.css-1okebmr-indicatorSeparator {
+  background: #ccc;
+}
+.css-14el2xx-placeholder {
+  color: #000;
+  opacity: 0.6;
+}
+.css-1gtu0rj-menu {
+  color: #000;
+  background: #fff;
+}
+.css-1n7v3ny-option {
+  color: #000;
+}
+.css-1n7v3ny-option:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+.css-13cymwt-control {
+  width: 100% !important;
+}
+
+// Cell_Text used in all Tables for hover data in rows 
+.cell-text {
+  position: relative;
+  display: inline-block;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.cell-text:hover::after {
+  content: attr(data-fulltext);
+  position: fixed;
+  z-index: 9999;
+  top: var(--tooltip-top);
+  left: var(--tooltip-left);
+  max-width: 300px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  word-break: break-word;
+  transform: translate(0, 6px);
+}
+// No-Result
+.no-result{
+  margin-top: 10px;
+  text-align: start;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+}

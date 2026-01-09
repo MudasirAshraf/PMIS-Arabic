@@ -71,6 +71,16 @@ const ServiceModal = ({
         ).toFixed(2)
       : null;
 
+      // Table-Cell-Hover
+         const renderCell = (value) => (
+  <span
+    className="cell-text"
+    data-fulltext={value ?? "_"}
+  >
+    {value ?? "_"}
+  </span>
+);
+
   return (
     <div className="service-modal-overlay">
       <div className="service-modal-container">
@@ -194,7 +204,7 @@ const ServiceModal = ({
                   secondFilteredData.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                       {columns.map((col, colIndex) => (
-                        <td key={colIndex}  className="fs-md lh-1-3 fw-500 text-center">{row[col]}</td>
+                        <td key={colIndex}  className="fs-md lh-1-3 fw-500 text-center">{renderCell(row[col])}</td>
                       ))}
                     </tr>
                   ))

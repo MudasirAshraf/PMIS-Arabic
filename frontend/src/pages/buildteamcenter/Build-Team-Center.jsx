@@ -20,6 +20,23 @@ const BuildTeamCenter = () => {
     setTeamMembers((prev) => prev.filter((member) => member.id !== id));
   };
 
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="main-container-build-center">
       {/* Header */}
@@ -80,7 +97,7 @@ const BuildTeamCenter = () => {
             {teamMembers.map((member) => (
               <tr key={member.id}>
                 <td>
-                  <span className="team-member-name">{member.name}</span>
+                  {renderCell(member.name)}
                   <AiFillDelete
                     className="delete-icon"
                     onClick={() => handleDelete(member.id)}

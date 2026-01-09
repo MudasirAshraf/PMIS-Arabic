@@ -2,14 +2,30 @@ import React, { useEffect } from "react";
 import "./modal.scss";
 
 const Modal = ({ modalData, closeModal, getRowClass }) => {
-
   useEffect(() => {
     document.body.classList.add("modal-open");
     return () => {
       document.body.classList.remove("modal-open");
     };
   }, []);
-  
+
+  const renderCell = (value) => (
+    <span
+      className="cell-text"
+      onMouseEnter={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty(
+          "--tooltip-top",
+          `${rect.top + rect.height}px`
+        );
+        e.currentTarget.style.setProperty("--tooltip-left", `${rect.left}px`);
+      }}
+      data-fulltext={value ?? "_"}
+    >
+      {value ?? "_"}
+    </span>
+  );
+
   return (
     <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-custom" onClick={(e) => e.stopPropagation()}>
@@ -35,11 +51,15 @@ const Modal = ({ modalData, closeModal, getRowClass }) => {
                   {Object.values(row).map((value, idx) => (
                     <td key={idx}>
                       {idx === 2 ? (
-                        <span className={`supervision ${getRowClass(modalData.type)}`}>
-                          {value}
+                        <span
+                          className={`supervision ${getRowClass(
+                            modalData.type
+                          )}`}
+                        >
+                          {renderCell(value)}
                         </span>
                       ) : (
-                        value
+                        renderCell(value)
                       )}
                     </td>
                   ))}

@@ -1,0 +1,353 @@
+@use "../../styles/variables" as *;
+.step-box p,
+.step-para {
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .step-box p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .yes-no-box button {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .choice-container h3 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+}
+
+.yes-no-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.yes-no-box button {
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 8px;
+}
+
+.choice-buttons button {
+  width: 150px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.choice-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+.container-stepbox {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.step-box input,
+.step-box select {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.step-box input:focus,
+.step-box select:focus {
+  border-color: $blue-deep;
+}
+
+.step-center {
+  text-align: center;
+}
+
+.step-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+// Table
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  background: $pure-white;
+  box-sizing: border-box;
+}
+
+.projects-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  direction: rtl;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid $gray-light-border;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $dark-gray-center;
+}
+
+.projects-table th {
+  background: $soft-gray-circle;
+  font-weight: 700;
+  color: $dark-gray-center;
+}
+
+.projects-table tr:nth-child(even) {
+  background: $gray-header-light;
+}
+
+.projects-table tr:hover {
+  background: $misted-gray;
+}
+
+.projects-table thead tr:first-child th:first-child {
+  border-top-right-radius: 12px;
+}
+.projects-table thead tr:first-child th:last-child {
+  border-top-left-radius: 12px;
+}
+
+.projects-table input {
+  width: 100%;
+  max-width: 150px;
+  padding: 10px;
+  border: 1px solid $gray-light-border;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  transition: 0.25s ease;
+  background: $gray-odd-row-hover;
+  color: $dark-gray-center;
+}
+
+.projects-table input:focus {
+  border-color: $gray-mid-light;
+  box-shadow: $shadow-elevation-lg;
+}
+
+@media (max-width: 480px) {
+  .projects-table input {
+    width: 90px;
+  }
+  .projects-table th,
+  .projects-table td {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+.actions-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.action-btn {
+  width: 100%;
+  max-width: 180px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.available {
+  direction: rtl;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 10px;
+}
+
+.available p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+}
+
+.available .amount {
+  font-weight: 600;
+  margin-inline-start: 10px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.max-budget-text {
+  font-size: 0.85rem;
+  line-height: 1rem;
+  font-weight: 500;
+  margin-right: 7px;
+}
+/* BACKDROP */
+.cm2-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+}
+
+/* MODAL BOX */
+.cm2-content {
+  max-width: 1200px;
+  max-height: 80%;
+  width: 100%;
+  direction: rtl;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  direction: rtl;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  isolation: isolate;
+}
+
+// HEADER
+.modal-header-comp-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.modal-header-comp-modal h3 {
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+.close-btn-comp-modal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* TIMELINE */
+.cm2-timeline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+  padding: 15px 12px;
+  position: relative;
+}
+
+.cm2-step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: $pure-white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline line */
+.cm2-timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.cm2-step.unlocked {
+  cursor: pointer;
+}
+
+.cm2-step.active {
+  transform: scale(1.2);
+}
+
+/* STEP CONTENT */
+.cm2-body {
+  // min-height: 160px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.cm2-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cm2-body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.cm2-body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+/* FOOTER BUTTONS */
+.cm2-footer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-radius: 0 0 13px 13px;
+}
+
+.cancel-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
